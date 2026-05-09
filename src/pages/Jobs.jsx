@@ -15,8 +15,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 
-const API = "http://localhost:5000/api/jobs";
-
+const API = "https://l-lhealthcare.onrender.com/api/jobs";
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);

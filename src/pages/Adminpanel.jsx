@@ -17,7 +17,7 @@ import {
     Tag,
 } from "lucide-react";
 
-const API = "http://localhost:5000/api/jobs";
+const API = "https://l-lhealthcare.onrender.com/api/jobs";
 
 const emptyForm = {
     title: "",

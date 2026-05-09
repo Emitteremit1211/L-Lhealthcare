@@ -3,13 +3,19 @@ import {
     FaEnvelope,
     FaMapMarkerAlt,
     FaClock,
-    FaFacebookF,
-    FaInstagram,
+    // FaFacebookF,
+    // FaInstagram,
 
-    FaLinkedinIn,
+    // FaLinkedinIn,
 } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { Link } from "react-router-dom"
+const socialLinks = [
+    { icon: FaFacebook, href: "#", label: "Facebook", color: "#1877F2" },
+    { icon: FaTwitter, href: "#", label: "Twitter", color: "#1DA1F2" },
+    { icon: FaInstagram, href: "#", label: "Instagram", color: "#E1306C" },
+    { icon: FaLinkedin, href: "#", label: "LinkedIn", color: "#0A66C2" },
+]
 
 const Footer = () => {
     return (
@@ -93,24 +99,25 @@ const Footer = () => {
                         SOCIAL PROFILES
                     </h3>
 
-                    <div className="flex gap-3">
-                        {[
-                            <FaFacebookF/>,
-                            <FaXTwitter />,
-                            <FaInstagram />,
-                            <FaLinkedinIn />,
-                            // <FaPinterestP />,
-                        ].map((icon, index) => (
-                            <button
-                                key={index}
-                                className="w-12 h-12 bg-[#6B8798] rounded flex items-center justify-center text-lg hover:bg-[#17B7F5] transition"
-                            >
-                                {icon}
-                            </button>
-                        ))}
+                    <div className="mt-10">
+                        <h4 className="font-semibold text-[#1B3A5C] mb-4">Follow Us</h4>
+                        <div className="flex gap-4">
+                            {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                                <button
+                                    key={label}
+                                    onClick={() => window.open(href, "_blank")}
+                                    title={label}
+                                    style={{ backgroundColor: color }}
+                                    className="w-12 h-12 flex items-center justify-center rounded-full text-white hover:opacity-80 transition"
+                                >
+                                    <Icon className="w-7 h-7" />
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
+            <Link to={'/adminLogin'} className="hover:bg-teal-300 p-2 rounded-lg hover:text-blue-500">Admin</Link>
             {/* Bottom copyright bar */}
             <div className="border-t border-white/20 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/90">
                 <p>

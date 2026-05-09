@@ -21,6 +21,7 @@ import slide3 from "../assets/slide3.jpg";
 import nurses from "../assets/nurses.jpg";
 import works from "../assets/works.jpg";
 import llvid from "../assets/llvid.mp4";
+import { Link } from "react-router-dom";
 
 const slides = [
     {
@@ -120,11 +121,11 @@ const Body = () => {
                             {/* OVERLAY */}
                             <div className="absolute inset-0 bg-black/30"></div>
 
-                            {/* TEXT CARD - desktop: left middle, mobile: bottom center */}
+                            {/* TEXT CARD */}
                             <div className="
                                 absolute bg-[#0F3355]/90 text-white p-6 md:p-10 rounded-xl shadow-lg
-                                left-1/2 -translate-x-1/2 bottom-[30px] w-[90%] max-w-sm
-                                md:left-14 md:translate-x-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:w-auto
+                                left-1/2 -translate-x-1/2 bottom-[40px] w-[90%] max-w-lg
+                                md:left-14 md:translate-x-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:w-auto 
                             ">
                                 <h1 className="text-xl md:text-4xl font-bold">
                                     {item.title}
@@ -185,7 +186,9 @@ const Body = () => {
                     </p>
 
                     <button className="mt-8 bg-[#0F3355] text-white px-6 py-3 rounded-md font-semibold hover:opacity-90 transition">
+                        <Link to={'/services'}>
                         Learn More →
+                        </Link>
                     </button>
                 </div>
 
@@ -382,12 +385,12 @@ const Body = () => {
                     Contact us today and let us help you find the right care solution for your loved one.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/contact" className="bg-white text-[#0F3355] px-8 py-3 rounded-md font-semibold hover:opacity-90 transition">
+                    <Link to={'/contact'} className="bg-white text-[#0F3355] px-8 py-3 rounded-md font-semibold hover:opacity-90 transition">
                         Contact Us
-                    </a>
-                    <a href="/apply" className="bg-[#2A9D8F] text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition">
+                    </Link>
+                    <Link to={'/apply'} className="bg-[#2A9D8F] text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition">
                         Apply Now
-                    </a>
+                    </Link>
                 </div>
             </section>
 

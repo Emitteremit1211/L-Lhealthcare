@@ -8,16 +8,18 @@ const Navbar = () => {
     return (
         <>
             <nav className="fixed top-0 left-0 w-full z-[999] bg-[#0F3655] lg:px-[30px] px-6 flex items-center justify-between h-20">
-                <div className="flex items-center  h-full ">
-                    <img
-                        src={logo}
-                        alt="L&L Healthcare"
-                        className="h-10 sm:h-12 md:h-14 w-auto object-contain"
-                    />
-                    <span className="text-white font-bold text-lg tracking-wide font-serif">
-                        L&L Healthcare <br /> Staffing Solution
-                    </span>
-                </div>
+                <Link to={"/"}>
+                    <div className="flex items-center  h-full ">
+                        <img
+                            src={logo}
+                            alt="L&L Healthcare"
+                            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+                        />
+                        <span className="text-white font-bold text-lg tracking-wide font-serif">
+                            L&L Healthcare <br /> Staffing Solution
+                        </span>
+                    </div>
+                </Link>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-6">

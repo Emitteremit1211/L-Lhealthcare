@@ -64,16 +64,16 @@ const services = [
 
 const Services = () => {
     const [loading, setLoading] = useState(true)
-    
-      useEffect(() => {
+
+    useEffect(() => {
         const timer = setTimeout(() => {
-          setLoading(false)
+            setLoading(false)
         }, 2000)
-    
+
         return () => clearTimeout(timer)
-      }, [])
-    
-      if (loading) return <Loader/>
+    }, [])
+
+    if (loading) return <Loader />
     return (
         <>
             <Navbar />
@@ -264,24 +264,28 @@ const Services = () => {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                         {/* Request Consultation Button */}
-                        <button className="bg-[#0F3655] text-white px-6 py-4 rounded-xl hover:bg-[#17B7F5] transition shadow-lg w-full sm:w-auto">
-                            <div className="font-semibold text-lg">
-                                Request a Consultation
-                            </div>
-                            <div className="text-sm mt-1 text-white/80">
-                                Book your care plan
-                            </div>
-                        </button>
+                        <Link to={'/'}>
+                            <button className="bg-[#0F3655] text-white px-6 py-4 rounded-xl hover:bg-[#17B7F5] transition shadow-lg w-full sm:w-auto">
+                                <div className="font-semibold text-lg">
+                                    Request a Consultation
+                                </div>
+                                <div className="text-sm mt-1 text-white/80">
+                                    Book your care plan
+                                </div>
+                            </button>
+                        </Link>
 
                         {/* Call Button */}
-                        <button className="bg-white border-2 border-[#0F3655] text-[#0F3655] px-6 py-4 rounded-xl hover:bg-[#0c8ffa] hover:text-white transition shadow-lg w-full sm:w-auto">
-                            <div className="font-semibold text-lg">
-                                Call Us Now
-                            </div>
-                            <div className="text-sm mt-1">
-                                24/7: 978-552-9703
-                            </div>
-                        </button>
+                        <Link to={'/'}>
+                            <button className="bg-white border-2 border-[#0F3655] text-[#0F3655] px-6 py-4 rounded-xl hover:bg-[#0c8ffa] hover:text-white transition shadow-lg w-full sm:w-auto">
+                                <div className="font-semibold text-lg">
+                                    Call Us Now
+                                </div>
+                                <div className="text-sm mt-1">
+                                    24/7: 978-552-9703
+                                </div>
+                            </button>
+                        </Link>
 
                     </div>
                 </div>

@@ -21,7 +21,7 @@ function App() {
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/services" element={<Services />} />
           <Route path="/how-it-works" element={<h1>How It Works Page</h1>} />
-          <Route path="/jobs" element={<Job />} />
+          <Route path="/jobs" element={<Jobs />} />
           <Route path="/contact" element={<Contact />} />
           {/* <Route path="/apply" element={<h1>Apply Page</h1>} /> */}
           {/* <Route path="/adminpanel" element={<Adminpanel />} /> */}

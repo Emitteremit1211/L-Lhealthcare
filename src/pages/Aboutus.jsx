@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { HeartHandshake, Star, Shield, Users, Award, ArrowRight } from 'lucide-react'
+import { HeartHandshake, Star, Shield, Users, Award, ArrowRight, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Loader from '../components/Loader'
+import { Link } from 'react-router-dom'
+import aboutImg from '../assets/nurses.jpg'
 
 const values = [
   {
@@ -18,7 +20,7 @@ const values = [
   {
     icon: Users,
     title: "Personalized Care",
-    desc: "Every care plan is tailored to the individual. No one-size-fits-all solutions only care that fits your life."
+    desc: "Every care plan is tailored to the individual. No one-size-fits-all solutions — only care that fits your life."
   },
   {
     icon: Shield,
@@ -57,16 +59,16 @@ const testimonials = [
 
 const Aboutus = () => {
   const [loading, setLoading] = useState(true)
-  
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setLoading(false)
-      }, 2000)
-  
-      return () => clearTimeout(timer)
-    }, [])
-  
-    if (loading) return <Loader />
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) return <Loader />
+
   return (
     <>
       <Navbar />
@@ -77,7 +79,7 @@ const Aboutus = () => {
           <div className="absolute inset-0 opacity-5"
             style={{
               backgroundImage: `radial-gradient(circle at 20% 50%, #17B7F5 0%, transparent 50%),
-                                          radial-gradient(circle at 80% 20%, #2A9D8F 0%, transparent 40%)`
+                            radial-gradient(circle at 80% 20%, #2A9D8F 0%, transparent 40%)`
             }}
           />
           <div className="max-w-4xl mx-auto text-center relative z-10 mt-[30px]">
@@ -89,10 +91,22 @@ const Aboutus = () => {
               <span className="text-[#17B7F5]">People You Can Trust</span>
             </h1>
             <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              At L&L Healthcare Staffing Solution, we provide personalized in-home care
+              At L&amp;L Healthcare Staffing Solution, we provide personalized in-home care
               and skilled nursing services that help individuals live safely, comfortably,
               and with dignity at home.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <button className="bg-[#17B7F5] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#0ea5d8] transition">
+                  Get In Touch
+                </button>
+              </Link>
+              <Link to="/services">
+                <button className="bg-white/10 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition border border-white/20">
+                  Our Services
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -105,19 +119,36 @@ const Aboutus = () => {
                 A Trusted Partner in Home-Based Healthcare
               </h2>
               <p className="mt-6 text-gray-600 leading-relaxed">
-                L&L Healthcare Staffing Solution (formerly Just Care Staffing Agency LLC) is a licensed
-                and registered Limited Liability Company dedicated to supporting individuals and families
-                with compassionate, professional in-home care services.
+                L&amp;L Healthcare Staffing Solution (formerly Just Care Staffing Agency LLC) is a licensed
+                and registered Limited Liability Company in the Commonwealth of Massachusetts,
+                dedicated to supporting individuals and families with compassionate, professional
+                in-home care services.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                We specialize in matching clients with qualified caregivers and nurses who deliver
-                personalized care that respects each individual's lifestyle, preferences, and health needs.
+                Founded and led by <span className="font-semibold text-[#1B3A5C]">Felix Osho</span> and <span className="font-semibold text-[#1B3A5C]">Akintunde Okufuwa</span>,
+                the company was officially registered and filed with the Massachusetts Secretary of State,
+                Corporations Division in <span className="font-semibold text-[#1B3A5C]">2025</span> — built on a shared vision of delivering
+                trusted and guaranteed staffing solutions across the state.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
                 Based at <span className="font-semibold text-[#1B3A5C]">91 Mill Street, Suite 1, Randolph, MA 02368</span>,
                 we proudly serve families across surrounding communities, offering dependable care solutions
                 that bring comfort, confidence, and peace of mind.
               </p>
+
+              <div className="mt-8 space-y-3">
+                {[
+                  "Licensed & Registered LLC in Massachusetts",
+                  "Certified and background-checked caregivers",
+                  "Personalized care plans for every client",
+                  "Available 24/7 for care and support",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#2A9D8F] shrink-0" />
+                    <p className="text-gray-600 text-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Stats */}
@@ -142,20 +173,78 @@ const Aboutus = () => {
           </div>
         </section>
 
-        {/* MISSION & VISION */}
+        {/* FOUNDERS SECTION */}
         <section className="w-full bg-gray-50 py-20 px-6 md:px-12">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-[#1B3A5C]/10 rounded-full flex items-center justify-center mb-6">
-                <Star className="w-6 h-6 text-[#1B3A5C]" />
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Leadership</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+                Meet Our Founders
+              </h2>
+              <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
+                L&amp;L Healthcare Staffing Solution was built by two passionate individuals
+                committed to transforming home-based healthcare in Massachusetts.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+              {/* Felix */}
+              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div className="w-20 h-20 rounded-full bg-[#1B3A5C] flex items-center justify-center text-white text-3xl font-bold mb-6">
+                  FO
+                </div>
+                <h3 className="text-2xl font-bold text-[#1B3A5C]">Felix Osho</h3>
+                <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Managing Director</p>
+                <p className="mt-4 text-gray-600 leading-relaxed text-sm">
+                  Felix Osho is a co-founder and resident agent of L&amp;L Healthcare Staffing Solution LLC,
+                  based at 91 Mill Street, Suite 1, Randolph, MA 02368. His leadership and dedication
+                  to quality care have been instrumental in shaping the company's mission of delivering
+                  trusted and guaranteed staffing solutions across Massachusetts.
+                </p>
+                <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
+                  <MapPin className="w-4 h-4 text-[#1B3A5C]" />
+                  Randolph, MA 02368
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#1B3A5C]">Our Mission</h3>
-              <p className="mt-4 text-gray-600 leading-relaxed">
+
+              {/* Akintunde */}
+              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div className="w-20 h-20 rounded-full bg-[#2A9D8F] flex items-center justify-center text-white text-3xl font-bold mb-6">
+                  AO
+                </div>
+                <h3 className="text-2xl font-bold text-[#1B3A5C]">Akintunde Okufuwa</h3>
+                <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Operations Director</p>
+                <p className="mt-4 text-gray-600 leading-relaxed text-sm">
+                  Akintunde Okufuwa is a co-founder and managing member of L&amp;L Healthcare Staffing Solution LLC.
+                  His operational expertise and commitment to compassionate care have been central to building
+                  a company that families across Massachusetts can rely on for consistent, professional,
+                  and personalized healthcare staffing services.
+                </p>
+                <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
+                  <MapPin className="w-4 h-4 text-[#1B3A5C]" />
+                  Randolph, MA 02368
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* MISSION & VISION */}
+        <section className="w-full bg-white py-20 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-[#1B3A5C] p-10 rounded-2xl shadow-sm">
+              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+              <p className="mt-4 text-gray-300 leading-relaxed">
                 To deliver high-quality, compassionate in-home care that enhances independence,
                 promotes wellbeing, and supports families through every stage of care.
               </p>
             </div>
-            <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-gray-50 p-10 rounded-2xl shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-[#2A9D8F]/10 rounded-full flex items-center justify-center mb-6">
                 <ArrowRight className="w-6 h-6 text-[#2A9D8F]" />
               </div>
@@ -169,7 +258,7 @@ const Aboutus = () => {
         </section>
 
         {/* CORE VALUES */}
-        <section className="w-full bg-white py-20 px-6 md:px-12">
+        <section className="w-full bg-gray-50 py-20 px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-2xl mx-auto">
               <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Our Core Values</span>
@@ -182,7 +271,7 @@ const Aboutus = () => {
               {values.map((val, i) => {
                 const Icon = val.icon
                 return (
-                  <div key={i} className="group p-8 rounded-2xl border border-gray-100 hover:border-[#1B3A5C] hover:shadow-lg transition-all duration-300">
+                  <div key={i} className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-[#1B3A5C] hover:shadow-lg transition-all duration-300">
                     <div className="w-12 h-12 bg-[#1B3A5C]/10 rounded-full flex items-center justify-center group-hover:bg-[#1B3A5C] transition-colors duration-300">
                       <Icon className="w-6 h-6 text-[#1B3A5C] group-hover:text-white transition-colors duration-300" />
                     </div>
@@ -191,6 +280,51 @@ const Aboutus = () => {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* WHY TRUST US */}
+        <section className="w-full bg-[#0F3355] py-20 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div>
+              <span className="text-[#17B7F5] text-sm font-semibold uppercase tracking-widest">Why Trust Us</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white leading-snug">
+                Built on Trust.<br />Powered by Compassion.
+              </h2>
+              <p className="mt-6 text-gray-300 leading-relaxed">
+                Choosing a healthcare provider is one of the most important decisions a family can make.
+                We understand that trust must be earned — through consistent, reliable, and compassionate care.
+              </p>
+              <div className="mt-8 space-y-4">
+                {[
+                  "Registered LLC with the Commonwealth of Massachusetts",
+                  "All caregivers are certified and thoroughly vetted",
+                  "Personalized care plans reviewed and updated regularly",
+                  "Transparent communication with families at all times",
+                  "Serving HHA, ACS, CNA, RN, and Personal Care needs",
+                  "Available 24/7 including weekends and holidays",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#17B7F5] shrink-0 mt-0.5" />
+                    <p className="text-gray-300 text-sm leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { label: "Registered", sub: "Commonwealth of Massachusetts", color: "bg-white/10" },
+                { label: "Certified", sub: "Background-checked caregivers", color: "bg-[#17B7F5]/20" },
+                { label: "Insured", sub: "Fully covered for your peace of mind", color: "bg-[#2A9D8F]/20" },
+                { label: "Trusted", sub: "By families across Massachusetts", color: "bg-white/10" },
+              ].map((item, i) => (
+                <div key={i} className={`${item.color} backdrop-blur-md border border-white/10 rounded-2xl p-6`}>
+                  <h4 className="text-white text-xl font-bold">{item.label}</h4>
+                  <p className="text-gray-300 text-xs mt-2 leading-relaxed">{item.sub}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -211,6 +345,49 @@ const Aboutus = () => {
                   <h4 className="mt-6 font-semibold text-[#1B3A5C]">{t.name}</h4>
                   <span className="text-sm text-gray-500">{t.role}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT BANNER */}
+        <section className="w-full bg-[#2A9D8F] py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Ready to Learn More?
+            </h2>
+            <p className="text-white/90 mt-4 max-w-xl mx-auto leading-8 text-sm">
+              Reach out to our team today and let us help you find the right care
+              solution for you or your loved one.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <button className="bg-white text-[#2A9D8F] px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg">
+                  Contact Us
+                </button>
+              </Link>
+              <Link to="/services">
+                <button className="bg-[#0F3355] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#1B3A5C] transition shadow-lg">
+                  View Our Services
+                </button>
+              </Link>
+            </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center text-white/90 text-sm">
+              {[
+                { href: "tel:+19785529703", icon: Phone, label: "978-552-9703" },
+                { href: "mailto:info@llhealthcare.com", icon: Mail, label: "info@llhealthcare.com" },
+                { href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368", icon: MapPin, label: "91 Mill Street, Randolph, MA" },
+              ].map(({ href, icon: Icon, label }) => (
+                React.createElement("a", {
+                  key: label,
+                  href: href,
+                  target: href.startsWith("http") ? "_blank" : "_self",
+                  rel: "noopener noreferrer",
+                  className: "flex items-center gap-2 justify-center hover:text-white transition text-white/90 text-sm"
+                },
+                  React.createElement(Icon, { className: "w-4 h-4" }),
+                  label
+                )
               ))}
             </div>
           </div>

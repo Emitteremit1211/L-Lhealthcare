@@ -10,6 +10,7 @@ import AdminLogin from "./pages/AdminLogin"
 import ProtectedRoute from "./pages/ProtectedRoute"
 import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           />
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>

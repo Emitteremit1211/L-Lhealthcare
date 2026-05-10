@@ -291,6 +291,141 @@ const Services = () => {
                 </div>
 
             </section>
+            {/* WHY CHOOSE US */}
+            <section className="bg-[#0F3655] py-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-14">
+                        <p className="text-[#17B7F5] uppercase tracking-[4px] text-sm font-semibold mb-3">
+                            Why Choose Us
+                        </p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">
+                            The L&amp;L Healthcare Difference
+                        </h2>
+                        <p className="text-white/70 mt-4 max-w-2xl mx-auto leading-8 text-sm">
+                            We go beyond standard care to deliver an experience that truly puts
+                            our clients and their families first.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        {[
+                            {
+                                title: "Certified Professionals",
+                                desc: "All our caregivers are certified, background-checked, and trained to deliver the highest standard of care.",
+                                icon: "🏅"
+                            },
+                            {
+                                title: "24/7 Availability",
+                                desc: "We are available around the clock to ensure your loved ones always have the support they need.",
+                                icon: "🕐"
+                            },
+                            {
+                                title: "Personalized Care Plans",
+                                desc: "Every client receives a customized care plan tailored specifically to their unique needs and preferences.",
+                                icon: "📋"
+                            },
+                            {
+                                title: "Compassionate Approach",
+                                desc: "We treat every client like family — with warmth, patience, dignity, and genuine compassion.",
+                                icon: "❤️"
+                            },
+                            {
+                                title: "Experienced Team",
+                                desc: "Our team brings years of healthcare experience across nursing, personal care, and mental health support.",
+                                icon: "👨‍⚕️"
+                            },
+                            {
+                                title: "Family Communication",
+                                desc: "We keep families informed and involved every step of the way through regular updates and open communication.",
+                                icon: "📞"
+                            },
+                        ].map((item, i) => (
+                            <div key={i} className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/20 transition duration-300">
+                                <div className="text-4xl mb-4">{item.icon}</div>
+                                <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
+                                <p className="text-white/70 text-sm leading-7">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* HOW WE DELIVER CARE */}
+            <section className="bg-gray-50 py-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-14">
+                        <p className="text-[#17B7F5] uppercase tracking-[4px] text-sm font-semibold mb-3">
+                            Our Process
+                        </p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#0F3655]">
+                            How We Deliver Care
+                        </h2>
+                        <p className="text-gray-600 mt-4 max-w-2xl mx-auto leading-8 text-sm">
+                            From your first call to ongoing support, our process is designed
+                            to be simple, stress-free, and centered around you.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {[
+                            {
+                                step: "01",
+                                title: "Initial Consultation",
+                                desc: "We start with a free consultation to understand your needs, preferences, and care goals."
+                            },
+                            {
+                                step: "02",
+                                title: "Care Plan Creation",
+                                desc: "We develop a personalized care plan tailored specifically to the client's needs and lifestyle."
+                            },
+                            {
+                                step: "03",
+                                title: "Caregiver Matching",
+                                desc: "We carefully match you with a certified caregiver who fits your personality and requirements."
+                            },
+                            {
+                                step: "04",
+                                title: "Ongoing Support",
+                                desc: "We continuously monitor and adjust the care plan to ensure the highest quality of service."
+                            },
+                        ].map((item, i) => (
+                            <div key={i} className="text-center">
+                                <div className="w-16 h-16 rounded-full bg-[#0F3655] text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
+                                    {item.step}
+                                </div>
+                                <h3 className="text-[#0F3655] font-bold text-lg mb-3">{item.title}</h3>
+                                <p className="text-gray-600 text-sm leading-7">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA BANNER */}
+            <section className="bg-[#17B7F5] py-16 px-6">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">
+                        Ready to Get Started?
+                    </h2>
+                    <p className="text-white/90 mt-4 max-w-xl mx-auto leading-8">
+                        Contact us today and let us help you find the right care solution
+                        for you or your loved one. We are here 24/7.
+                    </p>
+                    <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link to="/contact">
+                            <button className="bg-white text-[#0F3655] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-lg w-full sm:w-auto">
+                                Contact Us Today
+                            </button>
+                        </Link>
+                        <Link to="/jobs">
+                            <button className="bg-[#0F3655] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1B3A5C] transition shadow-lg w-full sm:w-auto">
+                                View Open Positions
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             <Footer />
         </>

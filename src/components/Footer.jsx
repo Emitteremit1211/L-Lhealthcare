@@ -128,7 +128,7 @@ const Footer = () => {
                 <p className="text-sm text-white">
                     Designed & Developed by{" "}
                     <a
-                        href="https://your-portfolio-link.com"
+                        href="https://personal-portfolio-rho-three-54.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-semibold text-white hover:text-blue-600 transition"

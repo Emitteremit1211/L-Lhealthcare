@@ -3,13 +3,10 @@ import {
     FaEnvelope,
     FaMapMarkerAlt,
     FaClock,
-    // FaFacebookF,
-    // FaInstagram,
-
-    // FaLinkedinIn,
 } from "react-icons/fa"
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { Link } from "react-router-dom"
+
 const socialLinks = [
     { icon: FaFacebook, href: "#", label: "Facebook", color: "#1877F2" },
     { icon: FaTwitter, href: "#", label: "Twitter", color: "#1DA1F2" },
@@ -53,10 +50,11 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-5 text-md">
                         <Link to="/">Home</Link>
-                        <Link to="/about">About Us</Link>
+                        <Link to="/aboutus">About Us</Link>
                         <Link to="/services">Our Services</Link>
-                        <Link to="/blog">Blog</Link>
+                        <Link to="/jobs">Jobs</Link>
                         <Link to="/contact">Contact Us</Link>
+                        <Link to="/appointment">Book Appointment</Link>
                     </div>
                 </div>
 
@@ -66,11 +64,11 @@ const Footer = () => {
 
                     <div className="flex flex-col gap-5 text-md">
                         <p>Certified Nursing Assistant Services (CNA)</p>
-                        <p>Home Health Aide Services(HHA)</p>
+                        <p>Home Health Aide Services (HHA)</p>
                         <p>Limousine Services</p>
                         <p>Home Care Program Services</p>
                         <p>Personal Care & Transportation Services</p>
-                        <p>Providing Mental Health services</p>
+                        <p>Providing Mental Health Services</p>
                     </div>
                 </div>
 
@@ -82,7 +80,7 @@ const Footer = () => {
                         <div className="flex gap-4 items-start">
                             <FaMapMarkerAlt className="text-[#17B7F5] text-2xl mt-1" />
                             <p className="text-md">
-                                911 Mill Street,Randolp, MA 02368
+                                91 Mill Street, Randolph, MA 02368
                             </p>
                         </div>
 
@@ -99,30 +97,35 @@ const Footer = () => {
                         SOCIAL PROFILES
                     </h3>
 
-                    <div className="mt-10">
-                        <h4 className="font-semibold text-[#1B3A5C] mb-4">Follow Us</h4>
-                        <div className="flex gap-4">
-                            {socialLinks.map(({ icon: Icon, href, label, color }) => (
-                                <button
-                                    key={label}
-                                    onClick={() => window.open(href, "_blank")}
-                                    title={label}
-                                    style={{ backgroundColor: color }}
-                                    className="w-12 h-12 flex items-center justify-center rounded-full text-white hover:opacity-80 transition"
-                                >
-                                    <Icon className="w-7 h-7" />
-                                </button>
-                            ))}
-                        </div>
+                    <div className="flex gap-4">
+                        {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                            <button
+                                key={label}
+                                onClick={() => window.open(href, "_blank")}
+                                title={label}
+                                style={{ backgroundColor: color }}
+                                className="w-12 h-12 flex items-center justify-center rounded-full text-white hover:opacity-80 transition"
+                            >
+                                <Icon className="w-7 h-7" />
+                            </button>
+                        ))}
                     </div>
                 </div>
             </div>
-            <Link to={'/adminLogin'} className="hover:bg-teal-300 p-2 rounded-lg hover:text-blue-500">Admin</Link>
+
+            {/* Admin hidden link */}
+            <Link
+                to="/adminlogin"
+                className="text-white/20 hover:text-white/60 text-xs transition mt-8 inline-block"
+            >
+                Admin
+            </Link>
+
             {/* Bottom copyright bar */}
-            <div className="border-t border-white/20 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/90">
+            <div className="border-t border-white/20 mt-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/90">
                 <p>
                     Copyright © {new Date().getFullYear()}{" "}
-                    <span className="font-semibold">L&LHEALTHCARE</span>. All rights reserved.
+                    <span className="font-semibold">L&L HEALTHCARE</span>. All rights reserved.
                 </p>
 
                 <p className="text-sm text-white">
@@ -131,7 +134,7 @@ const Footer = () => {
                         href="https://personal-portfolio-rho-three-54.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-white hover:text-blue-600 transition"
+                        className="font-semibold text-white hover:text-blue-400 transition"
                     >
                         Temitope
                     </a>

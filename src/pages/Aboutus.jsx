@@ -20,7 +20,7 @@ const values = [
   {
     icon: Users,
     title: "Personalized Care",
-    desc: "Every care plan is tailored to the individual. No one-size-fits-all solutions — only care that fits your life."
+    desc: "Every care plan is tailored to the individual. No one-size-fits-all solutions only care that fits your life."
   },
   {
     icon: Shield,
@@ -46,7 +46,7 @@ const testimonials = [
     role: "Patient"
   },
   {
-    text: "What stood out most was the connection they built with our dad. It wasn't just care — it felt personal. Their compassion made a real difference in his daily life.",
+    text: "What stood out most was the connection they built with our dad. It wasn't just care it felt personal. Their compassion made a real difference in his daily life.",
     name: "Linda & James P.",
     role: "Family Members"
   },
@@ -127,7 +127,7 @@ const Aboutus = () => {
               <p className="mt-4 text-gray-600 leading-relaxed">
                 Founded and led by <span className="font-semibold text-[#1B3A5C]">Felix Osho</span> and <span className="font-semibold text-[#1B3A5C]">Akintunde Okufuwa</span>,
                 the company was officially registered and filed with the Massachusetts Secretary of State,
-                Corporations Division in <span className="font-semibold text-[#1B3A5C]">2025</span> — built on a shared vision of delivering
+                Corporations Division in <span className="font-semibold text-[#1B3A5C]">2025</span> built on a shared vision of delivering
                 trusted and guaranteed staffing solutions across the state.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
@@ -294,7 +294,7 @@ const Aboutus = () => {
               </h2>
               <p className="mt-6 text-gray-300 leading-relaxed">
                 Choosing a healthcare provider is one of the most important decisions a family can make.
-                We understand that trust must be earned — through consistent, reliable, and compassionate care.
+                We understand that trust must be earned through consistent, reliable, and compassionate care.
               </p>
               <div className="mt-8 space-y-4">
                 {[

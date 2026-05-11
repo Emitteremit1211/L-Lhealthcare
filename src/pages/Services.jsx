@@ -327,7 +327,7 @@ const Services = () => {
                             },
                             {
                                 title: "Compassionate Approach",
-                                desc: "We treat every client like family — with warmth, patience, dignity, and genuine compassion.",
+                                desc: "We treat every client like family with warmth, patience, dignity, and genuine compassion.",
                                 icon: "❤️"
                             },
                             {

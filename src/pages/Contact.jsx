@@ -86,7 +86,7 @@ const Contact = () => {
                     </h1>
                     <p className="text-white/70 mt-6 max-w-xl mx-auto leading-8 text-sm">
                         Whether you need immediate care assistance, have questions about our services,
-                        or want to schedule a consultation — our team is always ready to help.
+                        or want to schedule a consultation our team is always ready to help.
                     </p>
                     <p className="text-white/60 mt-3 text-sm">
                         <Link to="/" className="hover:text-white transition">Home</Link>
@@ -277,6 +277,7 @@ const Contact = () => {
                             <option>Limousine Services</option>
                             <option>Mental Health Services</option>
                             <option>Home Care Program Services</option>
+                            <option>None Of The Above</option>
                         </select>
                         <textarea
                             rows="5"

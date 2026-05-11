@@ -1,13 +1,64 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Select from "react-select";
-import applyImage from "../assets/apply.jpg"; // or .png
+import applyImage from "../assets/apply.jpg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
+import { Link } from "react-router-dom";
+import {
+  User,
+  Mail,
+  Phone,
+  Globe,
+  Briefcase,
+  FileText,
+  Upload,
+  CheckCircle,
+  ArrowRight,
+  MapPin,
+  Clock,
+} from "lucide-react";
+
+const roles = [
+  "Home Health Aide (HHA)",
+  "Attendant Care Specialist (ACS)",
+  "Certified Nursing Assistant (CNA)",
+  "Registered Nurse (RN)",
+  "Personal Care Assistant",
+  "Limousine Driver",
+  "Mental Health Support Worker",
+  "Home Care Program Coordinator",
+];
+
+const experienceLevels = [
+  "Entry Level (0-1 years)",
+  "Junior (1-2 years)",
+  "Mid Level (2-5 years)",
+  "Senior (5+ years)",
+];
+
+const availabilities = [
+  "Full-Time",
+  "Part-Time",
+  "Contract",
+  "Per Diem",
+  "Flexible",
+];
 
 const Apply = () => {
+  const [loading, setLoading] = useState(true);
   const [country, setCountry] = useState(null);
+  const [role, setRole] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [cvName, setCvName] = useState("");
+  const [resumeName, setResumeName] = useState("");
 
-  // Full country list (ISO-based simple version with flags)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const countries = useMemo(() => {
     const list = [
       ["NG", "Nigeria", "+234"],
@@ -29,13 +80,17 @@ const Apply = () => {
       ["GH", "Ghana", "+233"],
       ["EG", "Egypt", "+20"],
       ["SA", "Saudi Arabia", "+966"],
+      ["AE", "UAE", "+971"],
+      ["PH", "Philippines", "+63"],
+      ["JM", "Jamaica", "+1-876"],
     ];
-
     return list.map(([code, name, dial]) => ({
       value: name,
       label: `${getFlag(code)} ${name} (${dial})`,
     }));
   }, []);
+
+  const roleOptions = roles.map((r) => ({ value: r, label: r }));
 
   function getFlag(code) {
     return code
@@ -43,161 +98,369 @@ const Apply = () => {
       .replace(/./g, (c) => String.fromCodePoint(127397 + c.charCodeAt()));
   }
 
-  const customSelect = {
-    control: (base) => ({
+  const selectStyles = {
+    control: (base, state) => ({
       ...base,
       borderRadius: "12px",
-      padding: "6px",
-      borderColor: "#d1d5db",
+      padding: "4px",
+      borderColor: state.isFocused ? "#1B3A5C" : "#e5e7eb",
       minHeight: "52px",
-      boxShadow: "none",
-      "&:hover": { borderColor: "#0F3655" },
+      boxShadow: state.isFocused ? "0 0 0 2px rgba(27,58,92,0.2)" : "none",
+      "&:hover": { borderColor: "#1B3A5C" },
+    }),
+    option: (base, state) => ({
+      ...base,
+      backgroundColor: state.isSelected ? "#1B3A5C" : state.isFocused ? "#f0f4f8" : "white",
+      color: state.isSelected ? "white" : "#374151",
     }),
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!country) { alert("Please select your country"); return; }
+    if (!role) { alert("Please select the role you are applying for"); return; }
 
-    const form = e.target;
-
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      country,
-      cv: form.cv.files[0],
-      resume: form.resume.files[0],
-    };
-
-    if (!country) {
-      alert("Please select a country");
-      return;
-    }
-
-    if (!data.cv || !data.resume) {
-      alert("CV and Resume are required");
-      return;
-    }
-
-    alert("Application submitted successfully!");
-    console.log(data);
+    setSubmitting(true);
+    await new Promise((r) => setTimeout(r, 1500));
+    setSubmitting(false);
+    setSubmitted(true);
   };
 
+  if (loading) return <Loader />;
+
+  if (submitted) {
+    return (
+      <>
+        <Navbar />
+        <section className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-20">
+          <div className="text-center max-w-lg mx-auto">
+            <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-12 h-12 text-green-500" />
+            </div>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Application Submitted!</h2>
+            <p className="text-gray-600 mt-4 leading-8">
+              Thank you for applying to L&amp;L Healthcare Staffing Solution.
+              Our team will review your application and get back to you within
+              24-48 hours.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/jobs">
+                <button className="bg-[#1B3A5C] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#2A9D8F] transition">
+                  View More Jobs
+                </button>
+              </Link>
+              <Link to="/">
+                <button className="bg-white border-2 border-[#1B3A5C] text-[#1B3A5C] px-8 py-3 rounded-xl font-semibold hover:bg-[#1B3A5C] hover:text-white transition">
+                  Back to Home
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </>
+    );
+  }
+
   return (
-            <>
-            <Navbar/>
-    <section className="min-h-screen bg-white mt-[50px]">
+    <>
+      <Navbar />
 
       {/* HERO */}
-      <div className="bg-[#0F3655] text-white py-16 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Career Application Form
-        </h1>
-        <p className="text-gray-200 max-w-2xl mx-auto">
-          Submit your details, CV, and resume to apply for available positions.
-        </p>
-      </div>
+      <section className="bg-[#0F3355] py-24 px-6 text-center relative ovverflow-hidden mt-[50px]">
+        <div className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, #17B7F5 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, #2A9D8F 0%, transparent 40%)`
+          }}
+        />
+        <div className="relative z-10">
+          <span className="inline-block text-[#17B7F5] text-sm font-semibold uppercase tracking-widest mb-4">
+            Join Our Team
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            Start Your Career in<br />
+            <span className="text-[#17B7F5]">Healthcare Today</span>
+          </h1>
+          <p className="text-gray-300 mt-6 max-w-2xl mx-auto leading-8 text-sm">
+            Join L&amp;L Healthcare Staffing Solution and make a real difference
+            in people's lives. We are always looking for compassionate,
+            certified professionals to join our growing team.
+          </p>
+          <p className="text-white/60 mt-4 text-sm">
+            <Link to="/" className="hover:text-white transition">Home</Link>
+            <span className="mx-2 text-[#17B7F5]">/</span>
+            <Link to="/jobs" className="hover:text-white transition">Jobs</Link>
+            <span className="mx-2 text-[#17B7F5]">/</span>
+            <span className="text-white">Apply</span>
+          </p>
+        </div>
+      </section>
 
-      {/* MAIN */}
-      <div className="grid md:grid-cols-2 gap-12 px-6 md:px-16 py-16 items-center">
+      {/* WHY JOIN US */}
+      <section className="bg-gray-50 py-12 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {[
+            { icon: Briefcase, title: "Competitive Pay", desc: "We offer fair and competitive compensation for all our healthcare professionals." },
+            { icon: Clock, title: "Flexible Hours", desc: "Full-time, part-time, and per diem options available to fit your lifestyle." },
+            { icon: MapPin, title: "Randolph, MA", desc: "Based at 91 Mill Street, Suite 1 — serving surrounding Massachusetts communities." },
+          ].map(({ icon: Icon, title, desc }, i) => (
+            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+              <div className="w-12 h-12 bg-[#1B3A5C]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon className="w-5 h-5 text-[#1B3A5C]" />
+              </div>
+              <h4 className="font-bold text-[#1B3A5C]">{title}</h4>
+              <p className="text-gray-500 text-sm mt-2 leading-6">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* IMAGE */}
-        <div>
+      {/* MAIN CONTENT */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+        {/* LEFT IMAGE + INFO */}
+        <div className="space-y-8">
           <img
             src={applyImage}
             alt="Apply"
-            className="w-full rounded-3xl shadow-2xl"
+            className="w-full rounded-3xl shadow-2xl object-cover max-h-[450px]"
           />
+
+          {/* INFO CARDS */}
+          <div className="bg-[#0F3355] rounded-2xl p-8 text-white">
+            <h3 className="text-xl font-bold mb-6">What Happens Next?</h3>
+            <div className="space-y-5">
+              {[
+                { step: "01", title: "Application Review", desc: "Our team reviews your application within 24-48 hours." },
+                { step: "02", title: "Initial Screening", desc: "We will reach out to schedule a quick phone screening." },
+                { step: "03", title: "Interview", desc: "A formal interview with our hiring team." },
+                { step: "04", title: "Onboarding", desc: "Welcome to the team! We guide you through the onboarding process." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-[#17B7F5] flex items-center justify-center text-xs font-bold shrink-0">
+                    {item.step}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm">{item.title}</h4>
+                    <p className="text-gray-300 text-xs mt-1">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* OPEN POSITIONS LINK */}
+          <div className="bg-[#2A9D8F]/10 border border-[#2A9D8F]/20 rounded-2xl p-6">
+            <h4 className="font-bold text-[#1B3A5C] mb-2">Looking for a specific role?</h4>
+            <p className="text-gray-600 text-sm mb-4">Browse our open positions and apply directly from the job listing.</p>
+            <Link to="/jobs" className="flex items-center gap-2 text-[#2A9D8F] font-semibold text-sm hover:opacity-70 transition">
+              View Open Positions <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
-        {/* FORM */}
-        <div className="bg-white border shadow-xl rounded-3xl p-8 md:p-10">
+        {/* RIGHT FORM */}
+        <div className="bg-white shadow-xl rounded-3xl p-8 md:p-10 border border-gray-100">
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2">Career Application Form</h2>
+          <p className="text-gray-500 text-sm mb-8">
+            Fill in your details below. All fields marked * are required.
+          </p>
 
-            {/* NAME */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+
+            {/* FULL NAME */}
             <div>
-              <label className="text-[#0F3655] font-semibold">Full Name</label>
-              <input
-                required
-                name="name"
-                className="w-full mt-2 border rounded-xl px-4 py-3"
-                placeholder="Enter full name"
-              />
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  required
+                  name="name"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm"
+                  placeholder="Enter your full name"
+                />
+              </div>
             </div>
 
             {/* EMAIL */}
             <div>
-              <label className="text-[#0F3655] font-semibold">Email</label>
-              <input
-                required
-                type="email"
-                name="email"
-                className="w-full mt-2 border rounded-xl px-4 py-3"
-                placeholder="example@email.com"
-              />
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm"
+                  placeholder="example@email.com"
+                />
+              </div>
             </div>
 
             {/* PHONE */}
             <div>
-              <label className="text-[#0F3655] font-semibold">Phone Number</label>
-              <input
-                required
-                name="phone"
-                type="tel"
-                className="w-full mt-2 border rounded-xl px-4 py-3"
-                placeholder="+234 801 234 5678"
-              />
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Phone Number <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  required
+                  name="phone"
+                  type="tel"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm"
+                  placeholder="+1 234 567 8900"
+                />
+              </div>
             </div>
 
             {/* COUNTRY */}
             <div>
-              <label className="text-[#0F3655] font-semibold">Country</label>
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Country <span className="text-red-500">*</span>
+              </label>
               <Select
                 options={countries}
                 value={country}
                 onChange={setCountry}
-                styles={customSelect}
-                placeholder="Select country"
+                styles={selectStyles}
+                placeholder="Select your country"
                 isSearchable
               />
             </div>
 
-            {/* CV */}
+            {/* ROLE */}
             <div>
-              <label className="text-[#0F3655] font-semibold">CV Upload</label>
-              <input
-                required
-                name="cv"
-                type="file"
-                className="w-full mt-2 border rounded-xl px-4 py-3"
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Role Applying For <span className="text-red-500">*</span>
+              </label>
+              <Select
+                options={roleOptions}
+                value={role}
+                onChange={setRole}
+                styles={selectStyles}
+                placeholder="Select a role"
+                isSearchable
               />
             </div>
 
-            {/* RESUME */}
+            {/* EXPERIENCE */}
             <div>
-              <label className="text-[#0F3655] font-semibold">Resume Upload</label>
-              <input
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Experience Level <span className="text-red-500">*</span>
+              </label>
+              <select
                 required
-                name="resume"
-                type="file"
-                className="w-full mt-2 border rounded-xl px-4 py-3"
+                name="experience"
+                className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm text-gray-500"
+              >
+                <option value="">Select experience level</option>
+                {experienceLevels.map((e) => (
+                  <option key={e}>{e}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* AVAILABILITY */}
+            <div>
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Availability <span className="text-red-500">*</span>
+              </label>
+              <select
+                required
+                name="availability"
+                className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm text-gray-500"
+              >
+                <option value="">Select availability</option>
+                {availabilities.map((a) => (
+                  <option key={a}>{a}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* CV UPLOAD */}
+            <div>
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Upload CV <span className="text-red-500">*</span>
+              </label>
+              <label className="w-full border-2 border-dashed border-gray-200 rounded-xl px-4 py-5 flex flex-col items-center justify-center cursor-pointer hover:border-[#1B3A5C] transition group">
+                <Upload className="w-6 h-6 text-gray-400 group-hover:text-[#1B3A5C] transition mb-2" />
+                <span className="text-sm text-gray-500 group-hover:text-[#1B3A5C] transition">
+                  {cvName || "Click to upload CV (PDF, DOC, DOCX)"}
+                </span>
+                <input
+                  required
+                  name="cv"
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="hidden"
+                  onChange={(e) => setCvName(e.target.files[0]?.name || "")}
+                />
+              </label>
+            </div>
+
+            {/* RESUME UPLOAD */}
+            <div>
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Upload Resume <span className="text-red-500">*</span>
+              </label>
+              <label className="w-full border-2 border-dashed border-gray-200 rounded-xl px-4 py-5 flex flex-col items-center justify-center cursor-pointer hover:border-[#1B3A5C] transition group">
+                <FileText className="w-6 h-6 text-gray-400 group-hover:text-[#1B3A5C] transition mb-2" />
+                <span className="text-sm text-gray-500 group-hover:text-[#1B3A5C] transition">
+                  {resumeName || "Click to upload Resume (PDF, DOC, DOCX)"}
+                </span>
+                <input
+                  required
+                  name="resume"
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="hidden"
+                  onChange={(e) => setResumeName(e.target.files[0]?.name || "")}
+                />
+              </label>
+            </div>
+
+            {/* COVER LETTER */}
+            <div>
+              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
+                Cover Letter <span className="text-gray-400 text-xs">(Optional)</span>
+              </label>
+              <textarea
+                name="coverLetter"
+                rows={4}
+                placeholder="Tell us why you want to join L&L Healthcare and what makes you a great fit..."
+                className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm resize-none"
               />
             </div>
 
-            {/* BUTTON */}
+            {/* SUBMIT */}
             <button
               type="submit"
-              className="w-full bg-[#0F3655] text-white py-4 rounded-xl font-semibold hover:bg-[#17496f] transition"
+              disabled={submitting}
+              className="w-full bg-[#1B3A5C] text-white py-4 rounded-xl font-bold hover:bg-[#2A9D8F] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
             >
-              Submit Application
+              {submitting ? "Submitting..." : (
+                <>Submit Application <ArrowRight className="w-4 h-4" /></>
+              )}
             </button>
+
+            <p className="text-center text-gray-400 text-xs">
+              By submitting this form you agree to our privacy policy.
+              Your information is safe with us.
+            </p>
 
           </form>
         </div>
-      </div>
-    </section>
-    <Footer/>
+
+      </section>
+
+      <Footer />
     </>
   );
 };

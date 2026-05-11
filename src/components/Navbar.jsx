@@ -26,7 +26,7 @@ const Navbar = () => {
                     <Link to="/" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Home</Link>
                     <Link to="/aboutus" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">About Us</Link>
                     <Link to="/services" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Our-Services</Link>
-                    <Link to="/how-it-works" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">How It Works</Link>
+                    <Link to="/Appointment" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Appointments</Link>
                     <Link to="/jobs" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Jobs</Link>
                     <Link to="/contact" className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Contact</Link>
                     <Link
@@ -78,7 +78,7 @@ const Navbar = () => {
                     <Link to="/" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Home</Link>
                     <Link to="/aboutus" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">About Us</Link>
                     <Link to="/services" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Our-Services</Link>
-                    <Link to="/how-it-works" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">How It Works</Link>
+                    <Link to="/Appointment" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Appointments</Link>
                     <Link to="/jobs" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Jobs</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)} className="text-white/85 font-semibold text-sm hover:text-[#17B7F5]">Contact</Link>
                     <Link

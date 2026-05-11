@@ -11,21 +11,19 @@ import ProtectedRoute from "./pages/ProtectedRoute"
 import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
 import NotFound from "./pages/NotFound"
+import Appointment from "./pages/Appointment"
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/how-it-works" element={<h1>How It Works Page</h1>} />
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/apply" element={<h1>Apply Page</h1>} /> */}
-          {/* <Route path="/adminpanel" element={<Adminpanel />} /> */}
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route
             path="/adminpanel"

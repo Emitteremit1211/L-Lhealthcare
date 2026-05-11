@@ -33,7 +33,7 @@ const slides = [
         title: "Compassionate In-Home Care You Can Trust",
         desc: "Professional caregivers delivering personalized support for your loved ones. We bring comfort, dignity, and expert care directly to your home because family deserves the best.",
         btn: "Request Care Consultation",
-        link: "/contact",
+        link: "/Appointment",
     },
     {
         image: slide2,
@@ -62,36 +62,36 @@ const services = [
         desc: "Our Attendant Care Services offer dependable companionship and supervision. Whether it's engaging in conversation, light activities, or simply being present, we help reduce isolation and create a sense of comfort and connection.",
         icon: UserCheck,
     },
-    {
-        title: "Certified Nursing Assistants Services",
-        desc: "Certified Nursing Assistants deliver essential care including hygiene support, mobility assistance, and vital monitoring. Our CNAs work closely with clients to ensure daily needs are met with professionalism and compassion.",
-        icon: BriefcaseMedical,
-    },
-    {
-        title: "Registered Nurses Services",
-        desc: "Our Registered Nurses provide skilled medical care at home, including medication management, health assessments, and treatment support. We bring clinical expertise directly to you, ensuring high-quality care without leaving home.",
-        icon: Stethoscope,
-    },
-    {
-        title: "Personal Care & Transportation",
-        desc: "We assist with personal routines and provide reliable transportation to medical appointments, errands, and social visits. Our goal is to help clients maintain independence while staying active and connected to their community.",
-        icon: Car,
-    },
-    {
-        title: "Limousine Services",
-        desc: "We offer premium limousine transportation for medical appointments, special occasions, and personal errands. Our professional drivers ensure a safe, comfortable, and dignified travel experience for every client.",
-        icon: CarFront,
-    },
+    // {
+    //     title: "Certified Nursing Assistants Services",
+    //     desc: "Certified Nursing Assistants deliver essential care including hygiene support, mobility assistance, and vital monitoring. Our CNAs work closely with clients to ensure daily needs are met with professionalism and compassion.",
+    //     icon: BriefcaseMedical,
+    // },
+    // {
+    //     title: "Registered Nurses Services",
+    //     desc: "Our Registered Nurses provide skilled medical care at home, including medication management, health assessments, and treatment support. We bring clinical expertise directly to you, ensuring high-quality care without leaving home.",
+    //     icon: Stethoscope,
+    // },
+    // {
+    //     title: "Personal Care & Transportation",
+    //     desc: "We assist with personal routines and provide reliable transportation to medical appointments, errands, and social visits. Our goal is to help clients maintain independence while staying active and connected to their community.",
+    //     icon: Car,
+    // },
+    // {
+    //     title: "Limousine Services",
+    //     desc: "We offer premium limousine transportation for medical appointments, special occasions, and personal errands. Our professional drivers ensure a safe, comfortable, and dignified travel experience for every client.",
+    //     icon: CarFront,
+    // },
     {
         title: "Providing Mental Health Services",
         desc: "Our mental health support services are designed to promote emotional well-being and psychological stability. We connect clients with compassionate professionals who provide counseling, crisis support, and ongoing mental wellness care.",
         icon: Brain,
     },
-    {
-        title: "Home Care Program Services",
-        desc: "Our comprehensive Home Care Program offers structured, long-term support tailored to each client's evolving needs. From routine check-ins to full-time assistance, we ensure continuity of care that promotes independence and quality of life.",
-        icon: Home,
-    },
+    // {
+    //     title: "Home Care Program Services",
+    //     desc: "Our comprehensive Home Care Program offers structured, long-term support tailored to each client's evolving needs. From routine check-ins to full-time assistance, we ensure continuity of care that promotes independence and quality of life.",
+    //     icon: Home,
+    // },
 ];
 
 const Body = () => {
@@ -163,7 +163,7 @@ const Body = () => {
                         className: "flex items-center gap-2 hover:text-[#17B7F5] transition"
                     },
                         React.createElement(Phone, { className: "w-4 h-4" }),
-                        "978-552-9703 — Available 24/7"
+                        "978-552-9703 - Available 24/7"
                     )}
                     {React.createElement("a", {
                         href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368",
@@ -197,7 +197,7 @@ const Body = () => {
                                 Learn More →
                             </button>
                         </Link>
-                        <Link to="/contact">
+                        <Link to="/appointment">
                             <button className="bg-white border-2 border-[#0F3355] text-[#0F3355] px-6 py-3 rounded-md font-semibold hover:bg-[#0F3355] hover:text-white transition">
                                 Request Consultation
                             </button>
@@ -263,7 +263,7 @@ const Body = () => {
                     </div>
 
                     <div className="flex justify-center gap-10 flex-wrap mt-10">
-                        {services.slice(6).map((service, index) => {
+                        {services.slice(3).map((service, index) => {
                             const Icon = service.icon;
                             return (
                                 <div key={index} className="bg-white p-[50px] rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transform transition w-full max-w-sm flex flex-col justify-between group">
@@ -307,11 +307,11 @@ const Body = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { title: "Licensed & Registered", desc: "Officially registered LLC with the Commonwealth of Massachusetts — certified and trustworthy.", icon: "🏛️" },
+                            { title: "Licensed & Registered", desc: "Officially registered LLC with the Commonwealth of Massachusetts certified and trustworthy.", icon: "🏛️" },
                             { title: "Certified Professionals", desc: "All caregivers are certified, background-checked, and trained to the highest standard.", icon: "🏅" },
                             { title: "24/7 Availability", desc: "Round-the-clock support ensuring your loved ones always have care when they need it.", icon: "🕐" },
                             { title: "Personalized Care Plans", desc: "Every client receives a custom care plan tailored to their unique needs and lifestyle.", icon: "📋" },
-                            { title: "Compassionate Team", desc: "We treat every client like family — with warmth, patience, and genuine compassion.", icon: "❤️" },
+                            { title: "Compassionate Team", desc: "We treat every client like family with warmth, patience, and genuine compassion.", icon: "❤️" },
                             { title: "Trusted by Families", desc: "Families across Massachusetts trust us for consistent, reliable, and dignified care.", icon: "👨‍👩‍👧" },
                         ].map((item, i) => (
                             <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
@@ -340,7 +340,7 @@ const Body = () => {
                             {[
                                 { icon: CalendarCheck, title: "Schedule a Consultation", desc: "Share your needs with us. We listen carefully, assess your situation, and guide you through the next steps." },
                                 { icon: ClipboardList, title: "Personalized Care Plan", desc: "We match you with the right caregiver and develop a care plan tailored specifically to your needs." },
-                                { icon: UserPlus, title: "Care Begins at Home", desc: "Your caregiver begins providing support — from companionship and daily assistance to skilled nursing care." },
+                                { icon: UserPlus, title: "Care Begins at Home", desc: "Your caregiver begins providing support from companionship and daily assistance to skilled nursing care." },
                                 { icon: RefreshCcw, title: "Ongoing Support & Adjustments", desc: "We continuously monitor care and make adjustments as needs change, ensuring consistent support." },
                             ].map(({ icon: Icon, title, desc }, i) => (
                                 <div key={i} className="flex items-start gap-4">
@@ -429,7 +429,7 @@ const Body = () => {
                             { text: "L&L Healthcare truly went above and beyond. The caregivers showed genuine kindness and treated my mom with so much respect. It gave our entire family peace of mind knowing she was in good hands.", name: "Sarah M.", role: "Family Member" },
                             { text: "From the initial consultation to daily visits, everything felt organized and professional. The nurse caring for my father was attentive, knowledgeable, and always punctual.", name: "Michael R.", role: "Client's Son" },
                             { text: "After surgery, I needed short-term support at home. L&L Healthcare made everything smooth and stress-free. They checked in often and adjusted care as I recovered.", name: "Janet K.", role: "Patient" },
-                            { text: "What stood out most was the connection they built with our dad. It wasn't just care — it felt personal. Their compassion made a real difference in his daily life.", name: "Linda & James P.", role: "Family Members" },
+                            { text: "What stood out most was the connection they built with our dad. It wasn't just care it felt personal. Their compassion made a real difference in his daily life.", name: "Linda & James P.", role: "Family Members" },
                             { text: "We needed full-time care for our aunt, and L&L Healthcare delivered exactly what they promised. The caregivers were patient, skilled, and incredibly supportive throughout.", name: "Angela T.", role: "Family Member" },
                         ].map((t, i) => (
                             <div key={i} className="snap-start bg-white p-8 rounded-2xl shadow-md w-[300px] md:w-[350px] flex-shrink-0 hover:-translate-y-2 transition">

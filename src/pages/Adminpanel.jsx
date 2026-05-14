@@ -200,7 +200,7 @@ const Adminpanel = () => {
     const Sidebar = () => (
         <aside className="w-64 bg-[#1B3A5C] text-white p-6 flex flex-col min-h-screen">
             <div className="mb-10">
-                <h1 className="text-xl font-bold">L&L Healthcare</h1>
+                <h1 className="text-xl font-bold">L&Lstaffing <br />solution</h1>
                 <p className="text-white/50 text-xs mt-1">Admin Panel</p>
             </div>
 
@@ -229,7 +229,7 @@ const Adminpanel = () => {
 
             <button
                 onClick={handleLogout}
-                className="flex items-center gap-3 w-full p-3 rounded-lg bg-white/10 hover:bg-red-600 transition mt-auto text-sm"
+                className="flex items-center gap-3 w-full p-3 rounded-lg bg-white/10 hover:bg-[#2A9D8F] transition mt-auto text-sm"
             >
                 <LogOut size={18} /> Logout
             </button>

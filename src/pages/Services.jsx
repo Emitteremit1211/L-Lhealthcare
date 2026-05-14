@@ -20,22 +20,22 @@ import { Link } from "react-router-dom"
 
 const services = [
     {
-        title: "Home Health Aides Services",
+        title: "HHA Services",
         desc: "Our Home Health Aides provide hands-on assistance with everyday activities such as bathing, dressing, grooming, and mobility. We focus on maintaining dignity while ensuring clients feel comfortable, safe, and supported in their own homes.",
         icon: HeartHandshake,
     },
     {
-        title: "Attendant Care Services",
+        title: "AC Services",
         desc: "Our Attendant Care Services offer dependable companionship and supervision. Whether it's engaging in conversation, light activities, or simply being present, we help reduce isolation and create a sense of comfort and connection.",
         icon: UserCheck,
     },
     {
-        title: "Certified Nursing Assistants Services",
+        title: "CNA Services",
         desc: "Certified Nursing Assistants deliver essential care including hygiene support, mobility assistance, and vital monitoring. Our CNAs work closely with clients to ensure daily needs are met with professionalism and compassion.",
         icon: BriefcaseMedical,
     },
     {
-        title: "Registered Nurses Services",
+        title: "RN Services",
         desc: "Our Registered Nurses provide skilled medical care at home, including medication management, health assessments, and treatment support. We bring clinical expertise directly to you, ensuring high-quality care without leaving home.",
         icon: Stethoscope,
     },
@@ -43,11 +43,6 @@ const services = [
         title: "Personal Care & Transportation",
         desc: "We assist with personal routines and provide reliable transportation to medical appointments, errands, and social visits. Our goal is to help clients maintain independence while staying active and connected to their community.",
         icon: Car,
-    },
-    {
-        title: "Limousine Services",
-        desc: "We offer premium limousine transportation for medical appointments, special occasions, and personal errands. Our professional drivers ensure a safe, comfortable, and dignified travel experience for every client.",
-        icon: CarFront,
     },
     {
         title: "Providing Mental Health Services",
@@ -265,7 +260,7 @@ const Services = () => {
 
                         {/* Request Consultation Button */}
                         <Link to={'/'}>
-                            <button className="bg-[#0F3655] text-white px-6 py-4 rounded-xl hover:bg-[#17B7F5] transition shadow-lg w-full sm:w-auto">
+                            <button className="bg-[#0F3655] text-white px-6 py-4 rounded-xl hover:bg-[#2A9D8F] transition shadow-lg w-full sm:w-auto">
                                 <div className="font-semibold text-lg">
                                     Request a Consultation
                                 </div>
@@ -277,7 +272,7 @@ const Services = () => {
 
                         {/* Call Button */}
                         <Link to={'/'}>
-                            <button className="bg-white border-2 border-[#0F3655] text-[#0F3655] px-6 py-4 rounded-xl hover:bg-[#0c8ffa] hover:text-white transition shadow-lg w-full sm:w-auto">
+                            <button className="bg-white border-2 border-[#0F3655] text-[#0F3655] px-6 py-4 rounded-xl hover:bg-[#2A9D8F] hover:text-white transition shadow-lg w-full sm:w-auto">
                                 <div className="font-semibold text-lg">
                                     Call Us Now
                                 </div>

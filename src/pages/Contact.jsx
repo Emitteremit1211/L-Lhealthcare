@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
+import emailjs from "@emailjs/browser"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import Loader from "../components/Loader"
 import { Link } from "react-router-dom"
 import {
-    Phone,
-    Mail,
-    MapPin,
-    Clock,
-    MessageSquare,
+    Phone, Mail, MapPin, Clock, MessageSquare,
 } from "lucide-react"
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 
@@ -32,8 +29,8 @@ const contactCards = [
         icon: Mail,
         title: "Email Us",
         sub: "We reply within 24 hours",
-        value: "info@llhealthcare.com",
-        href: "mailto:info@llhealthcare.com",
+        value: "info@llstaffingsolution.com",
+        href: "mailto:info@llstaffingsolution.com",
         color: "#2A9D8F",
     },
     {
@@ -54,13 +51,59 @@ const contactCards = [
     },
 ]
 
+const EMAILJS_SERVICE_ID = "service_dxj7637"
+const EMAILJS_TEMPLATE_ID = "template_fxtieqt"
+const EMAILJS_PUBLIC_KEY = "bDZyMz-kRmOAwiPq7"
+
 const Contact = () => {
     const [loading, setLoading] = useState(true)
+    const [formData, setFormData] = useState({
+        from_name: "",
+        from_email: "",
+        phone: "",
+        service: "",
+        message: "",
+    })
+    const [sending, setSending] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const [error, setError] = useState(false)
+    const formRef = useRef()
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 2000)
         return () => clearTimeout(timer)
     }, [])
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+        setSuccess(false)
+        setError(false)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if (!formData.from_name || !formData.from_email || !formData.message) return
+
+        setSending(true)
+        setSuccess(false)
+        setError(false)
+
+        try {
+            await emailjs.sendForm(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                EMAILJS_PUBLIC_KEY
+            )
+            setSuccess(true)
+            setFormData({ from_name: "", from_email: "", phone: "", service: "", message: "" })
+        } catch (err) {
+            console.error("EmailJS error:", err)
+            setError(true)
+        } finally {
+            setSending(false)
+        }
+    }
 
     if (loading) return <Loader />
 
@@ -143,13 +186,8 @@ const Contact = () => {
                         service inquiries, or immediate assistance.
                     </p>
 
-                    {/* CONTACT DETAILS */}
                     <div className="mt-8 space-y-5">
-
-                        {React.createElement("a", {
-                            href: "tel:+19785529703",
-                            className: "flex items-start gap-4 group"
-                        },
+                        {React.createElement("a", { href: "tel:+19785529703", className: "flex items-start gap-4 group" },
                             React.createElement("div", { className: "w-12 h-12 flex items-center justify-center rounded-full bg-[#1B3A5C]/10 shrink-0 group-hover:bg-[#1B3A5C] transition" },
                                 React.createElement(Phone, { className: "w-5 h-5 text-[#1B3A5C] group-hover:text-white transition" })
                             ),
@@ -160,25 +198,20 @@ const Contact = () => {
                             )
                         )}
 
-                        {React.createElement("a", {
-                            href: "mailto:info@llhealthcare.com",
-                            className: "flex items-start gap-4 group"
-                        },
+                        {React.createElement("a", { href: "mailto:info@llstaffingsolution.com", className: "flex items-start gap-4 group" },
                             React.createElement("div", { className: "w-12 h-12 flex items-center justify-center rounded-full bg-[#1B3A5C]/10 shrink-0 group-hover:bg-[#2A9D8F] transition" },
                                 React.createElement(Mail, { className: "w-5 h-5 text-[#1B3A5C] group-hover:text-white transition" })
                             ),
                             React.createElement("div", null,
                                 React.createElement("h4", { className: "font-semibold text-[#1B3A5C]" }, "Email"),
-                                React.createElement("p", { className: "text-gray-600" }, "info@llhealthcare.com"),
+                                React.createElement("p", { className: "text-gray-600" }, "info@llstaffingsolution.com"),
                                 React.createElement("p", { className: "text-gray-500 text-sm" }, "We reply within 24 hours")
                             )
                         )}
 
                         {React.createElement("a", {
                             href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            className: "flex items-start gap-4 group"
+                            target: "_blank", rel: "noopener noreferrer", className: "flex items-start gap-4 group"
                         },
                             React.createElement("div", { className: "w-12 h-12 flex items-center justify-center rounded-full bg-[#1B3A5C]/10 shrink-0 group-hover:bg-[#17B7F5] transition" },
                                 React.createElement(MapPin, { className: "w-5 h-5 text-[#1B3A5C] group-hover:text-white transition" })
@@ -200,28 +233,27 @@ const Contact = () => {
                                 <p className="text-gray-500 text-sm">24/7 Care Available</p>
                             </div>
                         </div>
-
                     </div>
 
-                    {/* SOCIAL MEDIA */}
+                    {/* SOCIAL */}
                     <div className="mt-10">
                         <h4 className="font-semibold text-[#1B3A5C] mb-4">Follow Us</h4>
-                        <div className="flex gap-4">
+                        <div className="flex gap-3 flex-wrap">
                             {socialLinks.map(({ icon: Icon, href, label, color }) => (
                                 <button
                                     key={label}
                                     onClick={() => window.open(href, "_blank")}
                                     title={label}
                                     style={{ backgroundColor: color }}
-                                    className="w-12 h-12 flex items-center justify-center rounded-full text-white hover:opacity-80 transition"
+                                    className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white hover:opacity-80 transition"
                                 >
-                                    <Icon className="w-5 h-5" />
+                                    <Icon size={18} />
                                 </button>
                             ))}
                         </div>
                     </div>
 
-                    {/* QUICK ACTIONS */}
+                    {/* QUICK ACTION */}
                     <div className="mt-10 bg-[#0F3355] rounded-2xl p-6">
                         <div className="flex items-center gap-2 mb-3">
                             <MessageSquare className="w-5 h-5 text-[#17B7F5]" />
@@ -239,7 +271,6 @@ const Contact = () => {
                             "Call Now: 978-552-9703"
                         )}
                     </div>
-
                 </div>
 
                 {/* RIGHT FORM */}
@@ -251,58 +282,89 @@ const Contact = () => {
                         Fill out the form below and we will get back to you as soon as possible.
                     </p>
 
-                    <form className="space-y-4">
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                         <input
                             type="text"
+                            name="from_name"
+                            value={formData.from_name}
+                            onChange={handleChange}
                             placeholder="Full Name"
+                            required
                             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]"
                         />
                         <input
                             type="email"
+                            name="from_email"
+                            value={formData.from_email}
+                            onChange={handleChange}
                             placeholder="Email Address"
+                            required
                             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]"
                         />
                         <input
                             type="text"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
                             placeholder="Phone Number"
                             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]"
                         />
-                        <select className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C] text-gray-500">
+                        <select
+                            name="service"
+                            value={formData.service}
+                            onChange={handleChange}
+                            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C] text-gray-500"
+                        >
                             <option value="">Select Service</option>
-                            <option>Home Health Aide Services</option>
-                            <option>Attendant Care Services</option>
-                            <option>Certified Nursing Assistant Services</option>
-                            <option>Registered Nurse Services</option>
-                            <option>Personal Care & Transportation</option>
-                            <option>Limousine Services</option>
-                            <option>Mental Health Services</option>
-                            <option>Home Care Program Services</option>
+                            <option>Home Health Aide (HHA)</option>
+                            <option>Adult Care Services (ACS)</option>
+                            <option>Certified Nursing Assistant (CNA)</option>
+                            <option>Registered Nurse Services (RN)</option>
+                            <option>Personal Care</option>
+                            <option>Transportation Services</option>
                             <option>None Of The Above</option>
                         </select>
                         <textarea
                             rows="5"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                             placeholder="Your Message"
+                            required
                             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]"
-                        ></textarea>
+                        />
+
+                        {/* SUCCESS / ERROR MESSAGES */}
+                        {success && (
+                            <div className="bg-green-50 border border-green-200 text-green-700 text-sm px-4 py-3 rounded-lg">
+                                ✅ Message sent successfully! We will get back to you shortly.
+                            </div>
+                        )}
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3 rounded-lg">
+                                ❌ Something went wrong. Please try again or call us directly.
+                            </div>
+                        )}
+
                         <button
                             type="submit"
-                            className="w-full bg-[#1B3A5C] text-white py-3 rounded-lg hover:bg-[#2A9D8F] transition font-semibold"
+                            disabled={sending}
+                            className="w-full bg-[#1B3A5C] text-white py-3 rounded-lg hover:bg-[#2A9D8F] transition font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                            Send Message
+                            {sending ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 </div>
-
             </section>
 
-            {/* MAP SECTION */}
+            {/* MAP */}
             <section className="w-full">
                 <div className="bg-[#1B3A5C] py-8 px-6 text-center">
                     <h3 className="text-white font-bold text-xl">Find Us On The Map</h3>
                     <p className="text-white/60 text-sm mt-1">91 Mill Street, Suite 1, Randolph, MA 02368</p>
                 </div>
                 <iframe
-                    title="L&amp;L Healthcare Location"
+                    title="LL Staffing Solutions Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2954.0!2d-71.0476!3d42.1654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s91+Mill+St%2C+Randolph%2C+MA+02368!5e0!3m2!1sen!2sus!4v1"
                     width="100%"
                     height="450"

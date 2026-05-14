@@ -203,7 +203,7 @@ const Apply = () => {
           {[
             { icon: Briefcase, title: "Competitive Pay", desc: "We offer fair and competitive compensation for all our healthcare professionals." },
             { icon: Clock, title: "Flexible Hours", desc: "Full-time, part-time, and per diem options available to fit your lifestyle." },
-            { icon: MapPin, title: "Randolph, MA", desc: "Based at 91 Mill Street, Suite 1 — serving surrounding Massachusetts communities." },
+            { icon: MapPin, title: "Randolph, MA", desc: "Based at 91 Mill Street, Suite 1 serving surrounding Massachusetts communities." },
           ].map(({ icon: Icon, title, desc }, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
               <div className="w-12 h-12 bg-[#1B3A5C]/10 rounded-full flex items-center justify-center mx-auto mb-4">

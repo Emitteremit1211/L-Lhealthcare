@@ -163,7 +163,7 @@ const AdminLogin = () => {
                     text-white 
                     py-3 
                     rounded-lg 
-                    hover:bg-sky-600 
+                    hover:bg-[#2A9D8F]
                     transition 
                     shadow-lg
                     backdrop-blur-md

@@ -47,7 +47,7 @@ const slides = [
         title: "24/7 Reliable Home Support",
         desc: "We ensure safety, comfort, and dignity for every patient, anytime. Our dedicated team is available around the clock to provide consistent, trustworthy care whenever you need it most.",
         btn: "Get Started",
-        link: "/apply",
+        link: "/services",
     },
 ];
 
@@ -355,7 +355,7 @@ const Body = () => {
                             ))}
                         </div>
                         <div className="mt-8 flex gap-4">
-                            <Link to="/contact">
+                            <Link to="/Appointment">
                                 <button className="bg-[#1B3A5C] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#2A9D8F] transition">
                                     Get Started
                                 </button>

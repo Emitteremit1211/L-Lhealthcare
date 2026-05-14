@@ -43,12 +43,17 @@ export default function Appointment() {
     const [checkingAvail, setCheckingAvail] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 2000);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
     const selectService = (id) => setForm({ ...form, service: id });
     const selectedService = services.find((s) => s.id === form.service);
 
-    // Check availability whenever date changes
     useEffect(() => {
         if (!form.appointmentDate) return;
         const checkAvailability = async () => {
@@ -110,53 +115,49 @@ export default function Appointment() {
     const selectClass = "w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-2xl text-sm text-gray-800 focus:outline-none focus:border-[#1B3A5C] focus:bg-white transition-all duration-200";
     const labelClass = "block text-xs font-bold text-[#1B3A5C] uppercase tracking-widest mb-2";
 
+    if (loading) return <Loader />
+
     if (submitted) {
         return (
-            <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-                <div className="bg-white rounded-3xl p-12 max-w-md w-full text-center shadow-2xl border border-gray-100">
-                    <div className="w-20 h-20 bg-[#1B3A5C] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#1B3A5C]/20">
-                        <Check className="w-10 h-10 text-white" />
+            <>
+                <Navbar />
+                <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+                    <div className="bg-white rounded-3xl p-12 max-w-md w-full text-center shadow-2xl border border-gray-100">
+                        <div className="w-20 h-20 bg-[#1B3A5C] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#1B3A5C]/20">
+                            <Check className="w-10 h-10 text-white" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-[#1B3A5C] mb-3">You're All Set!</h2>
+                        <p className="text-gray-500 leading-relaxed mb-2">
+                            Thank you, <span className="font-bold text-[#1B3A5C]">{form.fullName}</span>. Your appointment has been received.
+                        </p>
+                        <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Our team will contact you at <span className="font-semibold text-gray-600">{form.email}</span> within 24 hours to confirm.
+                        </p>
+                        <div className="bg-[#1B3A5C]/5 border border-[#1B3A5C]/10 rounded-2xl p-5 text-left space-y-3 mb-8">
+                            {[
+                                { label: "Service", val: selectedService?.label },
+                                { label: "Date", val: form.appointmentDate },
+                                { label: "Time", val: form.appointmentTime },
+                            ].map(({ label, val }) => (
+                                <div key={label} className="flex justify-between text-sm">
+                                    <span className="text-gray-400">{label}</span>
+                                    <span className="font-bold text-[#1B3A5C]">{val || "—"}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <button
+                            onClick={() => { setSubmitted(false); setForm(empty); setStep(0); setAvailability(null); }}
+                            className="w-full bg-[#1B3A5C] text-white py-4 rounded-2xl font-bold text-sm hover:bg-[#0F3355] transition shadow-lg shadow-[#1B3A5C]/20"
+                        >
+                            Book Another Appointment
+                        </button>
                     </div>
-                    <h2 className="text-3xl font-bold text-[#1B3A5C] mb-3">You're All Set!</h2>
-                    <p className="text-gray-500 leading-relaxed mb-2">
-                        Thank you, <span className="font-bold text-[#1B3A5C]">{form.fullName}</span>. Your appointment has been received.
-                    </p>
-                    <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-                        Our team will contact you at <span className="font-semibold text-gray-600">{form.email}</span> within 24 hours to confirm.
-                    </p>
-                    <div className="bg-[#1B3A5C]/5 border border-[#1B3A5C]/10 rounded-2xl p-5 text-left space-y-3 mb-8">
-                        {[
-                            { label: "Service", val: selectedService?.label },
-                            { label: "Date", val: form.appointmentDate },
-                            { label: "Time", val: form.appointmentTime },
-                        ].map(({ label, val }) => (
-                            <div key={label} className="flex justify-between text-sm">
-                                <span className="text-gray-400">{label}</span>
-                                <span className="font-bold text-[#1B3A5C]">{val || "—"}</span>
-                            </div>
-                        ))}
-                    </div>
-                    <button
-                        onClick={() => { setSubmitted(false); setForm(empty); setStep(0); setAvailability(null); }}
-                        className="w-full bg-[#1B3A5C] text-white py-4 rounded-2xl font-bold text-sm hover:bg-[#0F3355] transition shadow-lg shadow-[#1B3A5C]/20"
-                    >
-                        Book Another Appointment
-                    </button>
                 </div>
-            </div>
+                <Footer />
+            </>
         );
     }
-    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false)
-        }, 2000)
-
-        return () => clearTimeout(timer)
-    }, [])
-
-    if (loading) return <Loader />
     return (
         <>
             <Navbar />
@@ -168,7 +169,7 @@ export default function Appointment() {
                         backgroundImage: `radial-gradient(circle at 80% 20%, #17B7F5 0%, transparent 50%), radial-gradient(circle at 10% 80%, #2A9D8F 0%, transparent 40%)`
                     }} />
                     <div className="max-w-3xl mx-auto text-center relative z-10">
-                        <p className="text-[#17B7F5] text-xs font-bold uppercase tracking-widest mb-4">L&L Healthcare Staffing Solution</p>
+                        <p className="text-[#17B7F5] text-xs font-bold uppercase tracking-widest mb-4">L&amp;L Healthcare Staffing Solution</p>
                         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-5">
                             Book Your Care<br />
                             <span className="text-[#17B7F5]">Consultation</span>
@@ -294,7 +295,6 @@ export default function Appointment() {
                                             />
                                         </div>
 
-                                        {/* Day blocked warning */}
                                         {form.appointmentDate && availability?.dayBlocked && (
                                             <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-2xl p-4">
                                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
@@ -302,14 +302,12 @@ export default function Appointment() {
                                             </div>
                                         )}
 
-                                        {/* Time slots */}
                                         {form.appointmentDate && !availability?.dayBlocked && (
                                             <div>
                                                 <label className={labelClass}>
                                                     Preferred Time *
                                                     {checkingAvail && <span className="text-gray-300 font-normal normal-case tracking-normal ml-2">Checking availability...</span>}
                                                 </label>
-
                                                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5">
                                                     {ALL_TIME_SLOTS.map((t) => {
                                                         const unavailable = isTimeUnavailable(t);
@@ -335,7 +333,6 @@ export default function Appointment() {
                                                         );
                                                     })}
                                                 </div>
-
                                                 <div className="flex items-center gap-4 mt-4 text-xs text-gray-400">
                                                     <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-[#1B3A5C] inline-block" /> Selected</span>
                                                     <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-full bg-gray-200 inline-block" /> Available</span>
@@ -476,7 +473,7 @@ export default function Appointment() {
                                         )}
 
                                         <div className="bg-[#1B3A5C]/5 border border-[#1B3A5C]/10 rounded-2xl p-4 text-xs text-[#1B3A5C]/70 leading-relaxed">
-                                            By confirming, you agree that L&L Healthcare Staffing Solution may contact you via your provided email and phone to confirm and coordinate your care appointment.
+                                            By confirming, you agree that L&amp;L Healthcare Staffing Solution may contact you via your provided email and phone to confirm and coordinate your care appointment.
                                         </div>
                                     </div>
                                 </div>

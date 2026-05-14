@@ -1,23 +1,19 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Select from "react-select";
+import axios from "axios";
 import applyImage from "../assets/apply.jpg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import {
-  User,
-  Mail,
-  Phone,
-  Globe,
-  Briefcase,
-  FileText,
-  Upload,
-  CheckCircle,
-  ArrowRight,
-  MapPin,
-  Clock,
+  User, Mail, Phone, Briefcase, FileText,
+  Upload, CheckCircle, ArrowRight, MapPin, Clock,
 } from "lucide-react";
+
+const CLOUDINARY_CLOUD_NAME = "dqetbfrka";
+const CLOUDINARY_UPLOAD_PRESET = "ll-staffing-cvs";
+const APPLICATIONS_API = "https://l-lhealthcare.onrender.com/api/applications";
 
 const roles = [
   "Home Health Aide (HHA)",
@@ -25,7 +21,6 @@ const roles = [
   "Certified Nursing Assistant (CNA)",
   "Registered Nurse (RN)",
   "Personal Care Assistant",
-  "Limousine Driver",
   "Mental Health Support Worker",
   "Home Care Program Coordinator",
 ];
@@ -38,11 +33,7 @@ const experienceLevels = [
 ];
 
 const availabilities = [
-  "Full-Time",
-  "Part-Time",
-  "Contract",
-  "Per Diem",
-  "Flexible",
+  "Full-Time", "Part-Time", "Contract", "Per Diem", "Flexible",
 ];
 
 const Apply = () => {
@@ -51,8 +42,11 @@ const Apply = () => {
   const [role, setRole] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [cvFile, setCvFile] = useState(null);
   const [cvName, setCvName] = useState("");
-  const [resumeName, setResumeName] = useState("");
+  const [error, setError] = useState("");
+
+  const formRef = useRef();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -115,15 +109,60 @@ const Apply = () => {
     }),
   };
 
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+    formData.append("folder", "ll-staffing-cvs");
+
+    const res = await axios.post(
+      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
+      formData
+    );
+    return res.data.secure_url;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!country) { alert("Please select your country"); return; }
-    if (!role) { alert("Please select the role you are applying for"); return; }
+    setError("");
+
+    if (!country) { setError("Please select your country"); return; }
+    if (!role) { setError("Please select the role you are applying for"); return; }
+    if (!cvFile) { setError("Please upload your CV"); return; }
 
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      // 1. Upload CV to Cloudinary
+      const cvUrl = await uploadToCloudinary(cvFile);
+
+      // 2. Get form values
+      const form = formRef.current;
+      const applicationData = {
+        name: form.name_field.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        country: country.value,
+        role: role.value,
+        experience: form.experience.value,
+        availability: form.availability.value,
+        coverLetter: form.coverLetter.value,
+        cvUrl,
+        cvFileName: cvFile.name,
+        submittedAt: new Date().toISOString(),
+        status: "Pending",
+      };
+
+      // 3. Save to MongoDB via backend
+      await axios.post(APPLICATIONS_API, applicationData);
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Application error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (loading) return <Loader />;
@@ -139,9 +178,8 @@ const Apply = () => {
             </div>
             <h2 className="text-3xl font-bold text-[#1B3A5C]">Application Submitted!</h2>
             <p className="text-gray-600 mt-4 leading-8">
-              Thank you for applying to L&amp;L Healthcare Staffing Solution.
-              Our team will review your application and get back to you within
-              24-48 hours.
+              Thank you for applying to LL Staffing Solutions.
+              Our team will review your application and get back to you within 24-48 hours.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/jobs">
@@ -167,7 +205,7 @@ const Apply = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="bg-[#0F3355] py-24 px-6 text-center relative ovverflow-hidden mt-[50px]">
+      <section className="bg-[#0F3355] py-24 px-6 text-center relative overflow-hidden mt-[50px]">
         <div className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, #17B7F5 0%, transparent 50%),
@@ -183,9 +221,8 @@ const Apply = () => {
             <span className="text-[#17B7F5]">Healthcare Today</span>
           </h1>
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto leading-8 text-sm">
-            Join L&amp;L Healthcare Staffing Solution and make a real difference
-            in people's lives. We are always looking for compassionate,
-            certified professionals to join our growing team.
+            Join LL Staffing Solutions and make a real difference in people's lives.
+            We are always looking for compassionate, certified professionals to join our growing team.
           </p>
           <p className="text-white/60 mt-4 text-sm">
             <Link to="/" className="hover:text-white transition">Home</Link>
@@ -219,7 +256,7 @@ const Apply = () => {
       {/* MAIN CONTENT */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        {/* LEFT IMAGE + INFO */}
+        {/* LEFT */}
         <div className="space-y-8">
           <img
             src={applyImage}
@@ -227,7 +264,6 @@ const Apply = () => {
             className="w-full rounded-3xl shadow-2xl object-cover max-h-[450px]"
           />
 
-          {/* INFO CARDS */}
           <div className="bg-[#0F3355] rounded-2xl p-8 text-white">
             <h3 className="text-xl font-bold mb-6">What Happens Next?</h3>
             <div className="space-y-5">
@@ -250,7 +286,6 @@ const Apply = () => {
             </div>
           </div>
 
-          {/* OPEN POSITIONS LINK */}
           <div className="bg-[#2A9D8F]/10 border border-[#2A9D8F]/20 rounded-2xl p-6">
             <h4 className="font-bold text-[#1B3A5C] mb-2">Looking for a specific role?</h4>
             <p className="text-gray-600 text-sm mb-4">Browse our open positions and apply directly from the job listing.</p>
@@ -262,13 +297,12 @@ const Apply = () => {
 
         {/* RIGHT FORM */}
         <div className="bg-white shadow-xl rounded-3xl p-8 md:p-10 border border-gray-100">
-
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2">Career Application Form</h2>
           <p className="text-gray-500 text-sm mb-8">
             Fill in your details below. All fields marked * are required.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
 
             {/* FULL NAME */}
             <div>
@@ -279,7 +313,7 @@ const Apply = () => {
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   required
-                  name="name"
+                  name="name_field"
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm"
                   placeholder="Enter your full name"
                 />
@@ -387,41 +421,28 @@ const Apply = () => {
             {/* CV UPLOAD */}
             <div>
               <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
-                Upload CV <span className="text-red-500">*</span>
+                Upload CV / Resume <span className="text-red-500">*</span>
               </label>
               <label className="w-full border-2 border-dashed border-gray-200 rounded-xl px-4 py-5 flex flex-col items-center justify-center cursor-pointer hover:border-[#1B3A5C] transition group">
-                <Upload className="w-6 h-6 text-gray-400 group-hover:text-[#1B3A5C] transition mb-2" />
-                <span className="text-sm text-gray-500 group-hover:text-[#1B3A5C] transition">
-                  {cvName || "Click to upload CV (PDF, DOC, DOCX)"}
+                {cvName ? (
+                  <FileText className="w-6 h-6 text-[#2A9D8F] mb-2" />
+                ) : (
+                  <Upload className="w-6 h-6 text-gray-400 group-hover:text-[#1B3A5C] transition mb-2" />
+                )}
+                <span className={`text-sm transition ${cvName ? "text-[#2A9D8F] font-semibold" : "text-gray-500 group-hover:text-[#1B3A5C]"}`}>
+                  {cvName || "Click to upload CV or Resume (PDF, DOC, DOCX)"}
                 </span>
                 <input
-                  required
-                  name="cv"
                   type="file"
                   accept=".pdf,.doc,.docx"
                   className="hidden"
-                  onChange={(e) => setCvName(e.target.files[0]?.name || "")}
-                />
-              </label>
-            </div>
-
-            {/* RESUME UPLOAD */}
-            <div>
-              <label className="text-[#1B3A5C] font-semibold text-sm mb-1 block">
-                Upload Resume <span className="text-red-500">*</span>
-              </label>
-              <label className="w-full border-2 border-dashed border-gray-200 rounded-xl px-4 py-5 flex flex-col items-center justify-center cursor-pointer hover:border-[#1B3A5C] transition group">
-                <FileText className="w-6 h-6 text-gray-400 group-hover:text-[#1B3A5C] transition mb-2" />
-                <span className="text-sm text-gray-500 group-hover:text-[#1B3A5C] transition">
-                  {resumeName || "Click to upload Resume (PDF, DOC, DOCX)"}
-                </span>
-                <input
-                  required
-                  name="resume"
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
-                  onChange={(e) => setResumeName(e.target.files[0]?.name || "")}
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                      setCvFile(file);
+                      setCvName(file.name);
+                    }
+                  }}
                 />
               </label>
             </div>
@@ -434,10 +455,17 @@ const Apply = () => {
               <textarea
                 name="coverLetter"
                 rows={4}
-                placeholder="Tell us why you want to join L&L Healthcare and what makes you a great fit..."
+                placeholder="Tell us why you want to join LL Staffing Solutions and what makes you a great fit..."
                 className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20 focus:border-[#1B3A5C] text-sm resize-none"
               />
             </div>
+
+            {/* ERROR */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3 rounded-lg">
+                ❌ {error}
+              </div>
+            )}
 
             {/* SUBMIT */}
             <button
@@ -445,7 +473,7 @@ const Apply = () => {
               disabled={submitting}
               className="w-full bg-[#1B3A5C] text-white py-4 rounded-xl font-bold hover:bg-[#2A9D8F] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
             >
-              {submitting ? "Submitting..." : (
+              {submitting ? "Submitting Application..." : (
                 <>Submit Application <ArrowRight className="w-4 h-4" /></>
               )}
             </button>
@@ -457,7 +485,6 @@ const Apply = () => {
 
           </form>
         </div>
-
       </section>
 
       <Footer />

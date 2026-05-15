@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import emailjs from "@emailjs/browser";
 import {
     LayoutDashboard, Briefcase, Trash2, Pencil, Plus, LogOut,
     MoreVertical, Activity, X, MapPin, Building2, Clock,
     DollarSign, Tag, CalendarDays, Ban, User, Mail, Phone,
-    CheckCircle, XCircle, AlertCircle, ChevronDown,
+    CheckCircle, XCircle, AlertCircle, ChevronDown, FileText,
 } from "lucide-react";
 
+const EMAILJS_SERVICE_ID = "service_ideb3zi";
+const EMAILJS_TEMPLATE_ID = "template_uuuv51t";
+const EMAILJS_PUBLIC_KEY = "jh6VBRlbZ-IoWjfHg";
 const JOBS_API = "https://l-lhealthcare.onrender.com/api/jobs";
 const APPT_API = "https://l-lhealthcare.onrender.com/api/appointments";
 const BLOCKED_API = "https://l-lhealthcare.onrender.com/api/blockedslots";
+const APPLICATIONS_API = "https://l-lhealthcare.onrender.com/api/applications";
+const APPT_EMAILJS_SERVICE_ID = "service_lksueap";
+const APPT_EMAILJS_TEMPLATE_ID = "template_ws2a16a";
+const APPT_EMAILJS_PUBLIC_KEY = "fTOYbzk4T_L7BKCLG";
+
 
 const ALL_TIME_SLOTS = [
     "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM",
@@ -38,20 +47,25 @@ const Adminpanel = () => {
     const [deleteApptId, setDeleteApptId] = useState(null);
     const [expandedAppt, setExpandedAppt] = useState(null);
 
+    // Applications state
+    const [applications, setApplications] = useState([]);
+    const [appsLoading, setAppsLoading] = useState(true);
+    const [deleteAppId, setDeleteAppId] = useState(null);
+    const [expandedApp, setExpandedApp] = useState(null);
+
     // Blocked slots state
     const [blockedSlots, setBlockedSlots] = useState([]);
     const [blockedLoading, setBlockedLoading] = useState(true);
     const [blockDate, setBlockDate] = useState("");
     const [blockTime, setBlockTime] = useState("");
     const [blockReason, setBlockReason] = useState("");
-    const [blockType, setBlockType] = useState("time"); // "time" | "day"
+    const [blockType, setBlockType] = useState("time");
 
     // UI state
     const [activeTab, setActiveTab] = useState("dashboard");
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [loading, setLoading] = useState(true);
 
-    // ── Fetch functions ──
     const fetchJobs = async () => {
         try {
             const res = await axios.get(JOBS_API);
@@ -75,6 +89,17 @@ const Adminpanel = () => {
         }
     };
 
+    const fetchApplications = async () => {
+        try {
+            const res = await axios.get(APPLICATIONS_API);
+            setApplications(res.data);
+        } catch (err) {
+            console.error("Failed to fetch applications", err);
+        } finally {
+            setAppsLoading(false);
+        }
+    };
+
     const fetchBlockedSlots = async () => {
         try {
             const res = await axios.get(BLOCKED_API);
@@ -89,6 +114,7 @@ const Adminpanel = () => {
     useEffect(() => {
         fetchJobs();
         fetchAppointments();
+        fetchApplications();
         fetchBlockedSlots();
     }, []);
 
@@ -97,7 +123,6 @@ const Adminpanel = () => {
         window.location.href = "/adminlogin";
     };
 
-    // ── Job handlers ──
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const handleSubmit = async (e) => {
@@ -143,15 +168,46 @@ const Adminpanel = () => {
         setSidebarOpen(false);
     };
 
-    // ── Appointment handlers ──
     const handleUpdateApptStatus = async (id, status) => {
         try {
             await axios.put(`${APPT_API}/${id}`, { status });
+
+            const appt = appointments.find(a => a._id === id);
+            if (appt) {
+                const statusMessage = status === "Confirmed"
+                    ? "Great news! Your appointment has been confirmed. We look forward to providing you with the best care on your scheduled date. Please ensure you are available at the confirmed time. If you need to make any changes, don't hesitate to reach out to us."
+                    : "We regret to inform you that your appointment has been cancelled. We sincerely apologize for any inconvenience this may cause. Please visit our website to book a new appointment at a time that works best for you. We look forward to serving you soon.";
+
+                await emailjs.send(
+                    "service_lksueap",
+                    "template_ws2a16a",
+                    {
+                        patient_name: appt.fullName,
+                        patient_email: appt.email,
+                        appointment_date: appt.appointmentDate,
+                        appointment_time: appt.appointmentTime,
+                        service: appt.service,
+                        status: status,
+                        status_message: statusMessage,
+                    },
+                    "fTOYbzk4T_L7BKCLG"
+                );
+            }
+
             fetchAppointments();
         } catch (err) {
-            console.error("Failed to update status", err);
+            console.error("Failed to update appointment status", err);
         }
     };
+
+    // const handleUpdateApptStatus = async (id, status) => {
+    //     try {
+    //         await axios.put(`${APPT_API}/${id}`, { status });
+    //         fetchAppointments();
+    //     } catch (err) {
+    //         console.error("Failed to update appointment status", err);
+    //     }
+    // };
 
     const handleDeleteAppt = async (id) => {
         try {
@@ -163,7 +219,47 @@ const Adminpanel = () => {
         }
     };
 
-    // ── Blocked slot handlers ──
+    const handleDeleteApp = async (id) => {
+        try {
+            await axios.delete(`${APPLICATIONS_API}/${id}`);
+            setDeleteAppId(null);
+            fetchApplications();
+        } catch (err) {
+            console.error("Failed to delete application", err);
+        }
+    };
+    const handleUpdateAppStatus = async (id, status) => {
+        try {
+            await axios.put(`${APPLICATIONS_API}/${id}`, { status });
+
+            const app = applications.find(a => a._id === id);
+            if (app) {
+                const statusMessage = status === "Accepted"
+                    ? "We are pleased to inform you that your application has been reviewed and accepted. Our team will be reaching out to you shortly with next steps."
+                    : status === "Rejected"
+                        ? "After careful review, we regret to inform you that we are unable to move forward with your application at this time. We encourage you to apply for future openings."
+                        : "Your application status has been updated to Pending. We are still reviewing your application and will get back to you soon.";
+
+                await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    {
+                        applicant_name: app.name,
+                        to_email: app.email,
+                        role: app.role,
+                        status: status,
+                        status_message: statusMessage,
+                    },
+                    EMAILJS_PUBLIC_KEY
+                );
+            }
+
+            fetchApplications();
+        } catch (err) {
+            console.error("Failed to update application status", err);
+        }
+    };
+
     const handleBlockSlot = async (e) => {
         e.preventDefault();
         if (!blockDate) return;
@@ -192,15 +288,15 @@ const Adminpanel = () => {
     };
 
     const statusColor = (status) => {
-        if (status === "Confirmed") return "bg-green-100 text-green-700";
-        if (status === "Cancelled") return "bg-red-100 text-red-600";
+        if (status === "Confirmed" || status === "Accepted") return "bg-green-100 text-green-700";
+        if (status === "Cancelled" || status === "Rejected") return "bg-red-100 text-red-600";
         return "bg-amber-100 text-amber-700";
     };
 
-    const Sidebar = () => (
-        <aside className="w-64 bg-[#1B3A5C] text-white p-6 flex flex-col min-h-screen">
+    const SidebarContent = () => (
+        <div className="w-64 bg-[#1B3A5C] text-white p-6 flex flex-col h-full">
             <div className="mb-10">
-                <h1 className="text-xl font-bold">L&Lstaffing <br />solution</h1>
+                <h1 className="text-xl font-bold">LL Staffing <br />Solutions</h1>
                 <p className="text-white/50 text-xs mt-1">Admin Panel</p>
             </div>
 
@@ -208,6 +304,7 @@ const Adminpanel = () => {
                 {[
                     { id: "dashboard", icon: LayoutDashboard, label: "Dashboard" },
                     { id: "jobs", icon: Briefcase, label: "Job Listings" },
+                    { id: "applications", icon: FileText, label: "Applications", badge: applications.filter(a => a.status === "Pending").length },
                     { id: "appointments", icon: CalendarDays, label: "Appointments", badge: appointments.filter(a => a.status === "Pending").length },
                     { id: "blocked", icon: Ban, label: "Blocked Slots" },
                 ].map(({ id, icon: Icon, label, badge }) => (
@@ -233,28 +330,35 @@ const Adminpanel = () => {
             >
                 <LogOut size={18} /> Logout
             </button>
-        </aside>
+        </div>
     );
 
     return (
         <div className="flex min-h-screen bg-gray-100">
-            {/* MOBILE TOPBAR */}
+
+            {/* ── MOBILE TOP NAV ── */}
             <div className="md:hidden fixed top-0 left-0 right-0 bg-[#1B3A5C] text-white flex items-center justify-between p-4 z-50">
-                <h1 className="font-bold text-sm">L&L Admin</h1>
+                <h1 className="font-bold text-sm">LL Staffing Admin</h1>
                 <button onClick={() => setSidebarOpen(true)}><MoreVertical size={22} /></button>
             </div>
 
+            {/* ── MOBILE SIDEBAR OVERLAY ── */}
             {sidebarOpen && (
                 <div className="fixed inset-0 bg-black/50 z-40 md:hidden" onClick={() => setSidebarOpen(false)} />
             )}
 
-            <div className="hidden md:flex"><Sidebar /></div>
-            <div className={`fixed top-0 left-0 z-50 transform transition-transform duration-300 md:hidden ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
-                <Sidebar />
+            {/* ── MOBILE SIDEBAR (slide in) ── */}
+            <div className={`fixed top-0 left-0 h-full z-50 transform transition-transform duration-300 md:hidden ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+                <SidebarContent />
             </div>
 
-            {/* MAIN */}
-            <main className="flex-1 p-4 md:p-8 mt-16 md:mt-0 overflow-y-auto">
+            {/* ── DESKTOP SIDEBAR (fixed, never moves) ── */}
+            <div className="hidden md:block fixed top-0 left-0 h-screen w-64 z-30">
+                <SidebarContent />
+            </div>
+
+            {/* ── MAIN CONTENT (offset by sidebar width on desktop) ── */}
+            <main className="flex-1 md:ml-64 p-4 md:p-8 mt-16 md:mt-0 overflow-y-auto min-h-screen">
 
                 {/* ── DASHBOARD ── */}
                 {activeTab === "dashboard" && (
@@ -267,6 +371,10 @@ const Adminpanel = () => {
                                 <p className="text-4xl font-bold text-[#1B3A5C] mt-1">{jobs.length}</p>
                             </div>
                             <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
+                                <p className="text-gray-500 text-sm">Total Applications</p>
+                                <p className="text-4xl font-bold text-[#2A9D8F] mt-1">{applications.length}</p>
+                            </div>
+                            <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
                                 <p className="text-gray-500 text-sm">Total Appointments</p>
                                 <p className="text-4xl font-bold text-[#1B3A5C] mt-1">{appointments.length}</p>
                             </div>
@@ -274,26 +382,22 @@ const Adminpanel = () => {
                                 <p className="text-gray-500 text-sm">Pending Appointments</p>
                                 <p className="text-4xl font-bold text-amber-500 mt-1">{appointments.filter(a => a.status === "Pending").length}</p>
                             </div>
-                            <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
-                                <p className="text-gray-500 text-sm">Blocked Slots</p>
-                                <p className="text-4xl font-bold text-red-500 mt-1">{blockedSlots.length}</p>
-                            </div>
                         </div>
 
                         <div className="grid lg:grid-cols-2 gap-6">
                             <div className="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
-                                <h3 className="text-lg font-semibold text-[#1B3A5C] mb-4">Recent Jobs</h3>
-                                {jobs.length === 0 ? (
-                                    <p className="text-gray-400 text-sm">No jobs posted yet</p>
+                                <h3 className="text-lg font-semibold text-[#1B3A5C] mb-4">Recent Applications</h3>
+                                {applications.length === 0 ? (
+                                    <p className="text-gray-400 text-sm">No applications yet</p>
                                 ) : (
                                     <div className="space-y-3">
-                                        {jobs.slice(0, 5).map((job) => (
-                                            <div key={job._id} className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                                        {applications.slice(0, 5).map((app) => (
+                                            <div key={app._id} className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
                                                 <div>
-                                                    <p className="font-semibold text-[#1B3A5C] text-sm">{job.title}</p>
-                                                    <p className="text-xs text-gray-500">{job.company} · {job.location}</p>
+                                                    <p className="font-semibold text-[#1B3A5C] text-sm">{app.name}</p>
+                                                    <p className="text-xs text-gray-500">{app.role} · {app.availability}</p>
                                                 </div>
-                                                <span className="text-xs bg-[#1B3A5C]/10 text-[#1B3A5C] px-3 py-1 rounded-full">{job.type}</span>
+                                                <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusColor(app.status)}`}>{app.status}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -325,18 +429,18 @@ const Adminpanel = () => {
                                 <Activity size={18} className="text-[#1B3A5C]" />
                                 <h3 className="text-lg font-semibold text-[#1B3A5C]">Activity Log</h3>
                             </div>
-                            {jobs.length === 0 && appointments.length === 0 ? (
+                            {applications.length === 0 && appointments.length === 0 ? (
                                 <p className="text-gray-400 text-sm">No activity yet</p>
                             ) : (
                                 <div className="space-y-2">
+                                    {applications.slice(0, 3).map((app, i) => (
+                                        <p key={i} className="text-sm border-l-2 border-[#2A9D8F] pl-3 text-gray-600">
+                                            <b className="text-[#1B3A5C]">{app.name}</b> applied for <b className="text-[#1B3A5C]">{app.role}</b>
+                                        </p>
+                                    ))}
                                     {appointments.slice(0, 3).map((appt, i) => (
                                         <p key={i} className="text-sm border-l-2 border-[#1B3A5C] pl-3 text-gray-600">
                                             <b className="text-[#1B3A5C]">{appt.fullName}</b> booked an appointment for {appt.appointmentDate} at {appt.appointmentTime}
-                                        </p>
-                                    ))}
-                                    {jobs.slice(0, 3).map((job, i) => (
-                                        <p key={i} className="text-sm border-l-2 border-gray-300 pl-3 text-gray-600">
-                                            Job posted: <b className="text-[#1B3A5C]">{job.title}</b> at {job.company}
                                         </p>
                                     ))}
                                 </div>
@@ -404,6 +508,121 @@ const Adminpanel = () => {
                     </div>
                 )}
 
+                {/* ── APPLICATIONS ── */}
+                {activeTab === "applications" && (
+                    <div className="space-y-6">
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-2xl font-bold text-[#1B3A5C]">Job Applications</h2>
+                            <div className="flex gap-3 text-xs">
+                                <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full font-semibold">Pending: {applications.filter(a => a.status === "Pending").length}</span>
+                                <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-semibold">Accepted: {applications.filter(a => a.status === "Accepted").length}</span>
+                                <span className="bg-red-100 text-red-600 px-3 py-1.5 rounded-full font-semibold">Rejected: {applications.filter(a => a.status === "Rejected").length}</span>
+                            </div>
+                        </div>
+
+                        {appsLoading ? (
+                            <p className="text-gray-400 text-sm">Loading...</p>
+                        ) : applications.length === 0 ? (
+                            <div className="bg-white rounded-2xl p-12 text-center border border-gray-100">
+                                <FileText size={40} className="mx-auto text-gray-300 mb-3" />
+                                <p className="text-gray-500">No applications submitted yet.</p>
+                            </div>
+                        ) : (
+                            <div className="space-y-4">
+                                {applications.map((app) => (
+                                    <div key={app._id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                                        <div
+                                            className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition"
+                                            onClick={() => setExpandedApp(expandedApp === app._id ? null : app._id)}
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-10 h-10 bg-[#2A9D8F]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <User size={18} className="text-[#2A9D8F]" />
+                                                </div>
+                                                <div>
+                                                    <p className="font-bold text-[#1B3A5C]">{app.name}</p>
+                                                    <p className="text-xs text-gray-500">{app.role} · {app.experience} · {app.availability}</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <span className={`text-xs px-3 py-1.5 rounded-full font-semibold ${statusColor(app.status)}`}>{app.status}</span>
+                                                <ChevronDown size={16} className={`text-gray-400 transition-transform ${expandedApp === app._id ? "rotate-180" : ""}`} />
+                                            </div>
+                                        </div>
+
+                                        {expandedApp === app._id && (
+                                            <div className="border-t border-gray-100 p-5 space-y-5">
+                                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                                    {[
+                                                        { label: "Full Name", val: app.name },
+                                                        { label: "Email", val: app.email },
+                                                        { label: "Phone", val: app.phone },
+                                                        { label: "Country", val: app.country },
+                                                        { label: "Role", val: app.role },
+                                                        { label: "Experience", val: app.experience },
+                                                        { label: "Availability", val: app.availability },
+                                                        { label: "Applied", val: new Date(app.createdAt).toLocaleDateString() },
+                                                    ].map(({ label, val }) => (
+                                                        <div key={label} className="bg-gray-50 rounded-xl p-3">
+                                                            <p className="text-xs text-gray-400 mb-1">{label}</p>
+                                                            <p className="text-sm font-semibold text-[#1B3A5C] truncate">{val}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
+                                                {app.coverLetter && (
+                                                    <div className="bg-gray-50 rounded-xl p-4">
+                                                        <p className="text-xs text-gray-400 mb-1">Cover Letter</p>
+                                                        <p className="text-sm text-gray-700 leading-6">{app.coverLetter}</p>
+                                                    </div>
+                                                )}
+
+                                                {app.cvUrl && (
+                                                    <a
+                                                        href={`https://docs.google.com/viewer?url=${encodeURIComponent(app.cvUrl)}&embedded=false`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 bg-[#1B3A5C]/10 text-[#1B3A5C] px-4 py-3 rounded-xl text-sm font-semibold hover:bg-[#1B3A5C]/20 transition w-fit"
+                                                    >
+                                                        <FileText size={16} /> View CV — {app.cvFileName}
+                                                    </a>
+                                                )}
+
+                                                <div className="flex flex-wrap gap-3 pt-2 border-t border-gray-100">
+                                                    <button
+                                                        onClick={() => handleUpdateAppStatus(app._id, "Accepted")}
+                                                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition ${app.status === "Accepted" ? "bg-green-600 text-white" : "bg-green-50 text-green-700 hover:bg-green-100"}`}
+                                                    >
+                                                        <CheckCircle size={14} /> Accept
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleUpdateAppStatus(app._id, "Rejected")}
+                                                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition ${app.status === "Rejected" ? "bg-red-600 text-white" : "bg-red-50 text-red-600 hover:bg-red-100"}`}
+                                                    >
+                                                        <XCircle size={14} /> Reject
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleUpdateAppStatus(app._id, "Pending")}
+                                                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition ${app.status === "Pending" ? "bg-amber-500 text-white" : "bg-amber-50 text-amber-700 hover:bg-amber-100"}`}
+                                                    >
+                                                        <AlertCircle size={14} /> Pending
+                                                    </button>
+                                                    <button
+                                                        onClick={() => setDeleteAppId(app._id)}
+                                                        className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition ml-auto"
+                                                    >
+                                                        <Trash2 size={14} /> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+
                 {/* ── APPOINTMENTS ── */}
                 {activeTab === "appointments" && (
                     <div className="space-y-6">
@@ -427,7 +646,6 @@ const Adminpanel = () => {
                             <div className="space-y-4">
                                 {appointments.map((appt) => (
                                     <div key={appt._id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                                        {/* Header */}
                                         <div
                                             className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition"
                                             onClick={() => setExpandedAppt(expandedAppt === appt._id ? null : appt._id)}
@@ -447,7 +665,6 @@ const Adminpanel = () => {
                                             </div>
                                         </div>
 
-                                        {/* Expanded details */}
                                         {expandedAppt === appt._id && (
                                             <div className="border-t border-gray-100 p-5 space-y-5">
                                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -476,7 +693,6 @@ const Adminpanel = () => {
                                                     </div>
                                                 )}
 
-                                                {/* Actions */}
                                                 <div className="flex flex-wrap gap-3 pt-2 border-t border-gray-100">
                                                     <button
                                                         onClick={() => handleUpdateApptStatus(appt._id, "Confirmed")}
@@ -517,78 +733,38 @@ const Adminpanel = () => {
                     <div className="space-y-6">
                         <h2 className="text-2xl font-bold text-[#1B3A5C]">Blocked Slots</h2>
 
-                        {/* Block form */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                             <h3 className="font-bold text-[#1B3A5C] mb-5">Block a Date or Time Slot</h3>
                             <form onSubmit={handleBlockSlot} className="space-y-4">
-                                {/* Block type toggle */}
                                 <div className="flex gap-3">
-                                    <button
-                                        type="button"
-                                        onClick={() => setBlockType("time")}
-                                        className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border-2 transition ${blockType === "time" ? "bg-[#1B3A5C] text-white border-[#1B3A5C]" : "border-gray-200 text-gray-600 hover:border-[#1B3A5C]"}`}
-                                    >
-                                        Block Specific Time
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => setBlockType("day")}
-                                        className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border-2 transition ${blockType === "day" ? "bg-[#1B3A5C] text-white border-[#1B3A5C]" : "border-gray-200 text-gray-600 hover:border-[#1B3A5C]"}`}
-                                    >
-                                        Block Entire Day
-                                    </button>
+                                    <button type="button" onClick={() => setBlockType("time")} className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border-2 transition ${blockType === "time" ? "bg-[#1B3A5C] text-white border-[#1B3A5C]" : "border-gray-200 text-gray-600 hover:border-[#1B3A5C]"}`}>Block Specific Time</button>
+                                    <button type="button" onClick={() => setBlockType("day")} className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border-2 transition ${blockType === "day" ? "bg-[#1B3A5C] text-white border-[#1B3A5C]" : "border-gray-200 text-gray-600 hover:border-[#1B3A5C]"}`}>Block Entire Day</button>
                                 </div>
-
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-bold text-[#1B3A5C] uppercase tracking-widest mb-2">Date *</label>
-                                        <input
-                                            type="date"
-                                            value={blockDate}
-                                            onChange={(e) => setBlockDate(e.target.value)}
-                                            min={new Date().toISOString().split("T")[0]}
-                                            className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition"
-                                            required
-                                        />
+                                        <input type="date" value={blockDate} onChange={(e) => setBlockDate(e.target.value)} min={new Date().toISOString().split("T")[0]} className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition" required />
                                     </div>
-
                                     {blockType === "time" && (
                                         <div>
                                             <label className="block text-xs font-bold text-[#1B3A5C] uppercase tracking-widest mb-2">Time Slot *</label>
-                                            <select
-                                                value={blockTime}
-                                                onChange={(e) => setBlockTime(e.target.value)}
-                                                className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition"
-                                                required
-                                            >
+                                            <select value={blockTime} onChange={(e) => setBlockTime(e.target.value)} className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition" required>
                                                 <option value="">Select time</option>
                                                 {ALL_TIME_SLOTS.map((t) => <option key={t}>{t}</option>)}
                                             </select>
                                         </div>
                                     )}
                                 </div>
-
                                 <div>
                                     <label className="block text-xs font-bold text-[#1B3A5C] uppercase tracking-widest mb-2">Reason <span className="text-gray-300 font-normal normal-case tracking-normal">(Optional)</span></label>
-                                    <input
-                                        type="text"
-                                        value={blockReason}
-                                        onChange={(e) => setBlockReason(e.target.value)}
-                                        placeholder="e.g. Public holiday, Staff unavailable"
-                                        className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition"
-                                    />
+                                    <input type="text" value={blockReason} onChange={(e) => setBlockReason(e.target.value)} placeholder="e.g. Public holiday, Staff unavailable" className="w-full border-2 border-gray-100 bg-gray-50 p-3 rounded-xl text-sm focus:outline-none focus:border-[#1B3A5C] transition" />
                                 </div>
-
-                                <button
-                                    type="submit"
-                                    className="flex items-center gap-2 bg-[#1B3A5C] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-[#0F3355] transition"
-                                >
+                                <button type="submit" className="flex items-center gap-2 bg-[#1B3A5C] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-[#0F3355] transition">
                                     <Ban size={16} /> {blockType === "day" ? "Block Entire Day" : "Block Time Slot"}
                                 </button>
                             </form>
                         </div>
 
-                        {/* Blocked list */}
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                             <h3 className="font-bold text-[#1B3A5C] mb-5">Currently Blocked ({blockedSlots.length})</h3>
                             {blockedLoading ? (
@@ -611,10 +787,7 @@ const Adminpanel = () => {
                                                     {slot.reason && <p className="text-xs text-gray-400 mt-0.5">{slot.reason}</p>}
                                                 </div>
                                             </div>
-                                            <button
-                                                onClick={() => handleUnblock(slot._id)}
-                                                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white text-red-600 border border-red-200 hover:bg-red-100 transition text-xs font-semibold"
-                                            >
+                                            <button onClick={() => handleUnblock(slot._id)} className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white text-red-600 border border-red-200 hover:bg-red-100 transition text-xs font-semibold">
                                                 <X size={13} /> Unblock
                                             </button>
                                         </div>
@@ -632,9 +805,7 @@ const Adminpanel = () => {
                     <div className="bg-white rounded-2xl w-full max-w-2xl my-8 shadow-2xl">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
                             <h3 className="font-bold text-[#1B3A5C] text-lg">{editingId ? "Edit Job" : "Add New Job"}</h3>
-                            <button onClick={() => { setShowForm(false); setEditingId(null); setFormData(emptyForm); }} className="text-gray-400 hover:text-gray-600">
-                                <X size={20} />
-                            </button>
+                            <button onClick={() => { setShowForm(false); setEditingId(null); setFormData(emptyForm); }} className="text-gray-400 hover:text-gray-600"><X size={20} /></button>
                         </div>
                         <form onSubmit={handleSubmit} className="p-6 space-y-5">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -644,7 +815,7 @@ const Adminpanel = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Company <span className="text-red-500">*</span></label>
-                                    <input name="company" value={formData.company} onChange={handleChange} placeholder="e.g. L&L Healthcare" className="w-full border border-gray-200 p-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20" />
+                                    <input name="company" value={formData.company} onChange={handleChange} placeholder="e.g. LL Staffing Solutions" className="w-full border border-gray-200 p-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1B3A5C]/20" />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -730,6 +901,20 @@ const Adminpanel = () => {
                         <div className="flex gap-3 justify-end">
                             <button onClick={() => setDeleteApptId(null)} className="px-5 py-2 rounded-xl border border-gray-200 text-sm text-gray-600 hover:bg-gray-50 transition">Cancel</button>
                             <button onClick={() => handleDeleteAppt(deleteApptId)} className="px-5 py-2 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* DELETE APPLICATION MODAL */}
+            {deleteAppId && (
+                <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl w-full max-w-sm shadow-xl p-6">
+                        <h3 className="font-bold text-red-600 text-lg mb-2">Delete Application</h3>
+                        <p className="text-gray-600 text-sm mb-6">Are you sure you want to delete this application? This cannot be undone.</p>
+                        <div className="flex gap-3 justify-end">
+                            <button onClick={() => setDeleteAppId(null)} className="px-5 py-2 rounded-xl border border-gray-200 text-sm text-gray-600 hover:bg-gray-50 transition">Cancel</button>
+                            <button onClick={() => handleDeleteApp(deleteAppId)} className="px-5 py-2 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition">Delete</button>
                         </div>
                     </div>
                 </div>

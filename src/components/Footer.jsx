@@ -130,8 +130,8 @@ const Footer = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-5 text-sm text-white/70">
-                    <Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
-                    <Link to="/terms-of-service" className="hover:text-white transition">Terms of Service</Link>
+                    <Link to="/privatepolicy" className="hover:text-white transition">Privacy Policy</Link>
+                    <Link to="/Terms" className="hover:text-white transition">Terms of Service</Link>
                     <Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link>
                 </div>
 

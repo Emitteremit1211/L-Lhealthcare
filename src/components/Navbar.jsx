@@ -22,7 +22,7 @@ const Navbar = () => {
                             className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                         />
                         <span className="text-white font-bold text-lg tracking-wide font-serif">
-                            LL Staffing <br /> Solution
+                            L&LStaffing <br /> Solution
                         </span>
                     </div>
                 </Link>

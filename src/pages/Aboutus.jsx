@@ -91,7 +91,7 @@ const Aboutus = () => {
               <span className="text-[#17B7F5]">People You Can Trust</span>
             </h1>
             <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              At L&amp;L Healthcare Staffing Solution, we provide personalized in-home care
+              At L&amp;L Staffing Solution, we provide personalized in-home care
               and skilled nursing services that help individuals live safely, comfortably,
               and with dignity at home.
             </p>
@@ -119,7 +119,7 @@ const Aboutus = () => {
                 A Trusted Partner in Home-Based Healthcare
               </h2>
               <p className="mt-6 text-gray-600 leading-relaxed">
-                L&amp;L Healthcare Staffing Solution (formerly Just Care Staffing Agency LLC) is a licensed
+                L&amp;L Staffing Solution (formerly Just Care Staffing Agency LLC) is a licensed
                 and registered Limited Liability Company in the Commonwealth of Massachusetts,
                 dedicated to supporting individuals and families with compassionate, professional
                 in-home care services.
@@ -182,7 +182,7 @@ const Aboutus = () => {
                 Meet Our Founders
               </h2>
               <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
-                L&amp;L Healthcare Staffing Solution was built by two passionate individuals
+                L&amp;L Staffing Solution was built by two passionate individuals
                 committed to transforming home-based healthcare in Massachusetts.
               </p>
             </div>
@@ -197,7 +197,7 @@ const Aboutus = () => {
                 <h3 className="text-2xl font-bold text-[#1B3A5C]">Felix Osho</h3>
                 <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Managing Director</p>
                 <p className="mt-4 text-gray-600 leading-relaxed text-sm">
-                  Felix Osho is a co-founder and resident agent of L&amp;L Healthcare Staffing Solution LLC,
+                  Felix Osho is a co-founder and resident agent of L&amp;L Staffing Solution LLC,
                   based at 91 Mill Street, Suite 1, Randolph, MA 02368. His leadership and dedication
                   to quality care have been instrumental in shaping the company's mission of delivering
                   trusted and guaranteed staffing solutions across Massachusetts.
@@ -216,7 +216,7 @@ const Aboutus = () => {
                 <h3 className="text-2xl font-bold text-[#1B3A5C]">Akintunde Okufuwa</h3>
                 <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Operations Director</p>
                 <p className="mt-4 text-gray-600 leading-relaxed text-sm">
-                  Akintunde Okufuwa is a co-founder and managing member of L&amp;L Healthcare Staffing Solution LLC.
+                  Akintunde Okufuwa is a co-founder and managing member of L&amp;L Staffing Solution LLC.
                   His operational expertise and commitment to compassionate care have been central to building
                   a company that families across Massachusetts can rely on for consistent, professional,
                   and personalized healthcare staffing services.
@@ -375,7 +375,7 @@ const Aboutus = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center text-white/90 text-sm">
               {[
                 { href: "tel:+19785529703", icon: Phone, label: "978-552-9703" },
-                { href: "mailto:info@llhealthcare.com", icon: Mail, label: "info@llhealthcare.com" },
+                { href: "mailto:info@llstaffingsolution.com", icon: Mail, label: "info@llstaffingsolution.com" },
                 { href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368", icon: MapPin, label: "91 Mill Street, Randolph, MA" },
               ].map(({ href, icon: Icon, label }) => (
                 React.createElement("a", {

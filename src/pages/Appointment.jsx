@@ -169,7 +169,7 @@ export default function Appointment() {
                         backgroundImage: `radial-gradient(circle at 80% 20%, #17B7F5 0%, transparent 50%), radial-gradient(circle at 10% 80%, #2A9D8F 0%, transparent 40%)`
                     }} />
                     <div className="max-w-3xl mx-auto text-center relative z-10">
-                        <p className="text-[#17B7F5] text-xs font-bold uppercase tracking-widest mb-4">L&amp;L Healthcare Staffing Solution</p>
+                        <p className="text-[#17B7F5] text-xs font-bold uppercase tracking-widest mb-4">L&amp;L Staffing Solution</p>
                         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-5">
                             Book Your Care<br />
                             <span className="text-[#17B7F5]">Consultation</span>
@@ -473,7 +473,7 @@ export default function Appointment() {
                                         )}
 
                                         <div className="bg-[#1B3A5C]/5 border border-[#1B3A5C]/10 rounded-2xl p-4 text-xs text-[#1B3A5C]/70 leading-relaxed">
-                                            By confirming, you agree that L&amp;L Healthcare Staffing Solution may contact you via your provided email and phone to confirm and coordinate your care appointment.
+                                            By confirming, you agree that L&amp;L Staffing Solution may contact you via your provided email and phone to confirm and coordinate your care appointment.
                                         </div>
                                     </div>
                                 </div>

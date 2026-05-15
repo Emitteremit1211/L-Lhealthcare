@@ -119,7 +119,12 @@ const Apply = () => {
       `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
       formData
     );
-    return res.data.secure_url;
+
+    // Transform URL to make PDF viewable in browser
+    const url = res.data.secure_url.replace(
+      "/raw/upload/",
+      "/image/upload/"
+    ).replace(".pdf", ".pdf");
   };
 
   const handleSubmit = async (e) => {
@@ -261,7 +266,7 @@ const Apply = () => {
           <img
             src={applyImage}
             alt="Apply"
-            className="w-full rounded-3xl shadow-2xl object-cover max-h-[450px]"
+            className="w-full rounded-md shadow-2xl object-cover max-h-[450px]"
           />
 
           <div className="bg-[#0F3355] rounded-2xl p-8 text-white">

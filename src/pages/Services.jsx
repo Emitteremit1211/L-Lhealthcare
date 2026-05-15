@@ -89,7 +89,7 @@ const Services = () => {
 
                     {/* Description */}
                     <p className="text-white/80 text-sm md:text-lg max-w-3xl mx-auto leading-8">
-                        At L&L Healthcare Staffing Solution, we are committed to delivering
+                        At L&L Staffing Solution, we are committed to delivering
                         compassionate, high-quality, and dependable care services tailored to
                         meet the unique needs of every individual and family we serve.
                         Our experienced caregivers and healthcare professionals ensure comfort,
@@ -244,7 +244,7 @@ const Services = () => {
                     </p>
 
                     <p className="text-gray-600 mt-4 leading-8">
-                        Our mission at L&L Healthcare Staffing Solution is to ensure every client receives
+                        Our mission at L&L Staffing Solution is to ensure every client receives
                         respectful, reliable, and compassionate care that promotes dignity and emotional well-being
                         while allowing them to remain safely in the comfort of their own home.
                     </p>
@@ -294,7 +294,7 @@ const Services = () => {
                             Why Choose Us
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold text-white">
-                            The L&amp;L Healthcare Difference
+                            The L&amp;L staffing solution Difference
                         </h2>
                         <p className="text-white/70 mt-4 max-w-2xl mx-auto leading-8 text-sm">
                             We go beyond standard care to deliver an experience that truly puts

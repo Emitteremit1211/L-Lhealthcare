@@ -187,7 +187,7 @@ const Body = () => {
                         Care You Can Count On
                     </h2>
                     <p className="mt-6 text-gray-600 leading-relaxed">
-                        At L&amp;L Healthcare Staffing Agency, we deliver compassionate,
+                        At L&amp;L Staffing Agency, we deliver compassionate,
                         personalized home-care services that improve comfort,
                         independence, and quality of life.
                     </p>
@@ -302,12 +302,12 @@ const Body = () => {
                     <div className="text-center mb-14">
                         <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Why Choose Us</span>
                         <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
-                            The L&amp;L Healthcare Difference
+                            The L&amp;L Staffing Agency Difference
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { title: "Licensed & Registered", desc: "Officially registered LLC with the Commonwealth of Massachusetts certified and trustworthy.", icon: "🏛️" },
+                            { title: "Licensed & Registered", desc: "Officially registered L&L staffing agency with the Commonwealth of Massachusetts certified and trustworthy.", icon: "🏛️" },
                             { title: "Certified Professionals", desc: "All caregivers are certified, background-checked, and trained to the highest standard.", icon: "🏅" },
                             { title: "24/7 Availability", desc: "Round-the-clock support ensuring your loved ones always have care when they need it.", icon: "🕐" },
                             { title: "Personalized Care Plans", desc: "Every client receives a custom care plan tailored to their unique needs and lifestyle.", icon: "📋" },
@@ -426,7 +426,7 @@ const Body = () => {
                 <div className="mt-16 overflow-x-auto scrollbar-hide">
                     <div className="flex gap-6 w-max snap-x snap-mandatory">
                         {[
-                            { text: "L&L Healthcare truly went above and beyond. The caregivers showed genuine kindness and treated my mom with so much respect. It gave our entire family peace of mind knowing she was in good hands.", name: "Sarah M.", role: "Family Member" },
+                            { text: "L&L Staffing Solution Agency truly went above and beyond. The caregivers showed genuine kindness and treated my mom with so much respect. It gave our entire family peace of mind knowing she was in good hands.", name: "Sarah M.", role: "Family Member" },
                             { text: "From the initial consultation to daily visits, everything felt organized and professional. The nurse caring for my father was attentive, knowledgeable, and always punctual.", name: "Michael R.", role: "Client's Son" },
                             { text: "After surgery, I needed short-term support at home. L&L Healthcare made everything smooth and stress-free. They checked in often and adjusted care as I recovered.", name: "Janet K.", role: "Patient" },
                             { text: "What stood out most was the connection they built with our dad. It wasn't just care it felt personal. Their compassion made a real difference in his daily life.", name: "Linda & James P.", role: "Family Members" },

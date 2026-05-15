@@ -12,6 +12,8 @@ import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
 import NotFound from "./pages/NotFound"
 import Appointment from "./pages/Appointment"
+import Privatepolicy from "./pages/Privatepolicy"
+import Termsofpolicy from "./pages/Termsofpolicy"
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="privatepolicy" element={<Privatepolicy/>} />
+          <Route path="Terms" element={<Termsofpolicy />} />
         </Routes>
       </div>
     </Router>

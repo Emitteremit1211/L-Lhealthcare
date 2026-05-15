@@ -22,11 +22,11 @@ const Footer = () => {
                 {/* Column 1 */}
                 <div>
                     <h2 className="text-xl font-bold uppercase mb-6">
-                        LL STAFFING SOLUTIONS
+                        L&L STAFFING SOLUTIONS
                     </h2>
 
                     <p className="text-md leading-9 text-white/95 mb-8 max-w-sm">
-                        LL Staffing Solutions provides compassionate, professional in-home care
+                        L&L Staffing Solutions provides compassionate, professional in-home care
                         and skilled nursing services designed to support comfort, dignity,
                         and independence.
                     </p>

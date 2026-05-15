@@ -70,9 +70,9 @@ const Navbar = () => {
             >
                 <div className="flex items-center justify-between px-4 py-3 border-b border-white/20">
                     <div className="flex items-center gap-2">
-                        <img src={logo} alt="LL Staffing Solution" className="h-10 w-auto" />
+                        <img src={logo} alt="L&L Staffing Solution" className="h-10 w-auto" />
                         <span className="text-white font-bold text-sm font-serif">
-                            LL Staffing Solution
+                            L&L Staffing Solution
                         </span>
                     </div>
                     <button

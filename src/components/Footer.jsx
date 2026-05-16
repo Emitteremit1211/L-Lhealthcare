@@ -68,7 +68,7 @@ const Footer = () => {
                         <p>Adult Care Services (ACS)</p>
                         <p>Certified Nursing Assistant (CNA)</p>
                         <p>Registered Nurse Services (RN)</p>
-                        <p>Personal Care</p>
+                        <p>Personal Care Assistant (PCA)</p>
                         <p>Transportation Services</p>
                     </div>
                 </div>

@@ -235,11 +235,10 @@ const Adminpanel = () => {
             const app = applications.find(a => a._id === id);
             if (app) {
                 const statusMessage = status === "Accepted"
-                    ? "We are pleased to inform you that your application has been reviewed and accepted. Our team will be reaching out to you shortly with next steps."
+                    ? "We are thrilled to inform you that your application has been accepted! Your skills and dedication align perfectly with our mission at LL Staffing Solutions. Our team will be reaching out to you shortly with the next steps. Welcome aboard — we are excited to have you join our healthcare family."
                     : status === "Rejected"
-                        ? "After careful review, we regret to inform you that we are unable to move forward with your application at this time. We encourage you to apply for future openings."
-                        : "Your application status has been updated to Pending. We are still reviewing your application and will get back to you soon.";
-
+                        ? "After a thorough and careful review of your application, we regret to inform you that we are unable to move forward at this time. This was a difficult decision as we received many strong applications. We truly appreciate your interest in LL Staffing Solutions and encourage you to apply for future openings that match your qualifications."
+                        : "Your application is currently under review. Our team is carefully evaluating all applications and we appreciate your patience. We will get back to you with a final decision as soon as possible. Thank you for your interest in joining LL Staffing Solutions.";
                 await emailjs.send(
                     EMAILJS_SERVICE_ID,
                     EMAILJS_TEMPLATE_ID,

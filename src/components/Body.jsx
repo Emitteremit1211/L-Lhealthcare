@@ -22,7 +22,7 @@ import {
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
-import nurses from "../assets/nurses.jpg";
+import nurses from "../assets/nurses.avif";
 import works from "../assets/works.jpg";
 import llvid from "../assets/llvid.mp4";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ const slides = [
         title: "Compassionate In-Home Care You Can Trust",
         desc: "Professional caregivers delivering personalized support for your loved ones. We bring comfort, dignity, and expert care directly to your home because family deserves the best.",
         btn: "Request Care Consultation",
-        link: "/Appointment",
+        link: "/appointment",
     },
     {
         image: slide2,
@@ -62,36 +62,11 @@ const services = [
         desc: "Our Attendant Care Services offer dependable companionship and supervision. Whether it's engaging in conversation, light activities, or simply being present, we help reduce isolation and create a sense of comfort and connection.",
         icon: UserCheck,
     },
-    // {
-    //     title: "Certified Nursing Assistants Services",
-    //     desc: "Certified Nursing Assistants deliver essential care including hygiene support, mobility assistance, and vital monitoring. Our CNAs work closely with clients to ensure daily needs are met with professionalism and compassion.",
-    //     icon: BriefcaseMedical,
-    // },
-    // {
-    //     title: "Registered Nurses Services",
-    //     desc: "Our Registered Nurses provide skilled medical care at home, including medication management, health assessments, and treatment support. We bring clinical expertise directly to you, ensuring high-quality care without leaving home.",
-    //     icon: Stethoscope,
-    // },
-    // {
-    //     title: "Personal Care & Transportation",
-    //     desc: "We assist with personal routines and provide reliable transportation to medical appointments, errands, and social visits. Our goal is to help clients maintain independence while staying active and connected to their community.",
-    //     icon: Car,
-    // },
-    // {
-    //     title: "Limousine Services",
-    //     desc: "We offer premium limousine transportation for medical appointments, special occasions, and personal errands. Our professional drivers ensure a safe, comfortable, and dignified travel experience for every client.",
-    //     icon: CarFront,
-    // },
     {
         title: "Providing Mental Health Services",
         desc: "Our mental health support services are designed to promote emotional well-being and psychological stability. We connect clients with compassionate professionals who provide counseling, crisis support, and ongoing mental wellness care.",
         icon: Brain,
     },
-    // {
-    //     title: "Home Care Program Services",
-    //     desc: "Our comprehensive Home Care Program offers structured, long-term support tailored to each client's evolving needs. From routine check-ins to full-time assistance, we ensure continuity of care that promotes independence and quality of life.",
-    //     icon: Home,
-    // },
 ];
 
 const Body = () => {
@@ -210,8 +185,117 @@ const Body = () => {
                 </div>
             </section>
 
+            {/* ABOUT US SECTION */}
+            <section className="w-full bg-white pt-32 pb-20 px-6 md:px-12">
+                <div className="max-w-6xl mx-auto">
+
+                    {/* Header */}
+                    <div className="text-center mb-14">
+                        <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">About Us</span>
+                        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+                            Who We Are
+                        </h2>
+                        <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            L&amp;L Staffing Solution (formerly Just Care Staffing Agency LLC) is a licensed
+                            and registered Limited Liability Company in the Commonwealth of Massachusetts,
+                            dedicated to supporting individuals and families with compassionate, professional
+                            in-home care services.
+                        </p>
+                    </div>
+
+                    {/* Two column — text + checklist */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
+                        <div>
+                            <p className="text-gray-600 leading-relaxed">
+                                Founded and led by <span className="font-semibold text-[#1B3A5C]">Felix Osho</span> and <span className="font-semibold text-[#1B3A5C]">Akintunde Okufuwa</span>,
+                                the company was officially registered with the Massachusetts Secretary of State in 2025,
+                                built on a shared vision of delivering trusted and guaranteed staffing solutions across the state.
+                            </p>
+                            <p className="mt-4 text-gray-600 leading-relaxed">
+                                Based at <span className="font-semibold text-[#1B3A5C]">91 Mill Street, Suite 1, Randolph, MA 02368</span>,
+                                we proudly serve families across surrounding communities, offering dependable care solutions
+                                that bring comfort, confidence, and peace of mind.
+                            </p>
+                            <div className="mt-8 space-y-3">
+                                {[
+                                    "Licensed & Registered LLC in Massachusetts",
+                                    "Certified and background-checked caregivers",
+                                    "Personalized care plans for every client",
+                                    "Available 24/7 for care and support",
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-3">
+                                        <CheckCircle className="w-5 h-5 text-[#2A9D8F] shrink-0" />
+                                        <p className="text-gray-600 text-sm">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-8">
+                                <Link to="/aboutus">
+                                    <button className="bg-[#1B3A5C] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#2A9D8F] transition">
+                                        Learn More About Us →
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="bg-[#1B3A5C] text-white p-8 rounded-2xl">
+                                <h3 className="text-4xl font-bold text-[#17B7F5]">8+</h3>
+                                <p className="mt-2 text-gray-300 text-sm">Care Services Offered</p>
+                            </div>
+                            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                                <h3 className="text-4xl font-bold text-[#1B3A5C]">24/7</h3>
+                                <p className="mt-2 text-gray-500 text-sm">Round-the-Clock Support</p>
+                            </div>
+                            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                                <h3 className="text-4xl font-bold text-[#1B3A5C]">100%</h3>
+                                <p className="mt-2 text-gray-500 text-sm">Personalized Care Plans</p>
+                            </div>
+                            <div className="bg-[#2A9D8F] text-white p-8 rounded-2xl">
+                                <h3 className="text-4xl font-bold text-white">MA</h3>
+                                <p className="mt-2 text-green-100 text-sm">Licensed & Registered</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Founders */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition flex items-start gap-6">
+                            <div className="w-16 h-16 rounded-full bg-[#1B3A5C] flex items-center justify-center text-white text-xl font-bold shrink-0">
+                                FO
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-[#1B3A5C]">Felix Osho</h3>
+                                <p className="text-[#2A9D8F] text-xs font-semibold mt-0.5">Co-Founder & Managing Director</p>
+                                <p className="mt-3 text-gray-500 text-sm leading-relaxed">
+                                    Co-founder and resident agent of L&amp;L Staffing Solution LLC.
+                                    His leadership has been instrumental in shaping the company's mission
+                                    of delivering trusted staffing solutions across Massachusetts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition flex items-start gap-6">
+                            <div className="w-16 h-16 rounded-full bg-[#2A9D8F] flex items-center justify-center text-white text-xl font-bold shrink-0">
+                                AO
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-[#1B3A5C]">Akintunde Okufuwa</h3>
+                                <p className="text-[#2A9D8F] text-xs font-semibold mt-0.5">Co-Founder & Operations Director</p>
+                                <p className="mt-3 text-gray-500 text-sm leading-relaxed">
+                                    Co-founder and managing member of L&amp;L Staffing Solution LLC.
+                                    His operational expertise drives consistent, professional, and personalized
+                                    healthcare staffing services for families across Massachusetts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* STATS SECTION */}
-            <section className="w-full bg-[#0F3355] pt-28 pb-16 px-6 md:px-12">
+            <section className="w-full bg-[#0F3355] py-16 px-6 md:px-12">
                 <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     {[
                         { value: "8+", label: "Care Services" },
@@ -243,30 +327,6 @@ const Body = () => {
                             const Icon = service.icon;
                             return (
                                 <div key={index} className="bg-white p-[50px] rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transform transition w-full flex flex-col justify-between group">
-                                    <div>
-                                        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#1B3A5C]/10">
-                                            <Icon className="w-7 h-7 text-[#1B3A5C]" />
-                                        </div>
-                                        <h3 className="mt-6 text-xl font-semibold text-gray-900">{service.title}</h3>
-                                        <p className="mt-4 text-gray-600 text-sm leading-relaxed">{service.desc}</p>
-                                    </div>
-                                    <div className="mt-8 flex justify-end">
-                                        <Link to="/services">
-                                            <div className="w-10 h-10 flex items-center justify-center bg-[#1B3A5C] rounded-full cursor-pointer hover:opacity-90 transition">
-                                                <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition" />
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    <div className="flex justify-center gap-10 flex-wrap mt-10">
-                        {services.slice(3).map((service, index) => {
-                            const Icon = service.icon;
-                            return (
-                                <div key={index} className="bg-white p-[50px] rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transform transition w-full max-w-sm flex flex-col justify-between group">
                                     <div>
                                         <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#1B3A5C]/10">
                                             <Icon className="w-7 h-7 text-[#1B3A5C]" />
@@ -355,7 +415,7 @@ const Body = () => {
                             ))}
                         </div>
                         <div className="mt-8 flex gap-4">
-                            <Link to="/Appointment">
+                            <Link to="/appointment">
                                 <button className="bg-[#1B3A5C] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#2A9D8F] transition">
                                     Get Started
                                 </button>

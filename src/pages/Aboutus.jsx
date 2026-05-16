@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Loader from '../components/Loader'
 import { Link } from 'react-router-dom'
-import aboutImg from '../assets/nurses.jpg'
+import aboutImg from '../assets/nurses.avif'
 
 const values = [
   {

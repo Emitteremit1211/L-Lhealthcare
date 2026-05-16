@@ -40,7 +40,7 @@ const services = [
         icon: Stethoscope,
     },
     {
-        title: "Personal Care & Transportation",
+        title: "PCA Services",
         desc: "We assist with personal routines and provide reliable transportation to medical appointments, errands, and social visits. Our goal is to help clients maintain independence while staying active and connected to their community.",
         icon: Car,
     },

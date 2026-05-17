@@ -337,7 +337,7 @@ const Adminpanel = () => {
 
             {/* ── MOBILE TOP NAV ── */}
             <div className="md:hidden fixed top-0 left-0 right-0 bg-[#1B3A5C] text-white flex items-center justify-between p-4 z-50">
-                <h1 className="font-bold text-sm">LL Staffing Admin</h1>
+                <h1 className="font-bold text-sm">LL Staffing <br /> Solutions Admin</h1>
                 <button onClick={() => setSidebarOpen(true)}><MoreVertical size={22} /></button>
             </div>
 
@@ -513,9 +513,9 @@ const Adminpanel = () => {
                         <div className="flex items-center justify-between">
                             <h2 className="text-2xl font-bold text-[#1B3A5C]">Job Applications</h2>
                             <div className="flex gap-3 text-xs">
-                                <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full font-semibold">Pending: {applications.filter(a => a.status === "Pending").length}</span>
-                                <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-semibold">Accepted: {applications.filter(a => a.status === "Accepted").length}</span>
-                                <span className="bg-red-100 text-red-600 px-3 py-1.5 rounded-full font-semibold">Rejected: {applications.filter(a => a.status === "Rejected").length}</span>
+                                <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Pending: {applications.filter(a => a.status === "Pending").length}</span>
+                                <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Accepted: {applications.filter(a => a.status === "Accepted").length}</span>
+                                <span className="bg-red-100 text-red-600 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Rejected: {applications.filter(a => a.status === "Rejected").length}</span>
                             </div>
                         </div>
 
@@ -628,9 +628,9 @@ const Adminpanel = () => {
                         <div className="flex items-center justify-between">
                             <h2 className="text-2xl font-bold text-[#1B3A5C]">Appointments</h2>
                             <div className="flex gap-3 text-xs">
-                                <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full font-semibold">Pending: {appointments.filter(a => a.status === "Pending").length}</span>
-                                <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-semibold">Confirmed: {appointments.filter(a => a.status === "Confirmed").length}</span>
-                                <span className="bg-red-100 text-red-600 px-3 py-1.5 rounded-full font-semibold">Cancelled: {appointments.filter(a => a.status === "Cancelled").length}</span>
+                                <span className="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Pending: {appointments.filter(a => a.status === "Pending").length}</span>
+                                <span className="bg-green-100 text-green-700 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Confirmed: {appointments.filter(a => a.status === "Confirmed").length}</span>
+                                <span className="bg-red-100 text-red-600 px-3 py-1.5 rounded-md md:rounded-full font-semibold">Cancelled: {appointments.filter(a => a.status === "Cancelled").length}</span>
                             </div>
                         </div>
 

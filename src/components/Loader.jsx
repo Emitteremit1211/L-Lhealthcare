@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
 import logo from "../assets/logo.jpeg";
 
 const Loader = () => {
+  // const [ setFadeOut] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+    }, 2500); // loader stays visible for 2.5s
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="fixed inset-0 bg-[#0F3355] flex items-center justify-center z-50">
-      
+    <div
+      className={`
+        fixed inset-0 bg-[#0F3355] flex items-center justify-center z-50
+        transition-all duration-700 ease-in-out
+      `}
+    >
       {/* Spinner wrapper */}
       <div className="relative flex items-center justify-center">
 
@@ -41,7 +56,6 @@ const Loader = () => {
             w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72
           "
         />
-
       </div>
     </div>
   );

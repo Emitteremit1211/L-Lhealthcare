@@ -53,12 +53,12 @@ const slides = [
 
 const services = [
     {
-        title: "Home Health Aides Services",
+        title: "H   HA Services",
         desc: "Our Home Health Aides provide hands-on assistance with everyday activities such as bathing, dressing, grooming, and mobility. We focus on maintaining dignity while ensuring clients feel comfortable, safe, and supported in their own homes.",
         icon: HeartHandshake,
     },
     {
-        title: "Attendant Care Services",
+        title: "ACS services",
         desc: "Our Attendant Care Services offer dependable companionship and supervision. Whether it's engaging in conversation, light activities, or simply being present, we help reduce isolation and create a sense of comfort and connection.",
         icon: UserCheck,
     },
@@ -185,6 +185,22 @@ const Body = () => {
                 </div>
             </section>
 
+            {/* STATS SECTION */}
+            <section className="w-full bg-[#0F3355] py-16 px-6 md:px-12">
+                <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    {[
+                        { value: "8+", label: "Care Services" },
+                        { value: "24/7", label: "Support Available" },
+                        { value: "100%", label: "Personalized Plans" },
+                        { value: "MA", label: "Licensed & Registered" },
+                    ].map((stat, i) => (
+                        <div key={i} className="bg-white/10 backdrop-blur-md rounded-xl py-6 px-4 border border-white/10">
+                            <h3 className="text-white text-3xl font-bold">{stat.value}</h3>
+                            <p className="text-white/70 text-sm mt-1">{stat.label}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
             {/* ABOUT US SECTION */}
             <section className="w-full bg-white pt-32 pb-20 px-6 md:px-12">
                 <div className="max-w-6xl mx-auto">
@@ -260,7 +276,7 @@ const Body = () => {
                     </div>
 
                     {/* Founders */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition flex items-start gap-6">
                             <div className="w-16 h-16 rounded-full bg-[#1B3A5C] flex items-center justify-center text-white text-xl font-bold shrink-0">
                                 FO
@@ -290,26 +306,10 @@ const Body = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
-            {/* STATS SECTION */}
-            <section className="w-full bg-[#0F3355] py-16 px-6 md:px-12">
-                <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    {[
-                        { value: "8+", label: "Care Services" },
-                        { value: "24/7", label: "Support Available" },
-                        { value: "100%", label: "Personalized Plans" },
-                        { value: "MA", label: "Licensed & Registered" },
-                    ].map((stat, i) => (
-                        <div key={i} className="bg-white/10 backdrop-blur-md rounded-xl py-6 px-4 border border-white/10">
-                            <h3 className="text-white text-3xl font-bold">{stat.value}</h3>
-                            <p className="text-white/70 text-sm mt-1">{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
 
             {/* SERVICES */}
             <section className="w-full bg-[#1B3A5C] pt-20 pb-20 px-6 md:px-12">
@@ -362,7 +362,7 @@ const Body = () => {
                     <div className="text-center mb-14">
                         <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Why Choose Us</span>
                         <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
-                            The L&amp;L Staffing Agency Difference
+                            The L&amp;L Staffing Solution Difference
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -479,7 +479,7 @@ const Body = () => {
             {/* TESTIMONIALS */}
             <section className="w-full bg-gray-50 py-20 px-6 md:px-12">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h3 className="text-sm uppercase tracking-wider text-[#1B3A5C] font-semibold">L&amp;L Healthcare</h3>
+                    <h3 className="text-sm uppercase tracking-wider text-[#1B3A5C] font-semibold">L&amp;L Staffing Solution</h3>
                     <h2 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">What Families Are Saying</h2>
                 </div>
 

@@ -31,7 +31,7 @@ const values = [
 
 const testimonials = [
   {
-    text: "L&L Healthcare truly went above and beyond. The caregivers showed genuine kindness and treated my mom with so much respect. It gave our entire family peace of mind.",
+    text: "L&L staffing Solution truly went above and beyond. The caregivers showed genuine kindness and treated my mom with so much respect. It gave our entire family peace of mind.",
     name: "Sarah M.",
     role: "Family Member"
   },
@@ -51,7 +51,7 @@ const testimonials = [
     role: "Family Members"
   },
   {
-    text: "We needed full-time care for our aunt, and L&L Healthcare delivered exactly what they promised. The caregivers were patient, skilled, and incredibly supportive.",
+    text: "We needed full-time care for our aunt, and L&L staffing solution delivered exactly what they promised. The caregivers were patient, skilled, and incredibly supportive.",
     name: "Angela T.",
     role: "Family Member"
   },

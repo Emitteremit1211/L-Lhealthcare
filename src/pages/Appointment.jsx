@@ -121,8 +121,8 @@ export default function Appointment() {
         return (
             <>
                 <Navbar />
-                <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-                    <div className="bg-white rounded-3xl p-12 max-w-md w-full text-center shadow-2xl border border-gray-100">
+                <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 ">
+                    <div className="bg-white rounded-3xl p-12 max-w-md w-full text-center  shadow-2xl border border-gray-100 mt-[150px] mb-[100px]">
                         <div className="w-20 h-20 bg-[#1B3A5C] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#1B3A5C]/20">
                             <Check className="w-10 h-10 text-white" />
                         </div>

@@ -129,11 +129,26 @@ const Footer = () => {
                     <span className="font-semibold">LL STAFFING SOLUTIONS</span>. All rights reserved.
                 </p>
 
-                <div className="flex flex-wrap gap-5 text-sm text-white/70">
-                    <Link to="/privatepolicy" className="hover:text-white transition">Privacy Policy</Link>
-                    <Link to="/Terms" className="hover:text-white transition">Terms of Service</Link>
-                    <Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link>
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                    {[
+                        { to: "/privacypolicy", label: "Privacy Policy" },
+                        { to: "/Terms", label: "Terms & Conditions" },
+                        { to: "/cookies", label: "Cookie Policy" },
+                        { to: "/data", label: "Data Protection" },
+                        { to: "/disclaimer", label: "Website Disclaimer" },
+                    ].map(({ to, label }) => (
+                        <Link
+                            key={label}
+                            to={to}
+                            className="text-xs text-white/50 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-full transition-all duration-200"
+                        >
+                            {label}
+                        </Link>
+                    ))}
                 </div>
+
+            </div>
+            <div className="mt-[20px]">
 
                 <p className="text-sm text-white">
                     Designed & Developed by{" "}

@@ -15,7 +15,7 @@ const JOBS_API = "https://l-lhealthcare.onrender.com/api/jobs";
 const APPT_API = "https://l-lhealthcare.onrender.com/api/appointments";
 const BLOCKED_API = "https://l-lhealthcare.onrender.com/api/blockedslots";
 const APPLICATIONS_API = "https://l-lhealthcare.onrender.com/api/applications";
-const APPT_EMAILJS_SERVICE_ID = "service_lksueap";
+const APPT_EMAILJS_SERVICE_ID = "service_pirm3s3";
 const APPT_EMAILJS_TEMPLATE_ID = "template_ws2a16a";
 const APPT_EMAILJS_PUBLIC_KEY = "fTOYbzk4T_L7BKCLG";
 

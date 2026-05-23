@@ -83,7 +83,7 @@ const Aboutus = () => {
             }}
           />
           <div className="max-w-4xl mx-auto text-center relative z-10 mt-[30px]">
-            <span className="inline-block text-[#17B7F5] text-lg font-bold uppercase tracking-widest mb-4 underline underline-offset-[7px] decoration-2 decoration-[#17B7F5]">
+            <span className="inline-block text-[#17B7F5] text-lg font-bold uppercase tracking-widest mb-4 underline underline-offset-[7px] decoration-4 decoration-[#17B7F5]">
               About Us
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">

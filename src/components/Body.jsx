@@ -53,7 +53,7 @@ const slides = [
 
 const services = [
     {
-        title: "H   HA Services",
+        title: "HHA Services",
         desc: "Our Home Health Aides provide hands-on assistance with everyday activities such as bathing, dressing, grooming, and mobility. We focus on maintaining dignity while ensuring clients feel comfortable, safe, and supported in their own homes.",
         icon: HeartHandshake,
     },

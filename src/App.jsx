@@ -12,8 +12,12 @@ import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
 import NotFound from "./pages/NotFound"
 import Appointment from "./pages/Appointment"
-import Privatepolicy from "./pages/Privatepolicy"
-import Termsofpolicy from "./pages/Termsofpolicy"
+import Privacypolicy from "./pages/Privacypolicy"
+// import Termsofpolicy from "./pages/Termsofpolicy"
+import Termsandcondition from "./pages/Termsandcondition"
+import Websitedisclaimer from "./pages/Websitedisclaimer"
+import Dataprotection from "./pages/Dataprotection"
+import Cookiespolicy from "./pages/cookiespolicy"
 
 function App() {
   return (
@@ -38,8 +42,11 @@ function App() {
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="privatepolicy" element={<Privatepolicy/>} />
-          <Route path="Terms" element={<Termsofpolicy />} />
+          <Route path="privacypolicy" element={<Privacypolicy/>} />
+          <Route path="Terms" element={<Termsandcondition />} />
+          <Route path="disclaimer" element={<Websitedisclaimer/>}/>
+          <Route path="data" element={<Dataprotection/>}/>
+          <Route path="cookies" element={<Cookiespolicy/>}/>
         </Routes>
       </div>
     </Router>

@@ -100,10 +100,10 @@ const Footer = () => {
                                     </a>
 
                                     <a
-                                        href="tel:+19761697389"
+                                        href="tel:+16176973888"
                                         className="text-white/80 text-sm hover:text-[#17B7F5] transition"
                                     >
-                                        978-552-9704
+                                        1-617-697-3888
                                     </a>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
 import NotFound from "./pages/NotFound"
 import Appointment from "./pages/Appointment"
-import privacypolicy from "./pages/privacypolicy"
+import Privacypolicy from "./pages/Privacypolicy"
 // import Termsofpolicy from "./pages/Termsofpolicy"
 import Termsandcondition from "./pages/Termsandcondition"
 import Websitedisclaimer from "./pages/Websitedisclaimer"
@@ -42,7 +42,7 @@ function App() {
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="privacypolicy" element={<privacypolicy/>} />
+          <Route path="privacypolicy" element={<Privacypolicy/>} />
           <Route path="Terms" element={<Termsandcondition />} />
           <Route path="disclaimer" element={<Websitedisclaimer/>}/>
           <Route path="data" element={<Dataprotection/>}/>

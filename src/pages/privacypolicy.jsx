@@ -221,7 +221,7 @@ Website: www.llstaffingsolution.com`
   }
 ]
 
-const privacyPolicy = () => {
+const Privacypolicy = () => {
   const [openSections, setOpenSections] = useState({ 0: true })
 
   const toggle = (idx) => {
@@ -569,4 +569,4 @@ const privacyPolicy = () => {
   )
 }
 
-export default privacyPolicy
+export default Privacypolicy

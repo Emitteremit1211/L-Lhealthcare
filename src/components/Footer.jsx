@@ -131,7 +131,7 @@ const Footer = () => {
 
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                     {[
-                        { to: "/privacypolicy", label: "Privacy Policy" },
+                        { to: "/privacy", label: "Privacy Policy" },
                         { to: "/Terms", label: "Terms & Conditions" },
                         { to: "/cookies", label: "Cookie Policy" },
                         { to: "/data", label: "Data Protection" },

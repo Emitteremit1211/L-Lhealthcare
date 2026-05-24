@@ -18,7 +18,8 @@ import Termsandcondition from "./pages/Termsandcondition"
 import Websitedisclaimer from "./pages/Websitedisclaimer"
 import Dataprotection from "./pages/Dataprotection"
 import Cookiespolicy from "./pages/Cookiespolicy"
-import Privacypolicy from "./pages/Privacypolicy"
+// import Privacypolicy from "./pages/Privacypolicy"
+import Privacy from "./pages/Privacy"
 
 function App() {
   return (
@@ -43,11 +44,12 @@ function App() {
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="privacypolicy" element={<Privacypolicy/>} />
+          {/* <Route path="privacypolicy" element={<Privacypolicy/>} /> */}
           <Route path="Terms" element={<Termsandcondition />} />
           <Route path="disclaimer" element={<Websitedisclaimer/>}/>
           <Route path="data" element={<Dataprotection/>}/>
           <Route path="cookies" element={<Cookiespolicy/>}/>
+          <Route path="privacy" element={<Privacy/>}/>
         </Routes>
       </div>
     </Router>

@@ -134,11 +134,11 @@ const Body = () => {
             <section className="bg-[#1B3A5C] py-4 px-6">
                 <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-white text-sm">
                     {React.createElement("a", {
-                        href: "tel:+19785529703",
+                        href: "tel:+197616973888",
                         className: "flex items-center gap-2 hover:text-[#17B7F5] transition"
                     },
                         React.createElement(Phone, { className: "w-4 h-4" }),
-                        "978-552-9703 - Available 24/7"
+                        "+1-976-169-7388 - Available 24/7"
                     )}
                     {React.createElement("a", {
                         href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368",

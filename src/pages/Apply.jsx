@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import Select from "react-select";
 import axios from "axios";
-import applyImage from "../assets/apply.jpg";
+import applyImage from "../assets/application.avif";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";

@@ -259,7 +259,7 @@ const Services = () => {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                         {/* Request Consultation Button */}
-                        <Link to={'/'}>
+                        <Link to={'/appointment'}>
                             <button className="bg-[#0F3655] text-white px-6 py-4 rounded-xl hover:bg-[#2A9D8F] transition shadow-lg w-full sm:w-auto">
                                 <div className="font-semibold text-lg">
                                     Request a Consultation
@@ -271,7 +271,7 @@ const Services = () => {
                         </Link>
 
                         {/* Call Button */}
-                        <Link to={'/'}>
+                        <Link to={'/contact'}>
                             <button className="bg-white border-2 border-[#0F3655] text-[#0F3655] px-6 py-4 rounded-xl hover:bg-[#2A9D8F] hover:text-white transition shadow-lg w-full sm:w-auto">
                                 <div className="font-semibold text-lg">
                                     Call Us Now

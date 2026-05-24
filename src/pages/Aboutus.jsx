@@ -174,62 +174,93 @@ const Aboutus = () => {
         </section>
 
         {/* FOUNDERS SECTION */}
-        <section className="w-full bg-gray-50 py-20 px-6 md:px-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14">
-              <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Leadership</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
-                Meet Our Founders
-              </h2>
-              <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
-                L&amp;L Staffing Solution was built by two passionate individuals
-                committed to transforming home-based healthcare in Massachusetts.
-              </p>
-            </div>
+<section className="w-full bg-gray-50 py-20 px-6 md:px-12">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-14">
+      <span className="text-[#2A9D8F] text-sm font-semibold uppercase tracking-widest">Leadership</span>
+      <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#1B3A5C]">
+        Meet Our Team
+      </h2>
+      <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
+        L&amp;L Staffing Solution was built by passionate individuals
+        committed to transforming home-based healthcare in Massachusetts.
+      </p>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    {/* Founders row */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
 
-              {/* Felix */}
-              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div className="w-20 h-20 rounded-full bg-[#1B3A5C] flex items-center justify-center text-white text-3xl font-bold mb-6">
-                  FO
-                </div>
-                <h3 className="text-2xl font-bold text-[#1B3A5C]">Felix Osho</h3>
-                <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Managing Director</p>
-                <p className="mt-4 text-gray-600 leading-relaxed text-sm">
-                  Felix Osho is a co-founder and resident agent of L&amp;L Staffing Solution LLC,
-                  based at 91 Mill Street, Suite 1, Randolph, MA 02368. His leadership and dedication
-                  to quality care have been instrumental in shaping the company's mission of delivering
-                  trusted and guaranteed staffing solutions across Massachusetts.
-                </p>
-                <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
-                  <MapPin className="w-4 h-4 text-[#1B3A5C]" />
-                  Randolph, MA 02368
-                </div>
-              </div>
+      {/* Felix */}
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div className="w-20 h-20 rounded-full bg-[#1B3A5C] flex items-center justify-center text-white text-3xl font-bold mb-6">
+          FO
+        </div>
+        <h3 className="text-2xl font-bold text-[#1B3A5C]">Felix Osho</h3>
+        <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Managing Director</p>
+        <p className="mt-4 text-gray-600 leading-relaxed text-sm">
+          Felix Osho is a co-founder and resident agent of L&amp;L Staffing Solution LLC,
+          based at 91 Mill Street, Suite 1, Randolph, MA 02368. His leadership and dedication
+          to quality care have been instrumental in shaping the company's mission of delivering
+          trusted and guaranteed staffing solutions across Massachusetts.
+        </p>
+        <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
+          <MapPin className="w-4 h-4 text-[#1B3A5C]" />
+          Randolph, MA 02368
+        </div>
+      </div>
 
-              {/* Akintunde */}
-              <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div className="w-20 h-20 rounded-full bg-[#2A9D8F] flex items-center justify-center text-white text-3xl font-bold mb-6">
-                  AO
-                </div>
-                <h3 className="text-2xl font-bold text-[#1B3A5C]">Akintunde Okufuwa</h3>
-                <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Operations Director</p>
-                <p className="mt-4 text-gray-600 leading-relaxed text-sm">
-                  Akintunde Okufuwa is a co-founder and managing member of L&amp;L Staffing Solution LLC.
-                  His operational expertise and commitment to compassionate care have been central to building
-                  a company that families across Massachusetts can rely on for consistent, professional,
-                  and personalized healthcare staffing services.
-                </p>
-                <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
-                  <MapPin className="w-4 h-4 text-[#1B3A5C]" />
-                  Randolph, MA 02368
-                </div>
-              </div>
+      {/* Akintunde */}
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div className="w-20 h-20 rounded-full bg-[#2A9D8F] flex items-center justify-center text-white text-3xl font-bold mb-6">
+          AO
+        </div>
+        <h3 className="text-2xl font-bold text-[#1B3A5C]">Akintunde Okufuwa</h3>
+        <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Co-Founder & Operations Director</p>
+        <p className="mt-4 text-gray-600 leading-relaxed text-sm">
+          Akintunde Okufuwa is a co-founder and managing member of L&amp;L Staffing Solution LLC.
+          His operational expertise and commitment to compassionate care have been central to building
+          a company that families across Massachusetts can rely on for consistent, professional,
+          and personalized healthcare staffing services.
+        </p>
+        <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
+          <MapPin className="w-4 h-4 text-[#1B3A5C]" />
+          Randolph, MA 02368
+        </div>
+      </div>
+    </div>
 
-            </div>
-          </div>
-        </section>
+    {/* Rashidat — centered */}
+    <div className="flex justify-center">
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition w-full md:w-[calc(50%-20px)]">
+        <div className="w-20 h-20 rounded-full bg-[#17B7F5] flex items-center justify-center text-white text-3xl font-bold mb-6">
+          RO
+        </div>
+        <h3 className="text-2xl font-bold text-[#1B3A5C]">Rashidat Osho, RN</h3>
+        <p className="text-[#2A9D8F] text-sm font-semibold mt-1">Clinical Supervisor (RN)</p>
+        <ul className="mt-4 space-y-2">
+          {[
+            "Registered Nurse (RN), NARIS verified",
+            "Provides clinical oversight for all care services",
+            "Conducts staff training and professional development",
+            "Ensures quality assurance and adherence to clinical protocols",
+            "Supports continuous improvement in client care and staff performance",
+            "Employed on an as-needed basis based on job load",
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#17B7F5] flex-shrink-0 mt-1.5" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
+          <MapPin className="w-4 h-4 text-[#1B3A5C]" />
+          Randolph, MA 02368
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
         {/* MISSION & VISION */}
         <section className="w-full bg-white py-20 px-6 md:px-12">
@@ -374,7 +405,8 @@ const Aboutus = () => {
             </div>
             <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center text-white/90 text-sm">
               {[
-                { href: "tel:+19785529703", icon: Phone, label: "978-552-9703" },
+                { href: "tel:+1617697-3888", icon: Phone, label: "+1 (617) 697-3888" },
+                { href: "tel:+1978552-9703", icon: Phone, label: "+1 (978) 552-9703" },
                 { href: "mailto:info@llstaffingsolution.com", icon: Mail, label: "info@llstaffingsolution.com" },
                 { href: "https://www.google.com/maps/search/?api=1&query=91+Mill+Street+Suite+1+Randolph+MA+02368", icon: MapPin, label: "91 Mill Street, Randolph, MA" },
               ].map(({ href, icon: Icon, label }) => (

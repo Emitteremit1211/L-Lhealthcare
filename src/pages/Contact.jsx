@@ -197,6 +197,16 @@ const Contact = () => {
                                 React.createElement("p", { className: "text-gray-500 text-sm" }, "24/7 Available")
                             )
                         )}
+                        {React.createElement("a", { href: "tel:+16176973888", className: "flex items-start gap-4 group" },
+                            React.createElement("div", { className: "w-12 h-12 flex items-center justify-center rounded-full bg-[#1B3A5C]/10 shrink-0 group-hover:bg-[#1B3A5C] transition" },
+                                React.createElement(Phone, { className: "w-5 h-5 text-[#1B3A5C] group-hover:text-white transition" })
+                            ),
+                            React.createElement("div", null,
+                                React.createElement("h4", { className: "font-semibold text-[#1B3A5C]" }, "Phone"),
+                                React.createElement("p", { className: "text-gray-600" }, "617-697-3888"),
+                                React.createElement("p", { className: "text-gray-500 text-sm" }, "24/7 Available")
+                            )
+                        )}
 
                         {React.createElement("a", { href: "mailto:info@llstaffingsolution.com", className: "flex items-start gap-4 group" },
                             React.createElement("div", { className: "w-12 h-12 flex items-center justify-center rounded-full bg-[#1B3A5C]/10 shrink-0 group-hover:bg-[#2A9D8F] transition" },

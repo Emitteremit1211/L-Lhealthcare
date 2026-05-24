@@ -18,7 +18,7 @@ import Termsandcondition from "./pages/Termsandcondition"
 import Websitedisclaimer from "./pages/Websitedisclaimer"
 import Dataprotection from "./pages/Dataprotection"
 import Cookiespolicy from "./pages/Cookiespolicy"
-import Privacypolicy from "./pages/privacypolicy"
+import Privacypolicy from "./pages/Privacypolicy"
 
 function App() {
   return (

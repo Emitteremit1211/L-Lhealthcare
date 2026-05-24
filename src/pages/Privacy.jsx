@@ -6,15 +6,15 @@ const sections = [
     {
         id: 1,
         heading: 'Introduction & Scope',
-        text: `L&L Healthcare Staffing Solution LLC ("L&L," "we," "us," or "our"), operating as llstaffingsolution.com, is a Massachusetts-based provider of healthcare staffing, caregiver placement, personal care aide (PCA) coordination, and related services headquartered in Randolph, Massachusetts. We are committed to protecting the privacy and confidentiality of all personal information entrusted to us by our clients, caregivers, job applicants, website visitors, and referral sources.
+        text: `L&L  Staffing Solution LLC ("L&L," "we," "us," or "our"), operating as llstaffingsolution.com, is a Massachusetts-based provider of healthcare staffing, caregiver placement, personal care aide (PCA) coordination, and related services headquartered in Randolph, Massachusetts. We are committed to protecting the privacy and confidentiality of all personal information entrusted to us by our clients, caregivers, job applicants, website visitors, and referral sources.
 
-This Privacy Policy ("Policy") describes the types of personal information L&L Healthcare Staffing Solution LLC collects, how we use and protect that information, with whom we share it, and the rights you have with respect to your personal data. This Policy applies to all information collected through:
+This Privacy Policy ("Policy") describes the types of personal information L&L Staffing Solution LLC collects, how we use and protect that information, with whom we share it, and the rights you have with respect to your personal data. This Policy applies to all information collected through:
 
 • Our website at www.llstaffingsolution.com and any affiliated subdomains or web pages;
 • Our healthcare staffing and care coordination service operations;
 • Telephone, email, and written communications with our office;
 • Paper and electronic intake forms, employment applications, and service agreements; and
-• Any other interaction between you and L&L Healthcare Staffing Solution LLC.
+• Any other interaction between you and L&L Staffing Solution LLC.
 
 By accessing or using www.llstaffingsolution.com or engaging our services, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree with this Policy, please discontinue use of our website and services.
 
@@ -23,7 +23,7 @@ This Policy is designed to comply with applicable Massachusetts state law, inclu
     {
         id: 2,
         heading: 'Information We Collect',
-        text: `L&L Healthcare Staffing Solution LLC collects personal information from multiple categories of individuals in connection with the provision of our services and operation of our website.
+        text: `L&L Staffing Solution LLC collects personal information from multiple categories of individuals in connection with the provision of our services and operation of our website.
 
 2.1 Personal Identifiers
 • Full legal name, preferred name, and aliases;
@@ -71,7 +71,7 @@ This Policy is designed to comply with applicable Massachusetts state law, inclu
     {
         id: 3,
         heading: 'How We Use Your Information',
-        text: `L&L Healthcare Staffing Solution LLC uses the personal information we collect for the following purposes, each of which is authorized under applicable law or otherwise necessary for the operation of our business:
+        text: `L&L Staffing Solution LLC uses the personal information we collect for the following purposes, each of which is authorized under applicable law or otherwise necessary for the operation of our business:
 
 1. Service Delivery and Coordination: Providing, scheduling, coordinating, and managing healthcare staffing, caregiver placement, PCA coordination, and related services for our clients;
 
@@ -87,12 +87,12 @@ This Policy is designed to comply with applicable Massachusetts state law, inclu
 
 7. Communications: Responding to your inquiries, sending appointment confirmations, and communicating service updates; and
 
-8. Marketing and Website Improvement: Analyzing website usage trends, improving user experience, and conducting marketing activities — with consent where required by applicable law.`
+8. Marketing and Website Improvement: Analyzing website usage trends, improving user experience, and conducting marketing activities with consent where required by applicable law.`
     },
     {
         id: 4,
         heading: 'Legal Basis for Processing',
-        text: `L&L Healthcare Staffing Solution LLC processes personal information on the following legal bases:
+        text: `L&L Staffing Solution LLC processes personal information on the following legal bases:
 
 • Contractual Necessity: Processing is necessary for the performance of our service agreements with clients and employment agreements with caregivers and staff. Without this processing, we cannot provide our healthcare staffing services.
 
@@ -105,7 +105,7 @@ This Policy is designed to comply with applicable Massachusetts state law, inclu
     {
         id: 5,
         heading: 'HIPAA-Aligned Privacy Protections',
-        text: `To the extent that L&L Healthcare Staffing Solution LLC functions as a Covered Entity or Business Associate under HIPAA, all Protected Health Information (PHI) — as defined at 45 CFR §160.103 — is handled in strict accordance with the requirements of 45 CFR Parts 160 and 164 (the HIPAA Privacy Rule and Security Rule).
+        text: `To the extent that L&L Staffing Solution LLC functions as a Covered Entity or Business Associate under HIPAA, all Protected Health Information (PHI) — as defined at 45 CFR §160.103 — is handled in strict accordance with the requirements of 45 CFR Parts 160 and 164 (the HIPAA Privacy Rule and Security Rule).
 
 5.1 Use and Disclosure of PHI
 PHI is used and disclosed only as permitted or required by HIPAA, including for treatment, payment, and health care operations (TPO), as required by law, or pursuant to a valid HIPAA-compliant written authorization signed by the client or their authorized representative.
@@ -114,15 +114,15 @@ PHI is used and disclosed only as permitted or required by HIPAA, including for 
 Clients receiving healthcare staffing services subject to HIPAA will receive a separate Notice of Privacy Practices (NPP) at or before the commencement of services. The NPP describes in detail how PHI may be used and disclosed and the rights of HIPAA-covered individuals with respect to their PHI. A copy of our current NPP is available upon request by contacting l-l@llstaffingsolution.com.
 
 5.3 Prohibition on Sale of PHI
-L&L Healthcare Staffing Solution LLC does not sell, rent, or trade PHI to any third party. PHI is not used for marketing purposes without an explicit, HIPAA-compliant written authorization from the individual.
+L&L Staffing Solution LLC does not sell, rent, or trade PHI to any third party. PHI is not used for marketing purposes without an explicit, HIPAA-compliant written authorization from the individual.
 
 5.4 Minimum Necessary Standard
-In all uses and disclosures of PHI, L&L Healthcare Staffing Solution LLC applies the HIPAA minimum necessary standard, disclosing only that PHI which is reasonably necessary to accomplish the purpose of the use or disclosure.`
+In all uses and disclosures of PHI, L&L Staffing Solution LLC applies the HIPAA minimum necessary standard, disclosing only that PHI which is reasonably necessary to accomplish the purpose of the use or disclosure.`
     },
     {
         id: 6,
         heading: 'Sharing of Information',
-        text: `L&L Healthcare Staffing Solution LLC does not sell, rent, or trade personal information to third parties for their own marketing purposes. We may share personal information with the following categories of recipients, solely to the extent necessary for the purposes described in this Policy:
+        text: `L&L Staffing Solution LLC does not sell, rent, or trade personal information to third parties for their own marketing purposes. We may share personal information with the following categories of recipients, solely to the extent necessary for the purposes described in this Policy:
 
 • Service Providers and Subcontractors: Third-party vendors who assist us in operating our business, including payroll processors, background check companies, electronic health record (EHR) platforms, scheduling software providers, and IT service providers. All such vendors are required to execute confidentiality agreements and, where applicable, Business Associate Agreements (BAAs) as required by HIPAA;
 
@@ -134,12 +134,12 @@ In all uses and disclosures of PHI, L&L Healthcare Staffing Solution LLC applies
 
 • Insurance Companies and Payers: Health insurers, MassHealth (Massachusetts Medicaid), and other payers, as necessary for billing and claims adjudication.
 
-Important Notice: L&L Healthcare Staffing Solution LLC does not sell, rent, or otherwise disclose your personal information to any third party for commercial or marketing purposes. Any sharing of information is limited to what is legally permitted and operationally necessary.`
+Important Notice: L&L Staffing Solution LLC does not sell, rent, or otherwise disclose your personal information to any third party for commercial or marketing purposes. Any sharing of information is limited to what is legally permitted and operationally necessary.`
     },
     {
         id: 7,
         heading: 'Data Retention',
-        text: `L&L Healthcare Staffing Solution LLC retains personal information for the periods required or permitted by applicable law and no longer than is necessary for the purposes for which it was collected:
+        text: `L&L Staffing Solution LLC retains personal information for the periods required or permitted by applicable law and no longer than is necessary for the purposes for which it was collected:
 
 • Client Health and Service Records: Retained for a minimum of six (6) years from the date of the last service or the date of creation, whichever is later, as required by HIPAA (45 CFR §164.530(j)) and Massachusetts Department of Public Health regulations;
 
@@ -164,7 +164,7 @@ Upon expiration of the applicable retention period, personal information is secu
 
 • Right to Request Deletion: You may request deletion of your personal information, subject to our legal obligations to retain certain records under applicable law (including HIPAA and Massachusetts law);
 
-• Right to Opt Out of Marketing: You may opt out of receiving marketing communications from L&L Healthcare Staffing Solution LLC at any time by contacting us at l-l@llstaffingsolution.com or by following the unsubscribe instructions included in any marketing email;
+• Right to Opt Out of Marketing: You may opt out of receiving marketing communications from L&L Staffing Solution LLC at any time by contacting us at l-l@llstaffingsolution.com or by following the unsubscribe instructions included in any marketing email;
 
 • Right to File a Complaint: You have the right to file a complaint regarding our privacy practices with:
   – The Massachusetts Attorney General's Office: (617) 727-2200 or www.mass.gov/ago; and
@@ -175,7 +175,7 @@ To exercise your rights, please submit a written request to: L&L Healthcare Staf
     {
         id: 9,
         heading: 'Data Security',
-        text: `L&L Healthcare Staffing Solution LLC maintains a comprehensive Written Information Security Program (WISP) as required by 201 CMR 17.00. Our security program incorporates the following safeguards:
+        text: `L&L Staffing Solution LLC maintains a comprehensive Written Information Security Program (WISP) as required by 201 CMR 17.00. Our security program incorporates the following safeguards:
 
 • Technical Controls: Encryption of personal information stored on portable devices and transmitted over public networks; role-based access controls limiting access to personal information to those with a legitimate business need; multi-factor authentication for systems containing sensitive data; and regular software updates and patch management;
 
@@ -183,12 +183,12 @@ To exercise your rights, please submit a written request to: L&L Healthcare Staf
 
 • Physical Controls: Secured file storage for paper records; clean desk and locked filing policies; and controlled access to office premises.
 
-In the event of a security breach involving personal information of Massachusetts residents, L&L Healthcare Staffing Solution LLC will provide notification to affected individuals within thirty (30) days of the discovery of the breach, and will notify the Massachusetts Attorney General and the Director of Consumer Affairs and Business Regulation, as required by MGL c.93H. HIPAA breach notifications will be provided in accordance with 45 CFR §§164.400–414.`
+In the event of a security breach involving personal information of Massachusetts residents, L&L Staffing Solution LLC will provide notification to affected individuals within thirty (30) days of the discovery of the breach, and will notify the Massachusetts Attorney General and the Director of Consumer Affairs and Business Regulation, as required by MGL c.93H. HIPAA breach notifications will be provided in accordance with 45 CFR §§164.400–414.`
     },
     {
         id: 10,
         heading: "Children's Privacy",
-        text: `The website at www.llstaffingsolution.com is not directed to children under the age of thirteen (13). L&L Healthcare Staffing Solution LLC does not knowingly collect, use, or disclose personal information from children under the age of 13 without verifiable parental consent, in compliance with the Children's Online Privacy Protection Act (COPPA), 15 U.S.C. §§6501–6506.
+        text: `The website at www.llstaffingsolution.com is not directed to children under the age of thirteen (13). L&L Staffing Solution LLC does not knowingly collect, use, or disclose personal information from children under the age of 13 without verifiable parental consent, in compliance with the Children's Online Privacy Protection Act (COPPA), 15 U.S.C. §§6501–6506.
 
 If we become aware that we have inadvertently collected personal information from a child under 13 without appropriate consent, we will take prompt steps to delete such information from our records.
 
@@ -197,14 +197,14 @@ Our healthcare staffing services may involve the coordination of care for minor 
     {
         id: 11,
         heading: 'Third-Party Links',
-        text: `The llstaffingsolution.com website may contain hyperlinks to third-party websites, resources, or services that are not owned or controlled by L&L Healthcare Staffing Solution LLC. These links are provided solely for your convenience and informational purposes. L&L Healthcare Staffing Solution LLC has no control over, and assumes no responsibility for, the content, privacy practices, or terms of use of any third-party websites. The inclusion of a link to a third-party site does not constitute an endorsement, recommendation, or approval by L&L Healthcare Staffing Solution LLC of that site or its operators.
+        text: `The llstaffingsolution.com website may contain hyperlinks to third-party websites, resources, or services that are not owned or controlled by L&L Staffing Solution LLC. These links are provided solely for your convenience and informational purposes. L&L Staffing Solution LLC has no control over, and assumes no responsibility for, the content, privacy practices, or terms of use of any third-party websites. The inclusion of a link to a third-party site does not constitute an endorsement, recommendation, or approval by L&L Staffing Solution LLC of that site or its operators.
 
-We encourage you to review the privacy policy and terms of use of every third-party website you visit. L&L Healthcare Staffing Solution LLC is not liable for any information you provide to or receive from any third-party website accessed through a link on our site.`
+We encourage you to review the privacy policy and terms of use of every third-party website you visit. L&L Staffing Solution LLC is not liable for any information you provide to or receive from any third-party website accessed through a link on our site.`
     },
     {
         id: 12,
         heading: 'Changes to This Policy',
-        text: `L&L Healthcare Staffing Solution LLC reserves the right to update or modify this Privacy Policy at any time to reflect changes in our practices, legal obligations, or regulatory requirements. When material changes are made to this Policy, we will revise the "Last Updated" date at the top of this document and, where appropriate, provide conspicuous notice on our website or by direct communication to affected individuals.
+        text: `L&L Staffing Solution LLC reserves the right to update or modify this Privacy Policy at any time to reflect changes in our practices, legal obligations, or regulatory requirements. When material changes are made to this Policy, we will revise the "Last Updated" date at the top of this document and, where appropriate, provide conspicuous notice on our website or by direct communication to affected individuals.
 
 Your continued use of www.llstaffingsolution.com or our services following the posting of an updated Privacy Policy constitutes your acceptance of the revised Policy. We encourage you to review this Policy periodically to remain informed about our privacy practices.`
     },
@@ -213,7 +213,7 @@ Your continued use of www.llstaffingsolution.com or our services following the p
         heading: 'Contact Us',
         text: `If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
 
-Company Name: L&L Healthcare Staffing Solution LLC
+Company Name: L&L Staffing Solution LLC
 Address: 91 Mill Street, Suite 1, Randolph, MA 02368
 General Email: l-l@llstaffingsolution.com
 Privacy Officer Email: info@llstaffingsolution.com
@@ -506,7 +506,7 @@ const Privacy = () => {
                     <p className="pp-hero-eyebrow">Legal & Compliance</p>
                     <h1 className="pp-hero-title">Privacy Policy</h1>
                     <div className="pp-hero-meta">
-                        <div>L&L Healthcare Staffing Solution LLC</div>
+                        <div>L&L Staffing Solution LLC</div>
                         <div>91 Mill Street, Suite 1 · Randolph, MA 02368</div>
                     </div>
                     <div className="pp-hero-badge">
@@ -521,7 +521,7 @@ const Privacy = () => {
                     {/* Intro notice */}
                     <div className="pp-intro-bar">
                         <p>
-                            This Privacy Policy applies to all personal information collected through <strong>www.llstaffingsolution.com</strong> and all services provided by <strong>L&L Healthcare Staffing Solution LLC</strong>. It is designed to comply with HIPAA, HITECH, MGL c.93H, MGL c.66A, and 201 CMR 17.00.
+                            This Privacy Policy applies to all personal information collected through <strong>www.llstaffingsolution.com</strong> and all services provided by <strong>L&L Staffing Solution LLC</strong>. It is designed to comply with HIPAA, HITECH, MGL c.93H, MGL c.66A, and 201 CMR 17.00.
                         </p>
                     </div>
 

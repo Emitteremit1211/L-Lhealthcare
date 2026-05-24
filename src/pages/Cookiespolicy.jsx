@@ -21,7 +21,7 @@ Throughout this Cookie Policy, references to "cookies" encompass all of the abov
   {
     id: 2,
     heading: 'How We Use Cookies',
-    text: `L&L Healthcare Staffing Solution LLC uses cookies and similar tracking technologies on www.llstaffingsolution.com for the following purposes:
+    text: `L&L Staffing Solution LLC uses cookies and similar tracking technologies on www.llstaffingsolution.com for the following purposes:
 
 2.1 Essential / Strictly Necessary Cookies
 These cookies are necessary for the Site to function properly and cannot be disabled in our systems without preventing the Site from working correctly. They are typically set in response to actions made by you, such as setting your privacy preferences, logging in, or filling out forms. These cookies do not store any personally identifiable information beyond what is strictly necessary for their function. You cannot opt out of essential cookies if you wish to use the Site.
@@ -33,7 +33,7 @@ These cookies allow us to count visits and traffic sources so we can measure and
 These cookies enable enhanced functionality and personalization on the Site. They may be set by us or by third-party providers whose services we have added to our pages. They allow the Site to remember choices you make, such as your language preference, accessibility settings, or the region you are in, and to provide enhanced, more personalized features. If you do not allow these cookies, some or all of these services may not function properly.
 
 2.4 Marketing and Targeting Cookies
-Marketing cookies may be used to deliver advertisements and content that are more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and to help measure the effectiveness of advertising campaigns. These cookies are placed only with your express prior consent. L&L Healthcare Staffing Solution LLC does not currently operate paid advertising campaigns through the Site; if this changes, we will update this Cookie Policy accordingly and obtain fresh consent as required.`
+Marketing cookies may be used to deliver advertisements and content that are more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and to help measure the effectiveness of advertising campaigns. These cookies are placed only with your express prior consent. L&L Staffing Solution LLC does not currently operate paid advertising campaigns through the Site; if this changes, we will update this Cookie Policy accordingly and obtain fresh consent as required.`
   },
   {
     id: 3,
@@ -65,13 +65,13 @@ This table is periodically updated to reflect changes in our cookie usage. Pleas
     id: 4,
     heading: 'Third-Party Cookies',
     text: `4.1 Google Analytics
-We use Google Analytics, a web analytics service provided by Google LLC ("Google"), to help us understand how users interact with our Site. Google Analytics places cookies on your device that collect information about your use of the Site in anonymized, aggregated form. This information is transmitted to and stored on Google's servers. L&L Healthcare Staffing Solution LLC has enabled IP anonymization, which means Google truncates your IP address before processing. Google's use of this data is governed by Google's Privacy Policy, available at policies.google.com/privacy. You may opt out of Google Analytics tracking using the Google Analytics Opt-Out Browser Add-on available at tools.google.com/dlpage/gaoptout.
+We use Google Analytics, a web analytics service provided by Google LLC ("Google"), to help us understand how users interact with our Site. Google Analytics places cookies on your device that collect information about your use of the Site in anonymized, aggregated form. This information is transmitted to and stored on Google's servers. L&L Staffing Solution LLC has enabled IP anonymization, which means Google truncates your IP address before processing. Google's use of this data is governed by Google's Privacy Policy, available at policies.google.com/privacy. You may opt out of Google Analytics tracking using the Google Analytics Opt-Out Browser Add-on available at tools.google.com/dlpage/gaoptout.
 
 4.2 Social Media Sharing Features
 If social media sharing buttons (such as those for Facebook, LinkedIn, or X/Twitter) are present on our Site, these features may place cookies from the respective social media platform on your device when you interact with them, even if you do not click on the button. We do not control these third-party cookies and encourage you to review the privacy and cookie policies of the relevant social media platforms.
 
 4.3 Third-Party Advertising Networks
-L&L Healthcare Staffing Solution LLC does not currently permit third-party advertising networks to place tracking cookies on users of our Site for cross-site behavioral advertising without explicit, prior user consent. If we engage such networks in the future, we will update this Cookie Policy and obtain fresh consent prior to enabling any such cookies.`
+L&L Staffing Solution LLC does not currently permit third-party advertising networks to place tracking cookies on users of our Site for cross-site behavioral advertising without explicit, prior user consent. If we engage such networks in the future, we will update this Cookie Policy and obtain fresh consent prior to enabling any such cookies.`
   },
   {
     id: 5,
@@ -113,14 +113,14 @@ You may withdraw or update your cookie consent at any time by clearing your brow
   {
     id: 7,
     heading: 'Updates to This Policy',
-    text: `L&L Healthcare Staffing Solution LLC may update this Cookie Policy from time to time to reflect changes in the cookies we use, changes in applicable law, or updates to our website technology. When we update this Policy, we will revise the "Last Updated" date at the top of this document. We encourage you to review this Cookie Policy periodically to remain informed about our use of cookies and related technologies.`
+    text: `L&L Staffing Solution LLC may update this Cookie Policy from time to time to reflect changes in the cookies we use, changes in applicable law, or updates to our website technology. When we update this Policy, we will revise the "Last Updated" date at the top of this document. We encourage you to review this Cookie Policy periodically to remain informed about our use of cookies and related technologies.`
   },
   {
     id: 8,
     heading: 'Contact Us',
     text: `If you have any questions about our use of cookies or this Cookie Policy, please contact us:
 
-Company Name: L&L Healthcare Staffing Solution LLC
+Company Name: L&L Staffing Solution LLC
 Address: 91 Mill Street, Suite 1, Randolph, MA 02368
 General Email: l-l@llstaffingsolution.com
 Privacy Officer Email: info@llstaffingsolution.com
@@ -507,7 +507,7 @@ const Cookiespolicy = () => {
           <p className="cp-hero-eyebrow">Legal & Compliance</p>
           <h1 className="cp-hero-title">Cookie Policy</h1>
           <div className="cp-hero-meta">
-            <div>L&L Healthcare Staffing Solution LLC · llstaffingsolution.com</div>
+            <div>L&L Staffing Solution LLC · llstaffingsolution.com</div>
             <div>91 Mill Street, Suite 1 · Randolph, MA 02368</div>
           </div>
           <div className="cp-hero-dates">
@@ -536,7 +536,7 @@ const Cookiespolicy = () => {
           {/* Notice */}
           <div className="cp-notice">
             <p>
-              This Cookie Policy explains how <strong>L&L Healthcare Staffing Solution LLC</strong> uses cookies and similar tracking technologies on <strong>www.llstaffingsolution.com</strong>. By continuing to use our Site, you consent to our use of cookies in accordance with this policy.
+              This Cookie Policy explains how <strong>L&L Staffing Solution LLC</strong> uses cookies and similar tracking technologies on <strong>www.llstaffingsolution.com</strong>. By continuing to use our Site, you consent to our use of cookies in accordance with this policy.
             </p>
           </div>
 

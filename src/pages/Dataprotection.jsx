@@ -6,7 +6,7 @@ const sections = [
   {
     id: 1,
     heading: 'Our Commitment to Data Protection',
-    text: `L&L Healthcare Staffing Solution LLC ("L&L," "we," "us," or "our"), operating as llstaffingsolution.com, takes its obligations as a custodian of personal information and protected health information (PHI) with the utmost seriousness. We recognize that the individuals we serve — our healthcare staffing clients, their families, our caregivers, and our staff — entrust us with sensitive personal and health information as an essential part of our service relationship. This trust is foundational to our mission, and we are deeply committed to protecting that information from unauthorized access, use, disclosure, modification, or destruction.
+    text: `L&L Staffing Solution LLC ("L&L," "we," "us," or "our"), operating as llstaffingsolution.com, takes its obligations as a custodian of personal information and protected health information (PHI) with the utmost seriousness. We recognize that the individuals we serve our healthcare staffing clients, their families, our caregivers, and our staff entrust us with sensitive personal and health information as an essential part of our service relationship. This trust is foundational to our mission, and we are deeply committed to protecting that information from unauthorized access, use, disclosure, modification, or destruction.
 
 Our data protection program is designed to comply with, and in many cases exceed, the requirements of the following applicable laws and regulations:
 
@@ -20,7 +20,7 @@ Our data protection program is designed to comply with, and in many cases exceed
   {
     id: 2,
     heading: 'Categories of Data We Protect',
-    text: `L&L Healthcare Staffing Solution LLC maintains protective measures for the following categories of sensitive information:
+    text: `L&L Staffing Solution LLC maintains protective measures for the following categories of sensitive information:
 
 2.1 Client Protected Health Information (PHI)
 Individually identifiable health information about our home care clients, including:
@@ -53,7 +53,7 @@ Personal information relating to our caregivers, home health aides, personal car
   {
     id: 3,
     heading: 'Our Written Information Security Program (WISP)',
-    text: `L&L Healthcare Staffing Solution LLC maintains a Written Information Security Program (WISP) as required by Massachusetts 201 CMR 17.00. Our WISP is a comprehensive, documented security framework that governs how we collect, store, access, transmit, and dispose of personal information about Massachusetts residents.
+    text: `L&L Staffing Solution LLC maintains a Written Information Security Program (WISP) as required by Massachusetts 201 CMR 17.00. Our WISP is a comprehensive, documented security framework that governs how we collect, store, access, transmit, and dispose of personal information about Massachusetts residents.
 
 3.1 WISP Components
 Our WISP addresses the following core areas:
@@ -72,7 +72,7 @@ All employees and contractors who have access to personal information or PHI rec
   {
     id: 4,
     heading: 'Technical Safeguards',
-    text: `L&L Healthcare Staffing Solution LLC implements the following technical safeguards to protect electronic personal information and ePHI:
+    text: `L&L Staffing Solution LLC implements the following technical safeguards to protect electronic personal information and ePHI:
 
 • Encryption in Transit: All electronic transmission of personal information and ePHI over public or untrusted networks is encrypted using Transport Layer Security (TLS) version 1.2 or higher (TLS 1.3 preferred). Unencrypted transmission of PHI or PII over public networks is prohibited;
 
@@ -91,9 +91,9 @@ All employees and contractors who have access to personal information or PHI rec
   {
     id: 5,
     heading: 'Administrative Safeguards',
-    text: `• Privacy Officer: L&L Healthcare Staffing Solution LLC has designated a Privacy Officer responsible for overseeing our HIPAA compliance program, privacy policies, and response to privacy-related complaints and inquiries. The Privacy Officer may be contacted at info@llstaffingsolution.com;
+    text: `• Privacy Officer: L&L Staffing Solution LLC has designated a Privacy Officer responsible for overseeing our HIPAA compliance program, privacy policies, and response to privacy-related complaints and inquiries. The Privacy Officer may be contacted at info@llstaffingsolution.com;
 
-• Security Officer: L&L Healthcare Staffing Solution LLC has designated a Security Officer responsible for our WISP, HIPAA Security Rule compliance, and the technical security of our information systems;
+• Security Officer: L&L Staffing Solution LLC has designated a Security Officer responsible for our WISP, HIPAA Security Rule compliance, and the technical security of our information systems;
 
 • Confidentiality Agreements: All employees and contractors are required to execute confidentiality and non-disclosure agreements as a condition of access to personal information and PHI;
 
@@ -101,7 +101,7 @@ All employees and contractors who have access to personal information or PHI rec
 
 • Vendor Management and Business Associate Agreements (BAAs): All vendors and service providers who create, receive, maintain, or transmit PHI on our behalf are required to execute a HIPAA-compliant Business Associate Agreement (BAA) before any PHI is shared, as required by 45 CFR §164.308(b). We conduct due diligence on all such vendors; and
 
-• Incident Response Procedures: L&L Healthcare Staffing Solution LLC maintains documented incident response procedures for identifying, containing, investigating, and reporting data security incidents and breaches, consistent with HIPAA and MGL c.93H requirements.`
+• Incident Response Procedures: L&L Staffing Solution LLC maintains documented incident response procedures for identifying, containing, investigating, and reporting data security incidents and breaches, consistent with HIPAA and MGL c.93H requirements.`
   },
   {
     id: 6,
@@ -167,23 +167,23 @@ Individuals whose information is PHI subject to HIPAA have the following additio
 8.3 How to Submit Requests
 To exercise any of the above rights, please submit a written request — including your full name, contact information, and a description of the specific right you wish to exercise — to:
 • By Email: info@llstaffingsolution.com
-• By Mail: L&L Healthcare Staffing Solution LLC, Attn: Privacy Officer, 91 Mill Street, Suite 1, Randolph, MA 02368
+• By Mail: L&L Staffing Solution LLC, Attn: Privacy Officer, 91 Mill Street, Suite 1, Randolph, MA 02368
 
-L&L Healthcare Staffing Solution LLC will acknowledge receipt of your request promptly and will respond substantively within thirty (30) days of receipt of a verifiable written request, as required by applicable law.`
+L&L Staffing Solution LLC will acknowledge receipt of your request promptly and will respond substantively within thirty (30) days of receipt of a verifiable written request, as required by applicable law.`
   },
   {
     id: 9,
     heading: 'Data Transfers',
-    text: `All personal information and PHI collected and processed by L&L Healthcare Staffing Solution LLC is stored and processed within the United States. We do not transfer personal information or PHI to recipients located outside of the United States. Our data storage systems, servers, and cloud service providers are located in the United States and are subject to U.S. law, including applicable HIPAA, HITECH, and Massachusetts data protection requirements.
+    text: `All personal information and PHI collected and processed by L&L Staffing Solution LLC is stored and processed within the United States. We do not transfer personal information or PHI to recipients located outside of the United States. Our data storage systems, servers, and cloud service providers are located in the United States and are subject to U.S. law, including applicable HIPAA, HITECH, and Massachusetts data protection requirements.
 
 If this policy changes in the future, we will update this Data Protection Statement and obtain any required consents or provide required notifications to affected individuals prior to implementing any international data transfers.`
   },
   {
     id: 10,
     heading: 'Contact Our Privacy Officer',
-    text: `L&L Healthcare Staffing Solution LLC has designated a Privacy Officer to oversee our data protection program and to serve as the primary point of contact for privacy-related inquiries, complaints, and requests.
+    text: `L&L Staffing Solution LLC has designated a Privacy Officer to oversee our data protection program and to serve as the primary point of contact for privacy-related inquiries, complaints, and requests.
 
-Company Name: L&L Healthcare Staffing Solution LLC
+Company Name: L&L Staffing Solution LLC
 Attn: Privacy Officer
 Address: 91 Mill Street, Suite 1, Randolph, MA 02368
 Privacy Email: info@llstaffingsolution.com
@@ -195,7 +195,7 @@ We take all privacy inquiries and complaints seriously and will respond to all c
   {
     id: 11,
     heading: 'Regulatory Contacts',
-    text: `If you believe your privacy rights or data protection rights have not been adequately addressed by L&L Healthcare Staffing Solution LLC, you have the right to file a complaint directly with the applicable regulatory authority:
+    text: `If you believe your privacy rights or data protection rights have not been adequately addressed by L&L Staffing Solution LLC, you have the right to file a complaint directly with the applicable regulatory authority:
 
 Massachusetts Attorney General's Office
 Jurisdiction: Massachusetts data security and consumer protection complaints (MGL c.93H, c.93A)
@@ -209,7 +209,7 @@ Federal Trade Commission (FTC)
 Jurisdiction: Federal consumer protection and privacy
 Contact: 600 Pennsylvania Avenue NW, Washington, DC 20580 | Tel: 1-877-382-4357 | reportfraud.ftc.gov
 
-Filing a complaint with a regulatory authority will not result in any retaliation or adverse action by L&L Healthcare Staffing Solution LLC against you. We support your right to seek regulatory assistance.`
+Filing a complaint with a regulatory authority will not result in any retaliation or adverse action by L&L Staffing Solution LLC against you. We support your right to seek regulatory assistance.`
   }
 ]
 
@@ -547,7 +547,7 @@ const Dataprotection = () => {
           <p className="dp-hero-eyebrow">Legal & Compliance</p>
           <h1 className="dp-hero-title">Data Protection Statement</h1>
           <div className="dp-hero-meta">
-            <div>L&L Healthcare Staffing Solution LLC · llstaffingsolution.com</div>
+            <div>L&L Staffing Solution LLC · llstaffingsolution.com</div>
             <div>91 Mill Street, Suite 1 · Randolph, MA 02368</div>
           </div>
           <div className="dp-hero-chips">
@@ -567,7 +567,7 @@ const Dataprotection = () => {
             <div className="dp-shield-text">
               <h4>Your Data Is Protected</h4>
               <p>
-                This Data Protection Statement describes how <strong>L&L Healthcare Staffing Solution LLC</strong> safeguards the personal information and protected health information (PHI) of our clients, caregivers, and staff, in full compliance with HIPAA, HITECH, MGL c.93H, MGL c.66A, and Massachusetts 201 CMR 17.00.
+                This Data Protection Statement describes how <strong>L&L Staffing Solution LLC</strong> safeguards the personal information and protected health information (PHI) of our clients, caregivers, and staff, in full compliance with HIPAA, HITECH, MGL c.93H, MGL c.66A, and Massachusetts 201 CMR 17.00.
               </p>
             </div>
           </div>

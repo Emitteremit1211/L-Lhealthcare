@@ -6,16 +6,16 @@ const sections = [
   {
     id: 1,
     heading: 'General Disclaimer',
-    text: `The information contained on this website, www.llstaffingsolution.com (the "Site"), is provided by L&L Healthcare Staffing Solution LLC, a Massachusetts limited liability company ("L&L," "we," "us," or "our"), for general informational and educational purposes only. The information on this Site is provided in good faith; however, L&L Healthcare Staffing Solution LLC makes no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+    text: `The information contained on this website, www.llstaffingsolution.com (the "Site"), is provided by L&L Staffing Solution LLC, a Massachusetts limited liability company ("L&L," "we," "us," or "our"), for general informational and educational purposes only. The information on this Site is provided in good faith; however, L&L Staffing Solution LLC makes no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
 
-Under no circumstances shall L&L Healthcare Staffing Solution LLC be liable for any loss or damage of any kind incurred as a result of the use of the Site or reliance on any information provided on the Site. Your use of the Site and your reliance on any information on the Site are solely at your own risk.
+Under no circumstances shall L&L Staffing Solution LLC be liable for any loss or damage of any kind incurred as a result of the use of the Site or reliance on any information provided on the Site. Your use of the Site and your reliance on any information on the Site are solely at your own risk.
 
 Important Notice to All Users: The information provided on this website does not constitute professional medical, legal, financial, employment, or regulatory advice. It is intended for general informational purposes only. Always seek the advice of a qualified professional with respect to any specific matter or concern.`
   },
   {
     id: 2,
     heading: 'No Medical Advice',
-    text: `Nothing on this website, including articles, descriptions of care services, caregiver profiles, care tips, health information, testimonials, or any other content, constitutes medical advice, medical diagnosis, medical treatment recommendations, or the practice of medicine. L&L Healthcare Staffing Solution LLC does not hold a medical license and does not practice medicine in any form.
+    text: `Nothing on this website, including articles, descriptions of care services, caregiver profiles, care tips, health information, testimonials, or any other content, constitutes medical advice, medical diagnosis, medical treatment recommendations, or the practice of medicine. L&L Staffing Solution LLC does not hold a medical license and does not practice medicine in any form.
 
 Specifically:
 
@@ -24,7 +24,7 @@ Specifically:
 • Nothing on this Site should be used to delay seeking professional medical advice or to disregard the advice of a licensed healthcare provider; and
 • The inclusion of links to external health information resources does not constitute an endorsement of the medical content found on those resources.
 
-Clients engaging healthcare staffing services through L&L Healthcare Staffing Solution LLC should consult with their attending physician, specialist, or care manager regarding all medical decisions. Our caregivers are trained to provide personal care and assistance with activities of daily living — they do not provide medical treatment or make clinical judgments unless specifically licensed to do so under Massachusetts law.`
+Clients engaging healthcare staffing services through L&L Staffing Solution LLC should consult with their attending physician, specialist, or care manager regarding all medical decisions. Our caregivers are trained to provide personal care and assistance with activities of daily living they do not provide medical treatment or make clinical judgments unless specifically licensed to do so under Massachusetts law.`
   },
   {
     id: 3,
@@ -34,14 +34,14 @@ Clients engaging healthcare staffing services through L&L Healthcare Staffing So
 • Create an employment relationship, staffing relationship, or contractor relationship between L&L Healthcare Staffing Solution LLC and the applicant;
 • Guarantee placement in any caregiver, home care aide, or other position;
 • Constitute an offer of employment or a promise of employment; or
-• Confer any rights against L&L Healthcare Staffing Solution LLC with respect to employment decisions.
+• Confer any rights against L&L Staffing Solution LLC with respect to employment decisions.
 
-All employment and placement decisions are made by L&L Healthcare Staffing Solution LLC in its sole discretion and are subject to the successful completion of all required background screening, credentialing, reference verification, and onboarding processes. An employment relationship is created only upon the execution of a written employment or contractor agreement signed by an authorized officer of L&L Healthcare Staffing Solution LLC.`
+All employment and placement decisions are made by L&L Staffing Solution LLC in its sole discretion and are subject to the successful completion of all required background screening, credentialing, reference verification, and onboarding processes. An employment relationship is created only upon the execution of a written employment or contractor agreement signed by an authorized officer of L&L Staffing Solution LLC.`
   },
   {
     id: 4,
     heading: 'Accuracy and Completeness',
-    text: `L&L Healthcare Staffing Solution LLC endeavors to keep all information on this Site current, accurate, and complete. However, we make no warranty, express or implied, as to the accuracy, completeness, timeliness, or fitness for any particular purpose of any content on this Site. The following may change without notice:
+    text: `L&L Staffing Solution LLC endeavors to keep all information on this Site current, accurate, and complete. However, we make no warranty, express or implied, as to the accuracy, completeness, timeliness, or fitness for any particular purpose of any content on this Site. The following may change without notice:
 
 • Service offerings, service areas, and geographic coverage;
 • Caregiver availability and staffing capacity;
@@ -56,9 +56,9 @@ We reserve the right to modify, update, correct, or remove any content on this S
   {
     id: 5,
     heading: 'External Links Disclaimer',
-    text: `This Site may contain hyperlinks to external websites, resources, organizations, government agencies, and other entities that are not owned or operated by L&L Healthcare Staffing Solution LLC. These links are provided solely as a convenience to users and for informational purposes.
+    text: `This Site may contain hyperlinks to external websites, resources, organizations, government agencies, and other entities that are not owned or operated by L&L Staffing Solution LLC. These links are provided solely as a convenience to users and for informational purposes.
 
-L&L Healthcare Staffing Solution LLC:
+L&L Staffing Solution LLC:
 
 • Does not control, and is not responsible for, the content, accuracy, privacy practices, or terms of use of any linked external website;
 • Does not endorse, recommend, or sponsor any linked external website or its operators;
@@ -66,21 +66,21 @@ L&L Healthcare Staffing Solution LLC:
 • Is not liable for any information you provide to, or receive from, any external website accessed through a link on our Site; and
 • Encourages users to review the privacy policy and terms of use of every external website before providing any personal information.
 
-The inclusion of any link to an external site does not imply an affiliation, endorsement, or adoption by L&L Healthcare Staffing Solution LLC of any information, product, service, or viewpoint expressed on or available through that site.`
+The inclusion of any link to an external site does not imply an affiliation, endorsement, or adoption by L&L Staffing Solution LLC of any information, product, service, or viewpoint expressed on or available through that site.`
   },
   {
     id: 6,
     heading: 'Geographic Limitations',
-    text: `L&L Healthcare Staffing Solution LLC's healthcare staffing and care services are provided primarily within the Commonwealth of Massachusetts. Service availability varies by geographic location, even within Massachusetts. The information on this Site may not be applicable to, or accurate for, services or operations in jurisdictions other than Massachusetts.
+    text: `L&L Staffing Solution LLC's healthcare staffing and care services are provided primarily within the Commonwealth of Massachusetts. Service availability varies by geographic location, even within Massachusetts. The information on this Site may not be applicable to, or accurate for, services or operations in jurisdictions other than Massachusetts.
 
-Nothing on this Site constitutes an offer to provide services in any jurisdiction where L&L Healthcare Staffing Solution LLC is not licensed, registered, or otherwise authorized to operate. Users located outside of Massachusetts are advised that this Site is directed at Massachusetts residents and that we may be unable to service their needs.
+Nothing on this Site constitutes an offer to provide services in any jurisdiction where L&L Staffing Solution LLC is not licensed, registered, or otherwise authorized to operate. Users located outside of Massachusetts are advised that this Site is directed at Massachusetts residents and that we may be unable to service their needs.
 
 If you are unsure whether services are available in your specific area, please contact our office directly.`
   },
   {
     id: 7,
     heading: 'Regulatory Compliance Notice',
-    text: `L&L Healthcare Staffing Solution LLC operates in compliance with applicable Massachusetts state and federal laws and regulations governing healthcare staffing agencies, including but not limited to:
+    text: `L&L  Staffing Solution LLC operates in compliance with applicable Massachusetts state and federal laws and regulations governing healthcare staffing agencies, including but not limited to:
 
 • MGL c.111, §70E — Patient's Bill of Rights, governing the rights of home care clients;
 • MGL c.149 — Massachusetts labor law, governing employment practices and wage and hour compliance;
@@ -90,12 +90,12 @@ If you are unsure whether services are available in your specific area, please c
 • HIPAA (45 CFR Parts 160 and 164) — Federal law governing the privacy and security of protected health information; and
 • HITECH Act — Federal law governing electronic health records and strengthening HIPAA enforcement.
 
-Any regulatory compliance information provided on this Site is intended for general informational purposes only and does not constitute legal advice. Compliance obligations vary based on individual circumstances, and L&L Healthcare Staffing Solution LLC strongly encourages all clients, caregivers, and partners to consult with qualified legal counsel regarding specific regulatory requirements applicable to their situation.`
+Any regulatory compliance information provided on this Site is intended for general informational purposes only and does not constitute legal advice. Compliance obligations vary based on individual circumstances, and L&L Staffing Solution LLC strongly encourages all clients, caregivers, and partners to consult with qualified legal counsel regarding specific regulatory requirements applicable to their situation.`
   },
   {
     id: 8,
     heading: 'Limitation of Liability',
-    text: `TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, L&L HEALTHCARE STAFFING SOLUTION LLC, ITS MEMBERS, MANAGERS, OFFICERS, EMPLOYEES, AGENTS, AND CONTRACTORS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OF ANY KIND INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA, GOODWILL, USE, OR OTHER INTANGIBLE LOSSES ARISING OUT OF OR RELATED TO:
+    text: `TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, L&L STAFFING SOLUTION LLC, ITS MEMBERS, MANAGERS, OFFICERS, EMPLOYEES, AGENTS, AND CONTRACTORS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OF ANY KIND INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA, GOODWILL, USE, OR OTHER INTANGIBLE LOSSES ARISING OUT OF OR RELATED TO:
 
 • Your access to or use of, or inability to access or use, this Site;
 • Any content or information on this Site, including any errors, omissions, or inaccuracies therein;
@@ -103,14 +103,14 @@ Any regulatory compliance information provided on this Site is intended for gene
 • Unauthorized access to or alteration of your transmissions or data; or
 • Any other matter relating to this Site.
 
-Nothing in this Section shall be construed to limit L&L Healthcare Staffing Solution LLC's liability for personal injury directly caused by its own negligence, fraud, or any other liability that cannot be excluded under applicable law.`
+Nothing in this Section shall be construed to limit L&L Staffing Solution LLC's liability for personal injury directly caused by its own negligence, fraud, or any other liability that cannot be excluded under applicable law.`
   },
   {
     id: 9,
     heading: 'Contact Information',
     text: `If you have questions about this Website Disclaimer or require clarification about any content on our Site, please contact:
 
-Company Name: L&L Healthcare Staffing Solution LLC
+Company Name: L&L Staffing Solution LLC
 Address: 91 Mill Street, Suite 1, Randolph, MA 02368
 General Email: l-l@llstaffingsolution.com
 Privacy Officer Email: info@llstaffingsolution.com
@@ -494,7 +494,7 @@ const websitedisclaimer = () => {
             <span className="dis-hero-icon">⚖️</span>
             <h1 className="dis-hero-title">Website Disclaimer</h1>
             <div className="dis-hero-meta">
-              <div>L&L Healthcare Staffing Solution LLC · llstaffingsolution.com</div>
+              <div>L&L Staffing Solution LLC · llstaffingsolution.com</div>
               <div>91 Mill Street, Suite 1 · Randolph, MA 02368</div>
             </div>
             <div className="dis-hero-pill">

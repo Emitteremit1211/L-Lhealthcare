@@ -15,13 +15,13 @@ You represent and warrant that you are at least eighteen (18) years of age and h
   {
     id: 2,
     heading: 'Description of Services',
-    text: `L&L Healthcare Staffing Solution LLC provides professional healthcare staffing, caregiver placement, personal care aide (PCA) coordination, and related services within the Commonwealth of Massachusetts. Our services are designed to assist individuals who require assistance with activities of daily living, personal care, companionship, and healthcare support, with a focus on enabling clients to remain safely in their homes and communities.
+    text: `L&L Staffing Solution LLC provides professional healthcare staffing, caregiver placement, personal care aide (PCA) coordination, and related services within the Commonwealth of Massachusetts. Our services are designed to assist individuals who require assistance with activities of daily living, personal care, companionship, and healthcare support, with a focus on enabling clients to remain safely in their homes and communities.
 
 2.1 Website Purpose
 The Site serves as an informational platform describing our services, facilitating caregiver recruitment, enabling prospective client and family inquiries, and providing general information about healthcare staffing options. The Site does not itself constitute the delivery of care services.
 
 2.2 Service Agreements
-Actual healthcare staffing and care services are governed exclusively by separate written Service Agreements and/or Employment Agreements entered into directly between L&L Healthcare Staffing Solution LLC and the respective client, family, or caregiver. Nothing on this Site creates a care services contract, an employment contract, or any other binding obligation to provide services except as expressly set forth in a duly executed written agreement.
+Actual healthcare staffing and care services are governed exclusively by separate written Service Agreements and/or Employment Agreements entered into directly between L&L Staffing Solution LLC and the respective client, family, or caregiver. Nothing on this Site creates a care services contract, an employment contract, or any other binding obligation to provide services except as expressly set forth in a duly executed written agreement.
 
 2.3 Service Availability
 Service availability, caregiver availability, geographic coverage areas, and pricing are subject to change without notice. We encourage prospective clients and applicants to contact our office directly for the most current service information.`
@@ -31,7 +31,7 @@ Service availability, caregiver availability, geographic coverage areas, and pri
     heading: 'User Responsibilities',
     text: `As a condition of your use of this Site, you agree to the following responsibilities and restrictions:
 
-Accuracy of Information: You agree to provide accurate, current, and complete information in connection with any form submission, inquiry, or application submitted through the Site. You accept responsibility for all information you provide to L&L Healthcare Staffing Solution LLC.
+Accuracy of Information: You agree to provide accurate, current, and complete information in connection with any form submission, inquiry, or application submitted through the Site. You accept responsibility for all information you provide to L&L Staffing Solution LLC.
 
 Prohibited Conduct: You agree that you will not:
 • Use the Site for any unlawful purpose or in violation of any applicable federal, state, or local law or regulation;
@@ -42,29 +42,29 @@ Prohibited Conduct: You agree that you will not:
 • Submit false, misleading, or fraudulent employment applications, client inquiries, or other communications; or
 • Impersonate any person or entity or misrepresent your affiliation with any person or entity.
 
-Compliance: You agree to comply with all applicable local, state, and federal laws and regulations in connection with your use of this Site and any services engaged through L&L Healthcare Staffing Solution LLC.`
+Compliance: You agree to comply with all applicable local, state, and federal laws and regulations in connection with your use of this Site and any services engaged through L&L Staffing Solution LLC.`
   },
   {
     id: 4,
     heading: 'Intellectual Property',
     text: `4.1 Ownership
-All content on this Site, including but not limited to text, articles, descriptions, graphics, logos, icons, images, audio clips, digital downloads, data compilations, software, and the overall design and "look and feel" of the Site (collectively, "L&L Content"), is the exclusive property of L&L Healthcare Staffing Solution LLC or its content suppliers and is protected by United States and international copyright, trademark, trade dress, and other intellectual property laws.
+All content on this Site, including but not limited to text, articles, descriptions, graphics, logos, icons, images, audio clips, digital downloads, data compilations, software, and the overall design and "look and feel" of the Site (collectively, "L&L Content"), is the exclusive property of L&L Staffing Solution LLC or its content suppliers and is protected by United States and international copyright, trademark, trade dress, and other intellectual property laws.
 
 4.2 Limited License
-Subject to your compliance with these Terms, L&L Healthcare Staffing Solution LLC grants you a limited, non-exclusive, non-transferable, revocable license to access and use this Site solely for your personal, non-commercial informational purposes. This license does not include any right to:
+Subject to your compliance with these Terms, L&L Staffing Solution LLC grants you a limited, non-exclusive, non-transferable, revocable license to access and use this Site solely for your personal, non-commercial informational purposes. This license does not include any right to:
 • Reproduce, publish, distribute, or create derivative works based on L&L Content;
 • Use L&L Content for commercial purposes without our prior express written consent;
 • Remove or alter any proprietary notices or labels on L&L Content; or
 • Frame or mirror any portion of the Site on any other website or platform.
 
 4.3 Trademarks
-L&L Healthcare Staffing Solution LLC, llstaffingsolution.com, and associated logos and service marks are trademarks or service marks of L&L Healthcare Staffing Solution LLC. Nothing in these Terms grants you any right or license to use our trademarks without our prior written consent.`
+L&L Staffing Solution LLC, llstaffingsolution.com, and associated logos and service marks are trademarks or service marks of L&L Staffing Solution LLC. Nothing in these Terms grants you any right or license to use our trademarks without our prior written consent.`
   },
   {
     id: 5,
     heading: 'Job Applicant and Caregiver Terms',
     text: `5.1 No Guarantee of Employment
-The submission of a job application, caregiver profile, resume, or any other employment-related materials through this Site or by any other means does not constitute an offer of employment or guarantee of placement. All applicants are subject to L&L Healthcare Staffing Solution LLC's standard hiring process, which may include multiple interviews, reference checks, and credentialing verification.
+The submission of a job application, caregiver profile, resume, or any other employment-related materials through this Site or by any other means does not constitute an offer of employment or guarantee of placement. All applicants are subject to L&L Staffing Solution LLC's standard hiring process, which may include multiple interviews, reference checks, and credentialing verification.
 
 5.2 Background Screening Requirements
 All applicants for caregiver, home health aide, personal care aide, or other direct care and service positions are subject to:
@@ -76,22 +76,22 @@ All applicants for caregiver, home health aide, personal care aide, or other dir
 • Employment eligibility verification pursuant to the Immigration Reform and Control Act (IRCA), 8 U.S.C. §1324a (Form I-9).
 
 5.3 Misrepresentation
-Any misrepresentation or omission of material information in a job application, caregiver profile, or any communication with L&L Healthcare Staffing Solution LLC including but not limited to misrepresentation of credentials, licensure, certifications, employment history, or criminal record shall be grounds for immediate disqualification from consideration, termination of any existing placement, and may be subject to reporting to appropriate regulatory authorities.
+Any misrepresentation or omission of material information in a job application, caregiver profile, or any communication with L&L Staffing Solution LLC including but not limited to misrepresentation of credentials, licensure, certifications, employment history, or criminal record shall be grounds for immediate disqualification from consideration, termination of any existing placement, and may be subject to reporting to appropriate regulatory authorities.
 
 5.4 At-Will Employment
-To the extent an employment or contractor relationship is established between L&L Healthcare Staffing Solution LLC and a caregiver or staff member, such relationship shall be at-will unless otherwise expressly set forth in a separate written agreement signed by an authorized officer of L&L Healthcare Staffing Solution LLC.`
+To the extent an employment or contractor relationship is established between L&L Staffing Solution LLC and a caregiver or staff member, such relationship shall be at-will unless otherwise expressly set forth in a separate written agreement signed by an authorized officer of L&L Staffing Solution LLC.`
   },
   {
     id: 6,
     heading: 'Service Agreements',
-    text: `The actual provision of healthcare staffing, caregiver placement, PCA coordination, and related services is governed exclusively by separate written agreements executed between L&L Healthcare Staffing Solution LLC and each client, family representative, or care coordinator. These Terms of Use apply solely to your access to and use of this Site and do not create, modify, or supersede any such service agreement.
+    text: `The actual provision of healthcare staffing, caregiver placement, PCA coordination, and related services is governed exclusively by separate written agreements executed between L&L Staffing Solution LLC and each client, family representative, or care coordinator. These Terms of Use apply solely to your access to and use of this Site and do not create, modify, or supersede any such service agreement.
 
 In the event of any conflict between these Terms and a written service agreement, the written service agreement shall control with respect to the services covered therein.`
   },
   {
     id: 7,
     heading: 'Limitation of Liability',
-    text: `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, L&L Healthcare Staffing Solution LLC, its officers, members, managers, employees, agents, contractors, affiliates, and successors (collectively, "L&L Parties") shall not be liable to you or any third party for any:
+    text: `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, L&L Staffing Solution LLC, its officers, members, managers, employees, agents, contractors, affiliates, and successors (collectively, "L&L Parties") shall not be liable to you or any third party for any:
 
 • Indirect, incidental, special, consequential, punitive, or exemplary damages;
 • Loss of profits, revenue, data, goodwill, or business opportunities;
@@ -100,36 +100,36 @@ In the event of any conflict between these Terms and a written service agreement
 • Unauthorized access to or alteration of your data transmissions; or
 • Any matter beyond L&L's reasonable control.
 
-In the event that L&L Healthcare Staffing Solution LLC is found liable to you for any claim arising out of or related to your use of this Site, L&L's maximum aggregate liability to you shall not exceed the total fees paid by you to L&L Healthcare Staffing Solution LLC in the thirty (30) day period immediately preceding the event giving rise to the claim.
+In the event that L&L Staffing Solution LLC is found liable to you for any claim arising out of or related to your use of this Site, L&L's maximum aggregate liability to you shall not exceed the total fees paid by you to L&L Staffing Solution LLC in the thirty (30) day period immediately preceding the event giving rise to the claim.
 
-Important Limitation: Nothing in this Section shall operate to limit or exclude L&L Healthcare Staffing Solution LLC's liability for personal injury caused directly by its own negligence or intentional misconduct, or for any other liability that cannot be excluded under applicable Massachusetts or federal law.`
+Important Limitation: Nothing in this Section shall operate to limit or exclude L&L Staffing Solution LLC's liability for personal injury caused directly by its own negligence or intentional misconduct, or for any other liability that cannot be excluded under applicable Massachusetts or federal law.`
   },
   {
     id: 8,
     heading: 'Disclaimer of Warranties',
     text: `THIS SITE AND ALL CONTENT, INFORMATION, SERVICES, AND MATERIALS AVAILABLE ON OR THROUGH THE SITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-To the fullest extent permitted by applicable law, L&L Healthcare Staffing Solution LLC expressly disclaims all warranties, including but not limited to:
+To the fullest extent permitted by applicable law, L&L Staffing Solution LLC expressly disclaims all warranties, including but not limited to:
 
 • Implied warranties of merchantability, fitness for a particular purpose, and non-infringement;
 • Any warranty that the Site will be uninterrupted, error-free, or free of viruses or other harmful components;
 • Any warranty as to the accuracy, completeness, timeliness, or reliability of any content or information on the Site; and
 • Any warranty that defects in the Site will be corrected.
 
-L&L Healthcare Staffing Solution LLC does not warrant or make any representation regarding the use or results of use of any information, content, materials, or services on the Site.`
+L&L Staffing Solution LLC does not warrant or make any representation regarding the use or results of use of any information, content, materials, or services on the Site.`
   },
   {
     id: 9,
     heading: 'Indemnification',
-    text: `You agree to defend, indemnify, and hold harmless L&L Healthcare Staffing Solution LLC and the L&L Parties from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and court costs) arising out of or related to:
+    text: `You agree to defend, indemnify, and hold harmless L&L Solution LLC and the L&L Parties from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and court costs) arising out of or related to:
 
 (a) your use of or access to the Site;
 (b) your violation of any provision of these Terms;
 (c) your violation of any applicable law, rule, or regulation;
-(d) any information you submit to L&L Healthcare Staffing Solution LLC through the Site, including any misrepresentation; or
+(d) any information you submit to L&L Staffing Solution LLC through the Site, including any misrepresentation; or
 (e) your infringement of any third-party intellectual property rights.
 
-L&L Healthcare Staffing Solution LLC reserves the right, at its own expense, to assume exclusive defense and control of any matter otherwise subject to indemnification by you, in which case you agree to cooperate fully with L&L in asserting any available defenses.`
+L&L Staffing Solution LLC reserves the right, at its own expense, to assume exclusive defense and control of any matter otherwise subject to indemnification by you, in which case you agree to cooperate fully with L&L in asserting any available defenses.`
   },
   {
     id: 10,
@@ -141,19 +141,19 @@ These Terms and your use of this Site shall be governed by and construed in acco
 Any legal action or proceeding arising out of or relating to these Terms or your use of the Site shall be brought exclusively in the state courts of the Commonwealth of Massachusetts, specifically in the Superior Court of Norfolk County, Massachusetts, or in the United States District Court for the District of Massachusetts, and you hereby consent to the personal jurisdiction and venue of such courts.
 
 10.3 Waiver of Jury Trial
-TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU AND L&L HEALTHCARE STAFFING SOLUTION LLC EACH WAIVE ANY RIGHT TO A JURY TRIAL IN CONNECTION WITH ANY ACTION OR PROCEEDING ARISING UNDER THESE TERMS.`
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU AND L&L STAFFING SOLUTION LLC EACH WAIVE ANY RIGHT TO A JURY TRIAL IN CONNECTION WITH ANY ACTION OR PROCEEDING ARISING UNDER THESE TERMS.`
   },
   {
     id: 11,
     heading: 'Modification of Terms',
-    text: `L&L Healthcare Staffing Solution LLC reserves the right to amend, modify, update, or replace these Terms at any time in its sole discretion. Changes will be effective immediately upon posting to the Site, with the "Last Updated" date revised accordingly.
+    text: `L&L Staffing Solution LLC reserves the right to amend, modify, update, or replace these Terms at any time in its sole discretion. Changes will be effective immediately upon posting to the Site, with the "Last Updated" date revised accordingly.
 
 Your continued use of the Site following the posting of revised Terms constitutes your binding acceptance of the modified Terms. It is your responsibility to periodically review these Terms for updates. If any modification is unacceptable to you, your sole remedy is to discontinue use of the Site.`
   },
   {
     id: 12,
     heading: 'Termination of Access',
-    text: `L&L Healthcare Staffing Solution LLC reserves the right, in its sole discretion and without prior notice, to terminate or suspend your access to all or any part of the Site at any time, for any reason, including but not limited to your actual or suspected violation of these Terms, any applicable law, or the rights of any third party.
+    text: `L&L Staffing Solution LLC reserves the right, in its sole discretion and without prior notice, to terminate or suspend your access to all or any part of the Site at any time, for any reason, including but not limited to your actual or suspected violation of these Terms, any applicable law, or the rights of any third party.
 
 Upon termination, your right to use the Site shall immediately cease. All provisions of these Terms that by their nature should survive termination shall survive, including but not limited to Sections 4, 7, 8, 9, 10, and 13.`
   },
@@ -164,17 +164,17 @@ Upon termination, your right to use the Site shall immediately cease. All provis
 If any provision of these Terms is held by a court of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be modified to the minimum extent necessary to make it enforceable, or if modification is not possible, shall be severed from these Terms, and the remaining provisions shall continue in full force and effect.
 
 13.2 Entire Agreement
-These Terms, together with our Privacy Policy, Cookie Policy, and Website Disclaimer (all incorporated herein by reference), constitute the entire agreement between you and L&L Healthcare Staffing Solution LLC with respect to your use of this Site and supersede all prior and contemporaneous negotiations, representations, warranties, agreements, and understandings between the parties regarding such subject matter.
+These Terms, together with our Privacy Policy, Cookie Policy, and Website Disclaimer (all incorporated herein by reference), constitute the entire agreement between you and L&L Staffing Solution LLC with respect to your use of this Site and supersede all prior and contemporaneous negotiations, representations, warranties, agreements, and understandings between the parties regarding such subject matter.
 
 13.3 No Waiver
-L&L Healthcare Staffing Solution LLC's failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision unless acknowledged and agreed to by L&L in writing.`
+L&L Staffing Solution LLC's failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision unless acknowledged and agreed to by L&L in writing.`
   },
   {
     id: 14,
     heading: 'Contact Information',
     text: `For questions, concerns, or notices regarding these Terms and Conditions of Use, please contact:
 
-Company Name: L&L Healthcare Staffing Solution LLC
+Company Name: L&L Staffing Solution LLC
 Address: 91 Mill Street, Suite 1, Randolph, MA 02368
 General Email: l-l@llstaffingsolution.com
 Privacy Officer Email: info@llstaffingsolution.com
@@ -186,7 +186,7 @@ const highlights = [
   { icon: '📋', title: 'Binding Agreement', desc: 'Using this site means you accept these terms in full.' },
   { icon: '🏥', title: 'Healthcare Staffing', desc: 'Services governed by separate written agreements.' },
   { icon: '⚖️', title: 'Massachusetts Law', desc: 'Disputes resolved under Commonwealth of MA jurisdiction.' },
-  { icon: '🔒', title: 'No Warranties', desc: 'Site provided "as is" — see Section 8 for details.' },
+  { icon: '🔒', title: 'No Warranties', desc: 'Site provided "as is" see Section 8 for details.' },
 ]
 
 const Termsandcondition = () => {
@@ -566,7 +566,7 @@ const Termsandcondition = () => {
             <h1 className="tc-hero-title">Terms & Conditions</h1>
             <p className="tc-hero-subtitle">of Use llstaffingsolution.com</p>
             <div className="tc-hero-meta">
-              <div>L&L Healthcare Staffing Solution LLC</div>
+              <div>L&L Staffing Solution LLC</div>
               <div>91 Mill Street, Suite 1 · Randolph, MA 02368</div>
             </div>
             <div className="tc-hero-dates">

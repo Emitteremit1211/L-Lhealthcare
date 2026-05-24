@@ -12,12 +12,13 @@ import JobDetail from "./pages/JobDetail"
 import Apply from "./pages/Apply"
 import NotFound from "./pages/NotFound"
 import Appointment from "./pages/Appointment"
-import Privacypolicy from "./pages/Privacypolicy"
+// import Privacypolicy from "./pages/Privacypolicy"
 // import Termsofpolicy from "./pages/Termsofpolicy"
 import Termsandcondition from "./pages/Termsandcondition"
 import Websitedisclaimer from "./pages/Websitedisclaimer"
 import Dataprotection from "./pages/Dataprotection"
 import Cookiespolicy from "./pages/Cookiespolicy"
+import Privacypolicy from "./pages/privacypolicy"
 
 function App() {
   return (

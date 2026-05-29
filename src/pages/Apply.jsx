@@ -125,6 +125,7 @@ const Apply = () => {
       "/raw/upload/",
       "/image/upload/"
     ).replace(".pdf", ".pdf");
+    return res.data.secure_url;; 
   };
 
   const handleSubmit = async (e) => {

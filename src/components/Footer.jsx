@@ -43,13 +43,13 @@ const legalLinks = [
 
 const Footer = () => {
     return (
-        <footer className="bg-[#0B2540] text-white relative overflow-hidden">
+        <footer className="bg-[#0F3655] text-white relative overflow-hidden">
 
             {/* Decorative top accent line */}
             <div className="h-1 w-full bg-gradient-to-r from-[#17B7F5] via-[#2A9D8F] to-[#17B7F5]" />
 
             {/* Top CTA strip */}
-            <div className="bg-[#1B3A5C] border-b border-white/10">
+            <div className="bg-[#0B2540] border-b border-white/10">
                 <div className="max-w-7xl mx-auto px-8 md:px-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div>
                         <p className="text-white font-semibold text-base">Need care for a loved one?</p>

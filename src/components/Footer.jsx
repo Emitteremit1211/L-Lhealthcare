@@ -1,5 +1,6 @@
 import {
     FaPhoneAlt,
+    FaFax,
     FaEnvelope,
     FaMapMarkerAlt,
     FaClock,
@@ -105,6 +106,17 @@ const Footer = () => {
                                     >
                                         1-617-697-3888
                                     </a>
+
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-lg bg-[#17B7F5]/10 flex items-center justify-center flex-shrink-0">
+                                    <FaFax className="text-[#17B7F5] text-xs" />
+                                </div>
+                                <div>
+                                    <p className="text-white/40 text-xs">Fax</p>
+                                    <p className="text-white/80 text-sm">1 (877) 497-3314</p>
                                 </div>
                             </div>
 

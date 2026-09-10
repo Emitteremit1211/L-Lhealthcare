@@ -127,7 +127,7 @@ const Aboutus = () => {
               <p className="mt-4 text-gray-600 leading-relaxed">
                 Founded and led by <span className="font-semibold text-[#1B3A5C]">Felix Osho</span> and <span className="font-semibold text-[#1B3A5C]">Akintunde Okufuwa</span>,
                 the company was officially registered and filed with the Massachusetts Secretary of State,
-                Corporations Division in <span className="font-semibold text-[#1B3A5C]">2025</span> built on a shared vision of delivering
+                Corporations Division in <span className="font-semibold text-[#1B3A5C]">2022</span> built on a shared vision of delivering
                 trusted and guaranteed staffing solutions across the state.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">

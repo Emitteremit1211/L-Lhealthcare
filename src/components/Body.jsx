@@ -224,7 +224,7 @@ const Body = () => {
                         <div>
                             <p className="text-gray-600 leading-relaxed">
                                 Founded and led by <span className="font-semibold text-[#1B3A5C]">Felix Osho</span> and <span className="font-semibold text-[#1B3A5C]">Akintunde Okufuwa</span>,
-                                the company was officially registered with the Massachusetts Secretary of State in 2025,
+                                the company was officially registered with the Massachusetts Secretary of State in 2022,
                                 built on a shared vision of delivering trusted and guaranteed staffing solutions across the state.
                             </p>
                             <p className="mt-4 text-gray-600 leading-relaxed">
